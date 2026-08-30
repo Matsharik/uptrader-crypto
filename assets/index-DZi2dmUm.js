@@ -10413,19 +10413,29 @@ function App() {
 				const initData = tg?.initData || "";
 				const res = await fetch(`${API_URL}user/settings`, { headers: { "Authorization": `Bearer ${initData}` } });
 				if (!res.ok) {
-					console.warn(`Сервер вернул статус ${res.status}. Проверьте URL роута.`);
+					console.warn(`Сервер вернул статус ${res.status}.`);
+					setActiveTab("settings");
 					return;
 				}
 				const data = await res.json();
 				if (data.success && data.user) {
-					setIsPaper(data.user.is_paper ?? true);
-					setRisk(data.user.risk_per_trade_usdt ?? 10);
-					setLeverage(data.user.leverage ?? 10);
-					setApiKey(data.user.api_key || "");
-					setApiSecret(data.user.api_secret || "");
-				}
+					const u = data.user;
+					const fetchedApiKey = u.api_key || u.apiKey || "";
+					const fetchedApiSecret = u.api_secret || u.apiSecret || "";
+					const rawIsPaper = u.is_paper_trading ?? u.is_paper ?? u.isPaper;
+					const fetchedIsPaper = rawIsPaper !== void 0 ? Boolean(Number(rawIsPaper)) : true;
+					const fetchedRisk = u.risk_per_trade_usdt ?? u.risk ?? 10;
+					const fetchedLeverage = u.leverage ?? 10;
+					setIsPaper(fetchedIsPaper);
+					setRisk(Number(fetchedRisk));
+					setLeverage(Number(fetchedLeverage));
+					setApiKey(fetchedApiKey);
+					setApiSecret(fetchedApiSecret);
+					if (!fetchedApiKey || !fetchedApiSecret) setActiveTab("settings");
+				} else setActiveTab("settings");
 			} catch (e) {
 				console.error("Ошибка загрузки профиля:", e);
+				setActiveTab("settings");
 			} finally {
 				setLoading(false);
 			}
@@ -10451,8 +10461,10 @@ function App() {
 			});
 			if (!res.ok) throw new Error(`Ошибка HTTP: ${res.status}`);
 			const data = await res.json();
-			if (data.success) safeAlert(t("saveSuccess"));
-			else safeAlert(data.error || t("saveError"));
+			if (data.success) {
+				safeAlert(t("saveSuccess"));
+				setActiveTab("status");
+			} else safeAlert(data.error || t("saveError"));
 		} catch (err) {
 			safeAlert(t("networkError"));
 		}
@@ -10735,4 +10747,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-yPv-gthq.js.map
+//# sourceMappingURL=index-DZi2dmUm.js.map
