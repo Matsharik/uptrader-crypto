@@ -10456,14 +10456,14 @@ function App() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" })
 	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "min-h-screen bg-[#0b0f17] text-slate-100 flex flex-col font-sans max-w-md mx-auto pb-24 border-x border-slate-800/40",
+		className: "h-dvh bg-[#0b0f17] text-slate-100 flex flex-col font-sans max-w-md mx-auto overflow-hidden border-x border-slate-800/40",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
-				className: "px-5 py-4 bg-[#111622] border-b border-slate-800/80 flex items-center justify-between sticky top-0 z-10 backdrop-blur-md",
+				className: "px-5 py-4 bg-[#111622] border-b border-slate-800/80 flex items-center justify-between shrink-0 z-10",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-3",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center font-black text-white text-base shadow-lg shadow-emerald-500/20",
+						className: "w-9 h-9 rounded-xl bg-linear-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center font-black text-white text-base shadow-lg shadow-emerald-500/20",
 						children: "U"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
 						className: "font-bold text-sm tracking-wide text-white",
@@ -10514,7 +10514,7 @@ function App() {
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
-				className: "p-4 flex-1 space-y-4",
+				className: "flex-1 overflow-y-auto p-4 space-y-4 pb-24",
 				children: [
 					activeTab === "status" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "space-y-4 animate-fadeIn",
@@ -10692,7 +10692,7 @@ function App() {
 				]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-				className: "fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#111622]/90 backdrop-blur-md border-t border-slate-800/80 flex justify-around p-2 z-20",
+				className: "shrink-0 bg-[#111622]/95 backdrop-blur-md border-t border-slate-800/80 flex justify-around p-2 z-20",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						onClick: () => setActiveTab("status"),
@@ -10728,4 +10728,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-DIFkn51v.js.map
+//# sourceMappingURL=index-Bp_oX8iR.js.map
