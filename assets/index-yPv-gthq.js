@@ -10395,11 +10395,17 @@ function App() {
 		else alert(msg);
 	};
 	(0, import_react.useEffect)(() => {
+		const tg = window.Telegram?.WebApp;
+		if (tg) {
+			tg.ready();
+			tg.expand();
+			if (typeof tg.disableVerticalSwipes === "function") tg.disableVerticalSwipes();
+		}
+	}, []);
+	(0, import_react.useEffect)(() => {
 		const initTg = async () => {
 			const tg = window.Telegram?.WebApp;
 			if (tg) {
-				tg.ready();
-				tg.expand();
 				const userLang = tg.initDataUnsafe?.user?.language_code;
 				if (userLang && userLang in translations) setLang(userLang);
 			}
@@ -10456,10 +10462,10 @@ function App() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" })
 	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "h-dvh bg-[#0b0f17] text-slate-100 flex flex-col font-sans max-w-md mx-auto overflow-hidden border-x border-slate-800/40",
+		className: "h-screen h-[100dvh] w-full bg-[#0b0f17] text-slate-100 flex flex-col font-sans overflow-hidden",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
-				className: "px-5 py-4 bg-[#111622] border-b border-slate-800/80 flex items-center justify-between shrink-0 z-10",
+				className: "w-full px-5 py-4 bg-[#111622] border-b border-slate-800/80 flex items-center justify-between shrink-0 z-10",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-3",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -10514,7 +10520,8 @@ function App() {
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
-				className: "flex-1 overflow-y-auto p-4 space-y-4 pb-24",
+				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 18px)" },
+				className: "flex-1 w-full overflow-y-auto overscroll-contain p-4 space-y-4 pb-24 no-scrollbar",
 				children: [
 					activeTab === "status" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "space-y-4 animate-fadeIn",
@@ -10692,7 +10699,7 @@ function App() {
 				]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-				className: "shrink-0 bg-[#111622]/95 backdrop-blur-md border-t border-slate-800/80 flex justify-around p-2 z-20",
+				className: "shrink-0 w-full bg-[#111622]/95 backdrop-blur-md border-t border-slate-800/80 flex justify-around p-2 z-20",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						onClick: () => setActiveTab("status"),
@@ -10728,4 +10735,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-Bp_oX8iR.js.map
+//# sourceMappingURL=index-yPv-gthq.js.map
