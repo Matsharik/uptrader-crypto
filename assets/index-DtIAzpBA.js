@@ -10379,6 +10379,7 @@ var API_URL = "https://slovesny.ru/api-trade/";
 function App() {
 	const [activeTab, setActiveTab] = (0, import_react.useState)("status");
 	const [loading, setLoading] = (0, import_react.useState)(true);
+	const [subLoading, setSubLoading] = (0, import_react.useState)(false);
 	const [showSecret, setShowSecret] = (0, import_react.useState)(false);
 	const [lang, setLang] = (0, import_react.useState)("ru");
 	const [isPaper, setIsPaper] = (0, import_react.useState)(true);
@@ -10421,7 +10422,7 @@ function App() {
 				if (data.success && data.user) {
 					const u = data.user;
 					const fetchedApiKey = u.api_key || u.apiKey || "";
-					const fetchedApiSecret = u.api_secret || u.apiSecret || "";
+					const fetchedApiSecret = u.api_secret_encrypted || u.api_secret || u.apiSecret || "";
 					const rawIsPaper = u.is_paper_trading ?? u.is_paper ?? u.isPaper;
 					const fetchedIsPaper = rawIsPaper !== void 0 ? Boolean(Number(rawIsPaper)) : true;
 					const fetchedRisk = u.risk_per_trade_usdt ?? u.risk ?? 10;
@@ -10445,19 +10446,25 @@ function App() {
 	const handleSaveSettings = async () => {
 		try {
 			const initData = window.Telegram?.WebApp?.initData || "";
+			const payload = {
+				isPaper,
+				is_paper_trading: isPaper ? 1 : 0,
+				risk,
+				risk_per_trade_usdt: risk,
+				leverage,
+				apiKey,
+				api_key: apiKey,
+				apiSecret,
+				api_secret: apiSecret,
+				api_secret_encrypted: apiSecret
+			};
 			const res = await fetch(`${API_URL}user/settings`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 					"Authorization": `Bearer ${initData}`
 				},
-				body: JSON.stringify({
-					isPaper,
-					risk,
-					leverage,
-					apiKey,
-					apiSecret
-				})
+				body: JSON.stringify(payload)
 			});
 			if (!res.ok) throw new Error(`Ошибка HTTP: ${res.status}`);
 			const data = await res.json();
@@ -10467,6 +10474,37 @@ function App() {
 			} else safeAlert(data.error || t("saveError"));
 		} catch (err) {
 			safeAlert(t("networkError"));
+		}
+	};
+	const handleCreateInvoice = async () => {
+		setSubLoading(true);
+		try {
+			const tg = window.Telegram?.WebApp;
+			const initData = tg?.initData || "";
+			const res = await fetch(`${API_URL}create-invoice`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					"Authorization": `Bearer ${initData}`
+				},
+				body: JSON.stringify({
+					amount: 100,
+					asset: "USDT"
+				})
+			});
+			if (!res.ok) throw new Error(`Ошибка HTTP: ${res.status}`);
+			const data = await res.json();
+			const payUrl = data.pay_url || data.url || data.invoiceUrl || data.result?.pay_url || data.invoice?.pay_url;
+			if (data.success !== false && payUrl) {
+				if (tg?.openTelegramLink) tg.openTelegramLink(payUrl);
+				else if (tg?.openLink) tg.openLink(payUrl);
+				else window.open(payUrl, "_blank");
+			} else safeAlert(data.error || "Ошибка при выписки счета CryptoBot");
+		} catch (err) {
+			console.error("Ошибка оплаты:", err);
+			safeAlert(t("networkError"));
+		} finally {
+			setSubLoading(false);
 		}
 	};
 	if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -10703,8 +10741,10 @@ function App() {
 								})]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-								className: "w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/10",
-								children: t("payBtn")
+								onClick: handleCreateInvoice,
+								disabled: subLoading,
+								className: "w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/10 active:scale-[0.99] flex items-center justify-center gap-2",
+								children: subLoading ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" }) : t("payBtn")
 							})
 						]
 					})
@@ -10747,4 +10787,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-DZi2dmUm.js.map
+//# sourceMappingURL=index-DtIAzpBA.js.map
