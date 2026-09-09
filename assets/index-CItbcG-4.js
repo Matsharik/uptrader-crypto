@@ -10555,6 +10555,7 @@ function App() {
 	const [apiSecret, setApiSecret] = (0, import_react.useState)("");
 	const [balance, setBalance] = (0, import_react.useState)(null);
 	const [activeSignalsCount, setActiveSignalsCount] = (0, import_react.useState)(0);
+	const [positions, setPositions] = (0, import_react.useState)([]);
 	const t = (key) => {
 		return translations[lang]?.[key] || translations["en"]?.[key] || translations["ru"]?.[key] || key;
 	};
@@ -10563,6 +10564,13 @@ function App() {
 		if (tg?.showAlert) tg.showAlert(msg);
 		else alert(msg);
 	};
+	(0, import_react.useEffect)(() => {
+		const tg = window.Telegram?.WebApp;
+		if (tg) {
+			if (tg.setHeaderColor) tg.setHeaderColor("secondary_bg_color");
+			if (tg.setBackgroundColor) tg.setBackgroundColor("bg_color");
+		}
+	}, []);
 	(0, import_react.useEffect)(() => {
 		const tg = window.Telegram?.WebApp;
 		if (tg) {
@@ -10591,6 +10599,7 @@ function App() {
 						setApiSecret(u.api_secret_encrypted || u.api_secret || u.apiSecret || "");
 						if (u.wallet_balance) setBalance(u.wallet_balance);
 						if (u.active_positions_count !== void 0) setActiveSignalsCount(u.active_positions_count);
+						if (Array.isArray(u.positions)) setPositions(u.positions);
 						if (!fetchedIsPaper && (!u.api_key || !(u.api_secret_encrypted || u.api_secret))) setActiveTab("settings");
 					} else setActiveTab("settings");
 				} else setActiveTab("settings");
@@ -10665,14 +10674,14 @@ function App() {
 		}
 	};
 	if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "min-h-screen bg-[#0b0f17] text-white flex items-center justify-center",
+		className: "min-h-screen app-bg flex items-center justify-center",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" })
 	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "h-screen h-[100dvh] w-full bg-[#0b0f17] text-slate-100 flex flex-col font-sans overflow-hidden",
+		className: "h-screen h-[100dvh] w-full app-bg flex flex-col font-sans overflow-hidden",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
-				className: "w-full px-5 py-4 bg-[#111622] border-b border-slate-800/80 flex items-center justify-between shrink-0 z-10",
+				className: "w-full px-5 py-4 app-bar border-b flex items-center justify-between shrink-0 z-10",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-3",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -10693,7 +10702,7 @@ function App() {
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
 						value: lang,
 						onChange: (e) => setLang(e.target.value),
-						className: "bg-[#0b0f17] border border-slate-800 text-slate-300 text-[11px] rounded-lg px-2 py-1 outline-none uppercase font-bold focus:border-emerald-500",
+						className: "app-input border text-[11px] rounded-lg px-2 py-1 outline-none uppercase font-bold focus:border-emerald-500",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 								value: "ru",
@@ -10733,7 +10742,7 @@ function App() {
 					activeTab === "status" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "space-y-4 animate-fadeIn",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "p-5 rounded-2xl bg-[#111622] border border-slate-800/80 relative overflow-hidden",
+							className: "p-5 rounded-2xl app-card border relative overflow-hidden",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl" }),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -10790,7 +10799,7 @@ function App() {
 									]
 								})]
 							}), !positions || positions.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "text-center py-8 border border-dashed border-slate-800 rounded-xl bg-[#111622]",
+								className: "text-center py-8 border border-dashed rounded-xl app-card",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "text-xs text-slate-500",
 									children: t("noSignals")
@@ -10801,18 +10810,20 @@ function App() {
 					activeTab === "settings" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "space-y-4 animate-fadeIn",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "p-5 rounded-2xl bg-[#111622] border border-slate-800/80 space-y-5",
+							className: "p-5 rounded-2xl app-card border space-y-5",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 									className: "font-bold text-sm text-slate-200 mb-3",
 									children: t("botModeHeader")
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "grid grid-cols-2 bg-[#0b0f17] p-1 rounded-xl border border-slate-800",
+									className: "grid grid-cols-2 app-input p-1 rounded-xl border",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+										type: "button",
 										onClick: () => setIsPaper(true),
 										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${isPaper ? "bg-slate-800 text-amber-400 shadow" : "text-slate-400 hover:text-white"}`,
 										children: t("demoBtn")
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+										type: "button",
 										onClick: () => setIsPaper(false),
 										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${!isPaper ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/20" : "text-slate-400 hover:text-white"}`,
 										children: t("realBtn")
@@ -10834,7 +10845,7 @@ function App() {
 												type: "number",
 												value: risk,
 												onChange: (e) => setRisk(Number(e.target.value)),
-												className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 text-sm font-semibold text-white outline-none focus:border-emerald-500 transition-all"
+												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all"
 											})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 												className: "text-[11px] text-slate-400 font-medium block mb-1.5",
 												children: t("maxPositionsLabel")
@@ -10842,11 +10853,11 @@ function App() {
 												type: "number",
 												value: maxPositions,
 												onChange: (e) => setMaxPositions(Number(e.target.value)),
-												className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 text-sm font-semibold text-white outline-none focus:border-emerald-500 transition-all"
+												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all"
 											})] })]
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-											className: "flex items-center justify-between bg-[#0b0f17] p-3 rounded-xl border border-slate-800",
+											className: "flex items-center justify-between app-input p-3 rounded-xl border",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 												className: "text-xs font-semibold text-white block",
 												children: t("useMaxLeverageLabel")
@@ -10869,7 +10880,7 @@ function App() {
 												type: "number",
 												value: leverage,
 												onChange: (e) => setLeverage(Number(e.target.value)),
-												className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 text-sm font-semibold text-white outline-none focus:border-emerald-500 transition-all"
+												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all"
 											})]
 										})
 									]
@@ -10889,7 +10900,7 @@ function App() {
 											placeholder: "mx0glk...",
 											value: apiKey,
 											onChange: (e) => setApiKey(e.target.value),
-											className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 text-xs font-mono text-white outline-none focus:border-emerald-500 transition-all"
+											className: "w-full app-input border rounded-xl p-3 text-xs font-mono outline-none focus:border-emerald-500 transition-all"
 										})] }),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 											className: "text-[11px] text-slate-400 font-medium block mb-1",
@@ -10901,7 +10912,7 @@ function App() {
 												placeholder: "••••••••••••••••",
 												value: apiSecret,
 												onChange: (e) => setApiSecret(e.target.value),
-												className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 pr-10 text-xs font-mono text-white outline-none focus:border-emerald-500 transition-all"
+												className: "w-full app-input border rounded-xl p-3 pr-10 text-xs font-mono outline-none focus:border-emerald-500 transition-all"
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 												type: "button",
 												onClick: () => setShowSecret(!showSecret),
@@ -10912,6 +10923,7 @@ function App() {
 									]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+									type: "button",
 									onClick: handleSaveSettings,
 									className: "w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/10 active:scale-[0.99]",
 									children: t("saveBtn")
@@ -10920,7 +10932,7 @@ function App() {
 						})
 					}),
 					activeTab === "sub" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "p-6 rounded-2xl bg-[#111622] border border-slate-800/80 text-center space-y-4 animate-fadeIn",
+						className: "p-6 rounded-2xl app-card border text-center space-y-4 animate-fadeIn",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "w-12 h-12 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold",
@@ -10944,6 +10956,7 @@ function App() {
 								})]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
 								onClick: handleCreateInvoice,
 								disabled: subLoading,
 								className: "w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/10 active:scale-[0.99] flex items-center justify-center gap-2",
@@ -10954,9 +10967,10 @@ function App() {
 				]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-				className: "shrink-0 w-full bg-[#111622]/95 backdrop-blur-md border-t border-slate-800/80 flex justify-around p-2 z-20",
+				className: "shrink-0 w-full app-bar backdrop-blur-md border-t flex justify-around p-2 z-20",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
 						onClick: () => setActiveTab("status"),
 						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "status" ? "text-emerald-400" : "text-slate-500 hover:text-slate-300"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -10965,6 +10979,7 @@ function App() {
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("tabStatus") })]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
 						onClick: () => setActiveTab("settings"),
 						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "settings" ? "text-emerald-400" : "text-slate-500 hover:text-slate-300"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -10973,6 +10988,7 @@ function App() {
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("tabSettings") })]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
 						onClick: () => setActiveTab("sub"),
 						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "sub" ? "text-emerald-400" : "text-slate-500 hover:text-slate-300"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -10990,4 +11006,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-Cn_9S8xK.js.map
+//# sourceMappingURL=index-CItbcG-4.js.map

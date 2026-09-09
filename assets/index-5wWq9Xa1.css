@@ -1238,20 +1238,8 @@
     border-top-color: #0000;
   }
 
-  .bg-\[\#0b0f17\] {
-    background-color: #0b0f17;
-  }
-
   .bg-\[\#1c2434\] {
     background-color: #1c2434;
-  }
-
-  .bg-\[\#111622\] {
-    background-color: #111622;
-  }
-
-  .bg-\[\#111622\]\/95 {
-    background-color: oklab(20.1241% -.0014571 -.0253572 / .95);
   }
 
   .bg-\[\#131823\] {
@@ -2327,10 +2315,11 @@
 }
 
 :root {
-  --text: #9ca3af;
-  --text-h: #f3f4f6;
-  --bg: #070a13;
-  --border: #2e303a;
+  --bg: var(--tg-theme-bg-color, #070a13);
+  --secondary-bg: var(--tg-theme-secondary-bg-color, #111622);
+  --text: var(--tg-theme-hint-color, #9ca3af);
+  --text-h: var(--tg-theme-text-color, #f3f4f6);
+  --border: var(--tg-theme-section-separator-color, #ffffff14);
   --code-bg: #1f2028;
   --accent: #aa3bff;
   --accent-bg: #aa3bff1a;
@@ -2342,13 +2331,12 @@
   --mono: ui-monospace, Consolas, monospace;
   font: 18px/145% var(--sans);
   letter-spacing: .18px;
-  color-scheme: dark;
   color: var(--text);
+  background-color: var(--bg);
   font-synthesis: none;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #070a13;
 }
 
 @media (max-width: 1024px) {
@@ -2357,7 +2345,24 @@
   }
 }
 
+.app-bg {
+  background-color: var(--bg);
+  color: var(--text-h);
+}
+
+.app-bar, .app-card {
+  background-color: var(--secondary-bg);
+  border-color: var(--border);
+}
+
+.app-input {
+  background-color: var(--bg);
+  border-color: var(--border);
+  color: var(--text-h);
+}
+
 html, body {
+  background-color: var(--bg);
   touch-action: manipulation;
   -webkit-user-select: none;
   user-select: none;
@@ -2388,7 +2393,7 @@ h1, h2 {
 
 #root {
   box-sizing: border-box;
-  background-color: #070a13;
+  background-color: var(--bg);
   flex-direction: column;
   width: 100%;
   height: 100%;
@@ -2434,15 +2439,15 @@ h1, h2 {
 }
 
 .glass-header {
+  background: var(--secondary-bg);
   -webkit-backdrop-filter: blur(15px);
-  background: #0f172abf;
-  border-bottom: 1px solid #ffffff0d;
+  border-bottom: 1px solid var(--border);
 }
 
 .glass-footer {
+  background: var(--secondary-bg);
   -webkit-backdrop-filter: blur(20px);
-  background: #0f172ad9;
-  border-top: 1px solid #ffffff0f;
+  border-top: 1px solid var(--border);
 }
 
 @property --tw-translate-x {
