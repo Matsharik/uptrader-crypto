@@ -10156,30 +10156,37 @@ var translations = {
 		tabStatus: "Статус",
 		tabSettings: "Настройки",
 		tabSub: "Подписка",
-		accountBalance: "Баланс аккаунта",
-		modeLabel: "Режим",
-		demoMode: "🧪 Demo (Paper)",
-		realMode: "💰 Real Trading",
-		riskPerTrade: "Риск / Сделка",
-		activePositions: "Активные позиции",
+		accountBalance: "Ваш баланс",
+		hiddenBalance: "Скрыт",
+		modeLabel: "Режим торговли",
+		demoMode: "Тестовый (Demo)",
+		realMode: "Реальный счет",
+		riskPerTrade: "Риск на сделку",
+		activePositions: "Открытые позиции",
 		openCount: "открыто",
-		noSignals: "Сигналов на вход пока нет",
-		tradingParams: "Параметры торговли",
-		demoBtn: "🧪 DEMO (Тест)",
-		realBtn: "💰 REAL (Боевой)",
-		riskInputLabel: "Риск на сделку ($)",
-		leverageInputLabel: "Плечо (x1 – x125)",
-		mexcApiHeader: "MEXC API Ключи",
+		noSignals: "Нет активных сделок",
+		positionsTracked: "Позиции отслеживаются сервером",
+		botModeHeader: "Режим работы бота",
+		riskManagementHeader: "Управление рисками",
+		demoBtn: "Тестовый (Demo)",
+		realBtn: "Реальный счет",
+		riskInputLabel: "Сумма входа (USDT)",
+		maxPositionsLabel: "Макс. позиций (шт)",
+		useMaxLeverageLabel: "Использовать макс. плечо",
+		useMaxLeverageDesc: "Бот сам возьмет высшее плечо биржи",
+		leverageInputLabel: "Фиксированное плечо (x)",
+		mexcApiHeader: "Подключение биржи (MEXC)",
 		apiKeyLabel: "API Key",
-		apiSecretLabel: "API Secret",
-		saveBtn: "Сохранить параметры",
+		apiSecretLabel: "Secret Key",
+		saveBtn: "Сохранить настройки",
 		vipTitle: "UPTRADE VIP",
 		vipDesc: "Полный доступ к авто-исполнению сетапов SMC и Price Action на MEXC",
 		perMonth: "/ месяц",
 		payBtn: "Оплатить подписку",
 		saveSuccess: "✅ Настройки сохранены!",
-		saveError: "Ошибка сохранения",
-		networkError: "Ошибка сети при сохранении. Проверьте соединение."
+		saveError: "Ошибка сохранения параметров",
+		networkError: "Ошибка сети при сохранении. Проверьте соединение.",
+		invoiceError: "Ошибка при выписке счета CryptoBot"
 	},
 	en: {
 		subtitle: "MEXC Futures Bot",
@@ -10187,22 +10194,28 @@ var translations = {
 		tabStatus: "Status",
 		tabSettings: "Settings",
 		tabSub: "Subscription",
-		accountBalance: "Account Balance",
-		modeLabel: "Mode",
-		demoMode: "🧪 Demo (Paper)",
-		realMode: "💰 Real Trading",
-		riskPerTrade: "Risk / Trade",
-		activePositions: "Active Positions",
+		accountBalance: "Your Balance",
+		hiddenBalance: "Hidden",
+		modeLabel: "Trading Mode",
+		demoMode: "Test (Demo)",
+		realMode: "Real Account",
+		riskPerTrade: "Risk per Trade",
+		activePositions: "Open Positions",
 		openCount: "open",
-		noSignals: "No entry signals yet",
-		tradingParams: "Trading Parameters",
-		demoBtn: "🧪 DEMO (Test)",
-		realBtn: "💰 REAL (Live)",
-		riskInputLabel: "Risk per trade ($)",
-		leverageInputLabel: "Leverage (x1 – x125)",
-		mexcApiHeader: "MEXC API Keys",
+		noSignals: "No active positions",
+		positionsTracked: "Positions are tracked by server",
+		botModeHeader: "Bot Operating Mode",
+		riskManagementHeader: "Risk Management",
+		demoBtn: "Test (Demo)",
+		realBtn: "Real Account",
+		riskInputLabel: "Entry Amount (USDT)",
+		maxPositionsLabel: "Max Positions (qty)",
+		useMaxLeverageLabel: "Use Max Leverage",
+		useMaxLeverageDesc: "Bot will pick the highest available exchange leverage",
+		leverageInputLabel: "Fixed Leverage (x)",
+		mexcApiHeader: "MEXC Exchange Connection",
 		apiKeyLabel: "API Key",
-		apiSecretLabel: "API Secret",
+		apiSecretLabel: "Secret Key",
 		saveBtn: "Save Settings",
 		vipTitle: "UPTRADE VIP",
 		vipDesc: "Full access to auto-execution of SMC & Price Action setups on MEXC",
@@ -10210,7 +10223,8 @@ var translations = {
 		payBtn: "Pay Subscription",
 		saveSuccess: "✅ Settings saved successfully!",
 		saveError: "Failed to save settings",
-		networkError: "Network error while saving. Check connection."
+		networkError: "Network error while saving. Check connection.",
+		invoiceError: "CryptoBot invoice creation error"
 	},
 	es: {
 		subtitle: "MEXC Futures Bot",
@@ -10218,30 +10232,37 @@ var translations = {
 		tabStatus: "Estado",
 		tabSettings: "Ajustes",
 		tabSub: "Suscripción",
-		accountBalance: "Balance de la cuenta",
-		modeLabel: "Modo",
-		demoMode: "🧪 Demo (Paper)",
-		realMode: "💰 Trading Real",
+		accountBalance: "Tu Saldo",
+		hiddenBalance: "Oculto",
+		modeLabel: "Modo de Trading",
+		demoMode: "Prueba (Demo)",
+		realMode: "Cuenta Real",
 		riskPerTrade: "Riesgo / Operación",
-		activePositions: "Posiciones activas",
+		activePositions: "Posiciones Abiertas",
 		openCount: "abiertas",
-		noSignals: "Aún no hay señales de entrada",
-		tradingParams: "Parámetros de trading",
-		demoBtn: "🧪 DEMO (Prueba)",
-		realBtn: "💰 REAL (En vivo)",
-		riskInputLabel: "Riesgo por operación ($)",
-		leverageInputLabel: "Apalancamiento (x1 – x125)",
-		mexcApiHeader: "Claves API MEXC",
+		noSignals: "No hay operaciones activas",
+		positionsTracked: "Las posiciones son rastreadas por el servidor",
+		botModeHeader: "Modo de Operación del Bot",
+		riskManagementHeader: "Gestión de Riesgo",
+		demoBtn: "Prueba (Demo)",
+		realBtn: "Cuenta Real",
+		riskInputLabel: "Monto de Entrada (USDT)",
+		maxPositionsLabel: "Máx. Posiciones (cant.)",
+		useMaxLeverageLabel: "Usar Apalancamiento Máx.",
+		useMaxLeverageDesc: "El bot usará el máximo apalancamiento permitido",
+		leverageInputLabel: "Apalancamiento Fijo (x)",
+		mexcApiHeader: "Conexión con MEXC",
 		apiKeyLabel: "API Key",
-		apiSecretLabel: "API Secret",
-		saveBtn: "Guardar ajustes",
+		apiSecretLabel: "Secret Key",
+		saveBtn: "Guardar Ajustes",
 		vipTitle: "UPTRADE VIP",
 		vipDesc: "Acceso completo a la ejecución automática de setups SMC y Price Action en MEXC",
 		perMonth: "/ mes",
-		payBtn: "Pagar suscripción",
-		saveSuccess: "✅ Configuración guardada con éxito!",
+		payBtn: "Pagar Suscripción",
+		saveSuccess: "✅ ¡Configuración guardada con éxito!",
 		saveError: "Error al guardar la configuración",
-		networkError: "Error de red al guardar. Compruebe la conexión."
+		networkError: "Error de red al guardar. Compruebe la conexión.",
+		invoiceError: "Error al generar factura de CryptoBot"
 	},
 	zh: {
 		subtitle: "MEXC 合约机器人",
@@ -10249,22 +10270,28 @@ var translations = {
 		tabStatus: "状态",
 		tabSettings: "设置",
 		tabSub: "订阅",
-		accountBalance: "账户余额",
-		modeLabel: "模式",
-		demoMode: "🧪 模拟 (Paper)",
-		realMode: "💰 扣实盘交易",
+		accountBalance: "您的余额",
+		hiddenBalance: "隐藏",
+		modeLabel: "交易模式",
+		demoMode: "测试 (Demo)",
+		realMode: "实盘账户",
 		riskPerTrade: "每单风险",
 		activePositions: "当前持仓",
 		openCount: "个持仓",
-		noSignals: "暂无入场信号",
-		tradingParams: "交易参数",
-		demoBtn: "🧪 模拟测试",
-		realBtn: "💰 实盘交易",
-		riskInputLabel: "每单风险金额 ($)",
-		leverageInputLabel: "杠杆倍数 (x1 – x125)",
-		mexcApiHeader: "MEXC API 密钥",
+		noSignals: "暂无活跃持仓",
+		positionsTracked: "持仓正由服务器实时跟踪",
+		botModeHeader: "机器人运行模式",
+		riskManagementHeader: "风险管理",
+		demoBtn: "测试 (Demo)",
+		realBtn: "实盘账户",
+		riskInputLabel: "开仓金额 (USDT)",
+		maxPositionsLabel: "最大持仓数 (个)",
+		useMaxLeverageLabel: "使用最高杠杆",
+		useMaxLeverageDesc: "机器人将自动选取交易所支持的最高杠杆",
+		leverageInputLabel: "固定杠杆倍数 (x)",
+		mexcApiHeader: "MEXC 交易所连接",
 		apiKeyLabel: "API Key",
-		apiSecretLabel: "API Secret",
+		apiSecretLabel: "Secret Key",
 		saveBtn: "保存设置",
 		vipTitle: "UPTRADE VIP",
 		vipDesc: "全自动执行 MEXC 上的 SMC 和 Price Action 策略",
@@ -10272,7 +10299,8 @@ var translations = {
 		payBtn: "立即订阅",
 		saveSuccess: "✅ 设置保存成功！",
 		saveError: "保存设置失败",
-		networkError: "保存时发生网络错误，请检查网络。"
+		networkError: "网络错误，请检查网络连接。",
+		invoiceError: "CryptoBot 账单生成失败"
 	},
 	tr: {
 		subtitle: "MEXC Vadeli İşlem Botu",
@@ -10280,22 +10308,28 @@ var translations = {
 		tabStatus: "Durum",
 		tabSettings: "Ayarlar",
 		tabSub: "Abonelik",
-		accountBalance: "Hesap Bakiyesi",
-		modeLabel: "Mod",
-		demoMode: "🧪 Demo (Paper)",
-		realMode: "💰 Gerçek İşlem",
+		accountBalance: "Bakiyeniz",
+		hiddenBalance: "Gizli",
+		modeLabel: "İşlem Modu",
+		demoMode: "Test (Demo)",
+		realMode: "Gerçek Hesap",
 		riskPerTrade: "Risk / İşlem",
 		activePositions: "Açık Pozisyonlar",
 		openCount: "açık",
-		noSignals: "Henüz giriş sinyali yok",
-		tradingParams: "İşlem Parametreleri",
-		demoBtn: "🧪 DEMO (Test)",
-		realBtn: "💰 GERÇEK (Canlı)",
-		riskInputLabel: "İşlem Başına Risk ($)",
-		leverageInputLabel: "Kaldıraç (x1 – x125)",
-		mexcApiHeader: "MEXC API Anahtarları",
+		noSignals: "Aktif işlem bulunmuyor",
+		positionsTracked: "Pozisyonlar sunucu tarafından takip ediliyor",
+		botModeHeader: "Bot Çalışma Modu",
+		riskManagementHeader: "Risk Yönetimi",
+		demoBtn: "Test (Demo)",
+		realBtn: "Gerçek Hesap",
+		riskInputLabel: "Giriş Tutarı (USDT)",
+		maxPositionsLabel: "Maks. Pozisyon (adet)",
+		useMaxLeverageLabel: "Maks. Kaldıraç Kullan",
+		useMaxLeverageDesc: "Bot otomatik olarak borsadaki en yüksek kaldıraçı seçer",
+		leverageInputLabel: "Sabit Kaldıraç (x)",
+		mexcApiHeader: "MEXC Borsa Bağlantısı",
 		apiKeyLabel: "API Key",
-		apiSecretLabel: "API Secret",
+		apiSecretLabel: "Secret Key",
 		saveBtn: "Ayarları Kaydet",
 		vipTitle: "UPTRADE VIP",
 		vipDesc: "MEXC üzerindeki SMC ve Price Action kurulumlarının otomatik yürütülmesine tam erişim",
@@ -10303,7 +10337,8 @@ var translations = {
 		payBtn: "Aboneliği Öde",
 		saveSuccess: "✅ Ayarlar başarıyla kaydedildi!",
 		saveError: "Ayarlar kaydedilemedi",
-		networkError: "Kaydederken ağ hatası oluştu. Bağlantınızı kontrol edin."
+		networkError: "Kaydederken ağ hatası oluştu. Bağlantınızı kontrol edin.",
+		invoiceError: "CryptoBot fatura oluşturma hatası"
 	},
 	de: {
 		subtitle: "MEXC Futures Bot",
@@ -10311,22 +10346,28 @@ var translations = {
 		tabStatus: "Status",
 		tabSettings: "Einstellungen",
 		tabSub: "Abonnement",
-		accountBalance: "Kontostand",
-		modeLabel: "Modus",
-		demoMode: "🧪 Demo (Paper)",
-		realMode: "💰 Echtgeld-Trading",
+		accountBalance: "Ihr Kontostand",
+		hiddenBalance: "Ausgeblendet",
+		modeLabel: "Handelsmodus",
+		demoMode: "Test (Demo)",
+		realMode: "Echtgeldkonto",
 		riskPerTrade: "Risiko / Trade",
-		activePositions: "Aktive Positionen",
+		activePositions: "Offene Positionen",
 		openCount: "offen",
-		noSignals: "Noch keine Einstiegssignale",
-		tradingParams: "Trading-Parameter",
-		demoBtn: "🧪 DEMO (Test)",
-		realBtn: "💰 ECHTGELD (Live)",
-		riskInputLabel: "Risiko pro Trade ($)",
-		leverageInputLabel: "Hebel (x1 – x125)",
-		mexcApiHeader: "MEXC API-Schlüssel",
+		noSignals: "Keine aktiven Positionen",
+		positionsTracked: "Positionen werden vom Server überwacht",
+		botModeHeader: "Bot-Betriebsmodus",
+		riskManagementHeader: "Risikomanagement",
+		demoBtn: "Test (Demo)",
+		realBtn: "Echtgeldkonto",
+		riskInputLabel: "Einstiegsbetrag (USDT)",
+		maxPositionsLabel: "Max. Positionen (Anzahl)",
+		useMaxLeverageLabel: "Max. Hebel verwenden",
+		useMaxLeverageDesc: "Bot wählt automatisch den höchsten Hebel der Börse",
+		leverageInputLabel: "Fester Hebel (x)",
+		mexcApiHeader: "MEXC Börsen-Anbindung",
 		apiKeyLabel: "API Key",
-		apiSecretLabel: "API Secret",
+		apiSecretLabel: "Secret Key",
 		saveBtn: "Einstellungen speichern",
 		vipTitle: "UPTRADE VIP",
 		vipDesc: "Vollständiger Zugriff auf automatische SMC- & Price Action-Setups auf MEXC",
@@ -10334,7 +10375,8 @@ var translations = {
 		payBtn: "Abonnement bezahlen",
 		saveSuccess: "✅ Einstellungen erfolgreich gespeichert!",
 		saveError: "Fehler beim Speichern der Einstellungen",
-		networkError: "Netzwerkfehler beim Speichern. Bitte Verbindung prüfen."
+		networkError: "Netzwerkfehler beim Speichern. Bitte Verbindung prüfen.",
+		invoiceError: "Fehler bei CryptoBot Rechnungsstellung"
 	}
 };
 //#endregion
@@ -10371,10 +10413,132 @@ var require_react_jsx_runtime_production = /* @__PURE__ */ __commonJSMin(((expor
 	exports.jsxs = jsxProd;
 }));
 //#endregion
-//#region src/App.tsx
+//#region src/components/PositionCard.tsx
 var import_jsx_runtime = (/* @__PURE__ */ __commonJSMin(((exports, module) => {
 	module.exports = require_react_jsx_runtime_production();
 })))();
+var MexcPositionCard = ({ pos }) => {
+	const isLong = pos.side === "LONG" || pos.side === "BUY";
+	const isProfit = pos.pnl >= 0;
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "w-full bg-[#131823] border border-slate-800/80 rounded-2xl p-4 space-y-3 font-sans shadow-lg text-slate-200",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex items-center justify-between",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: `w-5 h-5 rounded flex items-center justify-center font-extrabold text-xs ${isLong ? "bg-emerald-500/20 text-emerald-400" : "bg-rose-500/20 text-rose-400"}`,
+						children: isLong ? "B" : "S"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+						className: "font-bold text-sm text-white tracking-wide",
+						children: [pos.symbol, " Perpetual"]
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+					className: "bg-[#1c2434] text-slate-400 text-[11px] px-2 py-0.5 rounded font-medium border border-slate-800",
+					children: [
+						pos.marginType || "Cross",
+						" ",
+						pos.leverage,
+						"X >"
+					]
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex justify-between items-baseline pt-1",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "text-[11px] text-slate-400 font-medium border-b border-dashed border-slate-600",
+					children: "Unrealized PNL (USDT)"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: `text-base font-extrabold font-mono ${isProfit ? "text-emerald-400" : "text-rose-500"}`,
+					children: [isProfit ? `+${pos.pnl.toFixed(4)}` : pos.pnl.toFixed(4), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+						className: "text-xs ml-1",
+						children: [
+							"[",
+							isProfit ? `+${pos.pnlPercent.toFixed(2)}` : pos.pnlPercent.toFixed(2),
+							"%]"
+						]
+					})]
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "grid grid-cols-3 gap-y-2.5 gap-x-1 pt-1 text-left",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
+						children: "Size (USDT)"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs font-semibold font-mono text-slate-100",
+						children: pos.size.toLocaleString()
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
+						children: "Margin (USDT)"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs font-semibold font-mono text-slate-100",
+						children: pos.margin.toFixed(2)
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
+						children: "Margin Ratio"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs font-semibold font-mono text-slate-100",
+						children: pos.marginRatio ? `${pos.marginRatio.toFixed(2)}%` : "--"
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
+						children: "Avg. Price"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs font-semibold font-mono text-slate-100",
+						children: pos.entryPrice
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
+						children: "Fair Price"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs font-semibold font-mono text-slate-100",
+						children: pos.markPrice
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
+						children: "Liq. Price"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs font-semibold font-mono text-amber-400",
+						children: pos.liqPrice || "--"
+					})] })
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "pt-2 border-t border-slate-800/60 flex justify-between items-center text-[11px]",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-1.5",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-slate-400",
+						children: "TP/SL"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+						className: "font-mono text-slate-300 font-semibold",
+						children: [
+							pos.tp ? pos.tp : "--",
+							" / ",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-rose-400",
+								children: pos.sl ? pos.sl : "--"
+							})
+						]
+					})]
+				}), pos.realizedPnl !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "text-slate-400",
+					children: ["Realized PNL ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: `font-mono font-semibold ${pos.realizedPnl >= 0 ? "text-emerald-400" : "text-rose-400"}`,
+						children: pos.realizedPnl >= 0 ? `+${pos.realizedPnl}` : pos.realizedPnl
+					})]
+				})]
+			})
+		]
+	});
+};
+//#endregion
+//#region src/App.tsx
 var API_URL = "https://slovesny.ru/api-trade/";
 function App() {
 	const [activeTab, setActiveTab] = (0, import_react.useState)("status");
@@ -10385,10 +10549,14 @@ function App() {
 	const [isPaper, setIsPaper] = (0, import_react.useState)(true);
 	const [risk, setRisk] = (0, import_react.useState)(10);
 	const [leverage, setLeverage] = (0, import_react.useState)(10);
+	const [useMaxLeverage, setUseMaxLeverage] = (0, import_react.useState)(true);
+	const [maxPositions, setMaxPositions] = (0, import_react.useState)(3);
 	const [apiKey, setApiKey] = (0, import_react.useState)("");
 	const [apiSecret, setApiSecret] = (0, import_react.useState)("");
+	const [balance, setBalance] = (0, import_react.useState)(null);
+	const [activeSignalsCount, setActiveSignalsCount] = (0, import_react.useState)(0);
 	const t = (key) => {
-		return translations[lang]?.[key] || translations["en"]?.[key] || translations["ru"][key] || key;
+		return translations[lang]?.[key] || translations["en"]?.[key] || translations["ru"]?.[key] || key;
 	};
 	const safeAlert = (msg) => {
 		const tg = window.Telegram?.WebApp;
@@ -10401,38 +10569,30 @@ function App() {
 			tg.ready();
 			tg.expand();
 			if (typeof tg.disableVerticalSwipes === "function") tg.disableVerticalSwipes();
+			const userLang = tg.initDataUnsafe?.user?.language_code;
+			if (userLang && userLang in translations) setLang(userLang);
 		}
-	}, []);
-	(0, import_react.useEffect)(() => {
-		const initTg = async () => {
-			const tg = window.Telegram?.WebApp;
-			if (tg) {
-				const userLang = tg.initDataUnsafe?.user?.language_code;
-				if (userLang && userLang in translations) setLang(userLang);
-			}
+		const fetchSettings = async () => {
 			try {
 				const initData = tg?.initData || "";
 				const res = await fetch(`${API_URL}user/settings`, { headers: { "Authorization": `Bearer ${initData}` } });
-				if (!res.ok) {
-					console.warn(`Сервер вернул статус ${res.status}.`);
-					setActiveTab("settings");
-					return;
-				}
-				const data = await res.json();
-				if (data.success && data.user) {
-					const u = data.user;
-					const fetchedApiKey = u.api_key || u.apiKey || "";
-					const fetchedApiSecret = u.api_secret_encrypted || u.api_secret || u.apiSecret || "";
-					const rawIsPaper = u.is_paper_trading ?? u.is_paper ?? u.isPaper;
-					const fetchedIsPaper = rawIsPaper !== void 0 ? Boolean(Number(rawIsPaper)) : true;
-					const fetchedRisk = u.risk_per_trade_usdt ?? u.risk ?? 10;
-					const fetchedLeverage = u.leverage ?? 10;
-					setIsPaper(fetchedIsPaper);
-					setRisk(Number(fetchedRisk));
-					setLeverage(Number(fetchedLeverage));
-					setApiKey(fetchedApiKey);
-					setApiSecret(fetchedApiSecret);
-					if (!fetchedApiKey || !fetchedApiSecret) setActiveTab("settings");
+				if (res.ok) {
+					const data = await res.json();
+					if (data.success && data.user) {
+						const u = data.user;
+						const rawIsPaper = u.is_paper_trading ?? u.is_paper ?? u.isPaper;
+						const fetchedIsPaper = rawIsPaper !== void 0 ? Boolean(Number(rawIsPaper)) : true;
+						setIsPaper(fetchedIsPaper);
+						setRisk(Number(u.risk_per_trade_usdt ?? u.risk ?? 10));
+						setLeverage(Number(u.leverage ?? 10));
+						setUseMaxLeverage(u.use_max_leverage !== void 0 ? Boolean(Number(u.use_max_leverage)) : true);
+						setMaxPositions(Number(u.max_open_positions ?? 3));
+						setApiKey(u.api_key || u.apiKey || "");
+						setApiSecret(u.api_secret_encrypted || u.api_secret || u.apiSecret || "");
+						if (u.wallet_balance) setBalance(u.wallet_balance);
+						if (u.active_positions_count !== void 0) setActiveSignalsCount(u.active_positions_count);
+						if (!fetchedIsPaper && (!u.api_key || !(u.api_secret_encrypted || u.api_secret))) setActiveTab("settings");
+					} else setActiveTab("settings");
 				} else setActiveTab("settings");
 			} catch (e) {
 				console.error("Ошибка загрузки профиля:", e);
@@ -10441,22 +10601,19 @@ function App() {
 				setLoading(false);
 			}
 		};
-		initTg();
+		fetchSettings();
 	}, []);
 	const handleSaveSettings = async () => {
 		try {
 			const initData = window.Telegram?.WebApp?.initData || "";
 			const payload = {
-				isPaper,
 				is_paper_trading: isPaper ? 1 : 0,
-				risk,
 				risk_per_trade_usdt: risk,
 				leverage,
-				apiKey,
+				use_max_leverage: useMaxLeverage ? 1 : 0,
+				max_open_positions: maxPositions,
 				api_key: apiKey,
-				apiSecret,
-				api_secret: apiSecret,
-				api_secret_encrypted: apiSecret
+				api_secret: apiSecret
 			};
 			const res = await fetch(`${API_URL}user/settings`, {
 				method: "POST",
@@ -10466,7 +10623,7 @@ function App() {
 				},
 				body: JSON.stringify(payload)
 			});
-			if (!res.ok) throw new Error(`Ошибка HTTP: ${res.status}`);
+			if (!res.ok) throw new Error(`HTTP: ${res.status}`);
 			const data = await res.json();
 			if (data.success) {
 				safeAlert(t("saveSuccess"));
@@ -10492,14 +10649,14 @@ function App() {
 					asset: "USDT"
 				})
 			});
-			if (!res.ok) throw new Error(`Ошибка HTTP: ${res.status}`);
+			if (!res.ok) throw new Error(`HTTP: ${res.status}`);
 			const data = await res.json();
 			const payUrl = data.pay_url || data.url || data.invoiceUrl || data.result?.pay_url || data.invoice?.pay_url;
 			if (data.success !== false && payUrl) {
 				if (tg?.openTelegramLink) tg.openTelegramLink(payUrl);
 				else if (tg?.openLink) tg.openLink(payUrl);
 				else window.open(payUrl, "_blank");
-			} else safeAlert(data.error || "Ошибка при выписки счета CryptoBot");
+			} else safeAlert(data.error || t("invoiceError"));
 		} catch (err) {
 			console.error("Ошибка оплаты:", err);
 			safeAlert(t("networkError"));
@@ -10519,7 +10676,7 @@ function App() {
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-3",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "w-9 h-9 rounded-xl bg-linear-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center font-black text-white text-base shadow-lg shadow-emerald-500/20",
+						className: "w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center font-black text-white text-base shadow-lg shadow-emerald-500/20",
 						children: "U"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
 						className: "font-bold text-sm tracking-wide text-white",
@@ -10585,10 +10742,14 @@ function App() {
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "text-3xl font-extrabold mt-1 text-white tracking-tight",
-									children: ["$1,250.00 ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-sm font-normal text-slate-400",
-										children: "USDT"
-									})]
+									children: [
+										isPaper ? "∞" : balance ? `$${balance}` : t("hiddenBalance"),
+										" ",
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "text-sm font-normal text-slate-400",
+											children: "USDT"
+										})
+									]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-slate-800/60 text-xs",
@@ -10612,74 +10773,115 @@ function App() {
 								})
 							]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "p-5 rounded-2xl bg-[#111622] border border-slate-800/80",
+							className: "space-y-3",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex justify-between items-center mb-4",
+								className: "flex justify-between items-center px-1",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 									className: "font-bold text-sm text-slate-200",
 									children: t("activePositions")
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 									className: "text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono",
-									children: ["0 ", t("openCount")]
+									children: [
+										(positions || []).length,
+										" / ",
+										maxPositions,
+										" ",
+										t("openCount")
+									]
 								})]
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "text-center py-8 border border-dashed border-slate-800 rounded-xl",
+							}), !positions || positions.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "text-center py-8 border border-dashed border-slate-800 rounded-xl bg-[#111622]",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "text-xs text-slate-500",
 									children: t("noSignals")
 								})
-							})]
+							}) : positions.map((pos) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MexcPositionCard, { pos }, pos.id || pos.symbol))]
 						})]
 					}),
 					activeTab === "settings" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "space-y-4 animate-fadeIn",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "p-5 rounded-2xl bg-[#111622] border border-slate-800/80 space-y-4",
+							className: "p-5 rounded-2xl bg-[#111622] border border-slate-800/80 space-y-5",
 							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "font-bold text-sm text-slate-200",
-									children: t("tradingParams")
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+									className: "font-bold text-sm text-slate-200 mb-3",
+									children: t("botModeHeader")
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "grid grid-cols-2 bg-[#0b0f17] p-1 rounded-xl border border-slate-800",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 										onClick: () => setIsPaper(true),
-										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${isPaper ? "bg-slate-800 text-amber-400 border border-amber-500/30 shadow" : "text-slate-400 hover:text-white"}`,
+										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${isPaper ? "bg-slate-800 text-amber-400 shadow" : "text-slate-400 hover:text-white"}`,
 										children: t("demoBtn")
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 										onClick: () => setIsPaper(false),
 										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${!isPaper ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/20" : "text-slate-400 hover:text-white"}`,
 										children: t("realBtn")
 									})]
-								}),
+								})] }),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "grid grid-cols-2 gap-3",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-										className: "text-[11px] text-slate-400 font-medium block mb-1.5",
-										children: t("riskInputLabel")
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-										type: "number",
-										value: risk,
-										onChange: (e) => setRisk(Number(e.target.value)),
-										className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 text-sm font-semibold text-white outline-none focus:border-emerald-500 transition-all"
-									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-										className: "text-[11px] text-slate-400 font-medium block mb-1.5",
-										children: t("leverageInputLabel")
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-										type: "number",
-										value: leverage,
-										onChange: (e) => setLeverage(Number(e.target.value)),
-										className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 text-sm font-semibold text-white outline-none focus:border-emerald-500 transition-all"
-									})] })]
+									className: "space-y-3",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+											className: "font-bold text-sm text-slate-200",
+											children: t("riskManagementHeader")
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "grid grid-cols-2 gap-3",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+												className: "text-[11px] text-slate-400 font-medium block mb-1.5",
+												children: t("riskInputLabel")
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+												type: "number",
+												value: risk,
+												onChange: (e) => setRisk(Number(e.target.value)),
+												className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 text-sm font-semibold text-white outline-none focus:border-emerald-500 transition-all"
+											})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+												className: "text-[11px] text-slate-400 font-medium block mb-1.5",
+												children: t("maxPositionsLabel")
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+												type: "number",
+												value: maxPositions,
+												onChange: (e) => setMaxPositions(Number(e.target.value)),
+												className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 text-sm font-semibold text-white outline-none focus:border-emerald-500 transition-all"
+											})] })]
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex items-center justify-between bg-[#0b0f17] p-3 rounded-xl border border-slate-800",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-xs font-semibold text-white block",
+												children: t("useMaxLeverageLabel")
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-[10px] text-slate-400 block mt-0.5",
+												children: t("useMaxLeverageDesc")
+											})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+												type: "button",
+												onClick: () => setUseMaxLeverage(!useMaxLeverage),
+												className: `w-11 h-6 rounded-full p-1 transition-colors shrink-0 ${useMaxLeverage ? "bg-emerald-500" : "bg-slate-700"}`,
+												children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `w-4 h-4 bg-white rounded-full transition-transform ${useMaxLeverage ? "translate-x-5" : "translate-x-0"}` })
+											})]
+										}),
+										!useMaxLeverage && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "animate-fadeIn",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+												className: "text-[11px] text-slate-400 font-medium block mb-1.5",
+												children: t("leverageInputLabel")
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+												type: "number",
+												value: leverage,
+												onChange: (e) => setLeverage(Number(e.target.value)),
+												className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 text-sm font-semibold text-white outline-none focus:border-emerald-500 transition-all"
+											})]
+										})
+									]
 								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "pt-2 border-t border-slate-800",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-										className: "font-bold text-xs text-slate-300 mb-3",
-										children: t("mexcApiHeader")
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "space-y-3",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+								!isPaper && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "pt-2 border-t border-slate-800 animate-fadeIn space-y-3",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+											className: "font-bold text-xs text-amber-400",
+											children: t("mexcApiHeader")
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 											className: "text-[11px] text-slate-400 font-medium block mb-1",
 											children: t("apiKeyLabel")
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
@@ -10688,7 +10890,8 @@ function App() {
 											value: apiKey,
 											onChange: (e) => setApiKey(e.target.value),
 											className: "w-full bg-[#0b0f17] border border-slate-800 rounded-xl p-3 text-xs font-mono text-white outline-none focus:border-emerald-500 transition-all"
-										})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+										})] }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 											className: "text-[11px] text-slate-400 font-medium block mb-1",
 											children: t("apiSecretLabel")
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -10705,8 +10908,8 @@ function App() {
 												className: "absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 text-xs",
 												children: showSecret ? "👁️" : "🔒"
 											})]
-										})] })]
-									})]
+										})] })
+									]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 									onClick: handleSaveSettings,
@@ -10787,4 +10990,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-DtIAzpBA.js.map
+//# sourceMappingURL=index-Cn_9S8xK.js.map
