@@ -10170,7 +10170,7 @@ var translations = {
 		riskManagementHeader: "Управление рисками",
 		demoBtn: "Тестовый (Demo)",
 		realBtn: "Реальный счет",
-		riskInputLabel: "Сумма входа (USDT)",
+		riskInputLabel: "Риск на сделку (USDT)",
 		maxPositionsLabel: "Макс. позиций (шт)",
 		useMaxLeverageLabel: "Использовать макс. плечо",
 		useMaxLeverageDesc: "Бот сам возьмет высшее плечо биржи",
@@ -10208,7 +10208,7 @@ var translations = {
 		riskManagementHeader: "Risk Management",
 		demoBtn: "Test (Demo)",
 		realBtn: "Real Account",
-		riskInputLabel: "Entry Amount (USDT)",
+		riskInputLabel: "Risk per Trade (USDT)",
 		maxPositionsLabel: "Max Positions (qty)",
 		useMaxLeverageLabel: "Use Max Leverage",
 		useMaxLeverageDesc: "Bot will pick the highest available exchange leverage",
@@ -10246,7 +10246,7 @@ var translations = {
 		riskManagementHeader: "Gestión de Riesgo",
 		demoBtn: "Prueba (Demo)",
 		realBtn: "Cuenta Real",
-		riskInputLabel: "Monto de Entrada (USDT)",
+		riskInputLabel: "Riesgo por Operación (USDT)",
 		maxPositionsLabel: "Máx. Posiciones (cant.)",
 		useMaxLeverageLabel: "Usar Apalancamiento Máx.",
 		useMaxLeverageDesc: "El bot usará el máximo apalancamiento permitido",
@@ -10284,7 +10284,7 @@ var translations = {
 		riskManagementHeader: "风险管理",
 		demoBtn: "测试 (Demo)",
 		realBtn: "实盘账户",
-		riskInputLabel: "开仓金额 (USDT)",
+		riskInputLabel: "单笔交易风险 (USDT)",
 		maxPositionsLabel: "最大持仓数 (个)",
 		useMaxLeverageLabel: "使用最高杠杆",
 		useMaxLeverageDesc: "机器人将自动选取交易所支持的最高杠杆",
@@ -10322,7 +10322,7 @@ var translations = {
 		riskManagementHeader: "Risk Yönetimi",
 		demoBtn: "Test (Demo)",
 		realBtn: "Gerçek Hesap",
-		riskInputLabel: "Giriş Tutarı (USDT)",
+		riskInputLabel: "İşlem Başına Risk (USDT)",
 		maxPositionsLabel: "Maks. Pozisyon (adet)",
 		useMaxLeverageLabel: "Maks. Kaldıraç Kullan",
 		useMaxLeverageDesc: "Bot otomatik olarak borsadaki en yüksek kaldıraçı seçer",
@@ -10360,7 +10360,7 @@ var translations = {
 		riskManagementHeader: "Risikomanagement",
 		demoBtn: "Test (Demo)",
 		realBtn: "Echtgeldkonto",
-		riskInputLabel: "Einstiegsbetrag (USDT)",
+		riskInputLabel: "Risiko pro Trade (USDT)",
 		maxPositionsLabel: "Max. Positionen (Anzahl)",
 		useMaxLeverageLabel: "Max. Hebel verwenden",
 		useMaxLeverageDesc: "Bot wählt automatisch den höchsten Hebel der Börse",
@@ -10688,12 +10688,12 @@ function App() {
 						className: "w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center font-black text-white text-base shadow-lg shadow-emerald-500/20",
 						children: "U"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-						className: "font-bold text-sm tracking-wide text-white",
+						className: "font-bold text-sm tracking-wide text-[var(--text-h)]",
 						children: "UPTRADE CRYPTO"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "flex items-center gap-1.5 mt-0.5",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-2 h-2 rounded-full bg-emerald-400 animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-[11px] text-slate-400 font-medium",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-2 h-2 rounded-full bg-emerald-500 animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-[11px] text-[var(--text)] font-medium",
 							children: t("subtitle")
 						})]
 					})] })]
@@ -10702,35 +10702,41 @@ function App() {
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
 						value: lang,
 						onChange: (e) => setLang(e.target.value),
-						className: "app-input border text-[11px] rounded-lg px-2 py-1 outline-none uppercase font-bold focus:border-emerald-500",
+						className: "app-input border text-[11px] rounded-lg px-2 py-1 outline-none uppercase font-bold focus:border-emerald-500 text-[var(--text-h)]",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 								value: "ru",
+								className: "app-bg",
 								children: "RU"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 								value: "en",
+								className: "app-bg",
 								children: "EN"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 								value: "es",
+								className: "app-bg",
 								children: "ES"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 								value: "zh",
+								className: "app-bg",
 								children: "ZH"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 								value: "tr",
+								className: "app-bg",
 								children: "TR"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 								value: "de",
+								className: "app-bg",
 								children: "DE"
 							})
 						]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
+						className: "px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20",
 						children: t("trialBadge")
 					})]
 				})]
@@ -10746,33 +10752,33 @@ function App() {
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl" }),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-xs text-slate-400 font-medium",
+									className: "text-xs text-[var(--text)] font-medium",
 									children: t("accountBalance")
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "text-3xl font-extrabold mt-1 text-white tracking-tight",
+									className: "text-3xl font-extrabold mt-1 text-[var(--text-h)] tracking-tight",
 									children: [
 										isPaper ? "∞" : balance ? `$${balance}` : t("hiddenBalance"),
 										" ",
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-											className: "text-sm font-normal text-slate-400",
+											className: "text-sm font-normal text-[var(--text)]",
 											children: "USDT"
 										})
 									]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-slate-800/60 text-xs",
+									className: "grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-[var(--border)] text-xs",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-slate-400 block",
+										className: "text-[var(--text)] block",
 										children: t("modeLabel")
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: `font-semibold ${isPaper ? "text-amber-400" : "text-emerald-400"}`,
+										className: `font-semibold ${isPaper ? "text-amber-500" : "text-emerald-500"}`,
 										children: isPaper ? t("demoMode") : t("realMode")
 									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-slate-400 block",
+										className: "text-[var(--text)] block",
 										children: t("riskPerTrade")
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-										className: "font-semibold text-white",
+										className: "font-semibold text-[var(--text-h)]",
 										children: [
 											"$",
 											risk,
@@ -10786,10 +10792,10 @@ function App() {
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex justify-between items-center px-1",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "font-bold text-sm text-slate-200",
+									className: "font-bold text-sm text-[var(--text-h)]",
 									children: t("activePositions")
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono",
+									className: "text-[11px] px-2 py-0.5 rounded bg-[var(--bg)] text-[var(--text)] border border-[var(--border)] font-mono",
 									children: [
 										(positions || []).length,
 										" / ",
@@ -10801,7 +10807,7 @@ function App() {
 							}), !positions || positions.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "text-center py-8 border border-dashed rounded-xl app-card",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "text-xs text-slate-500",
+									className: "text-xs text-[var(--text)]",
 									children: t("noSignals")
 								})
 							}) : positions.map((pos) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MexcPositionCard, { pos }, pos.id || pos.symbol))]
@@ -10813,19 +10819,19 @@ function App() {
 							className: "p-5 rounded-2xl app-card border space-y-5",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "font-bold text-sm text-slate-200 mb-3",
+									className: "font-bold text-sm text-[var(--text-h)] mb-3",
 									children: t("botModeHeader")
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "grid grid-cols-2 app-input p-1 rounded-xl border",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 										type: "button",
 										onClick: () => setIsPaper(true),
-										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${isPaper ? "bg-slate-800 text-amber-400 shadow" : "text-slate-400 hover:text-white"}`,
+										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${isPaper ? "bg-[var(--bg)] text-amber-500 shadow border border-[var(--border)]" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
 										children: t("demoBtn")
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 										type: "button",
 										onClick: () => setIsPaper(false),
-										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${!isPaper ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/20" : "text-slate-400 hover:text-white"}`,
+										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${!isPaper ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/20" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
 										children: t("realBtn")
 									})]
 								})] }),
@@ -10833,77 +10839,77 @@ function App() {
 									className: "space-y-3",
 									children: [
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-											className: "font-bold text-sm text-slate-200",
+											className: "font-bold text-sm text-[var(--text-h)]",
 											children: t("riskManagementHeader")
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											className: "grid grid-cols-2 gap-3",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "text-[11px] text-slate-400 font-medium block mb-1.5",
+												className: "text-[11px] text-[var(--text)] font-medium block mb-1.5",
 												children: t("riskInputLabel")
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 												type: "number",
 												value: risk,
 												onChange: (e) => setRisk(Number(e.target.value)),
-												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all"
+												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all text-[var(--text-h)]"
 											})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "text-[11px] text-slate-400 font-medium block mb-1.5",
+												className: "text-[11px] text-[var(--text)] font-medium block mb-1.5",
 												children: t("maxPositionsLabel")
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 												type: "number",
 												value: maxPositions,
 												onChange: (e) => setMaxPositions(Number(e.target.value)),
-												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all"
+												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all text-[var(--text-h)]"
 											})] })]
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											className: "flex items-center justify-between app-input p-3 rounded-xl border",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-												className: "text-xs font-semibold text-white block",
+												className: "text-xs font-semibold text-[var(--text-h)] block",
 												children: t("useMaxLeverageLabel")
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-												className: "text-[10px] text-slate-400 block mt-0.5",
+												className: "text-[10px] text-[var(--text)] block mt-0.5",
 												children: t("useMaxLeverageDesc")
 											})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 												type: "button",
 												onClick: () => setUseMaxLeverage(!useMaxLeverage),
-												className: `w-11 h-6 rounded-full p-1 transition-colors shrink-0 ${useMaxLeverage ? "bg-emerald-500" : "bg-slate-700"}`,
+												className: `w-11 h-6 rounded-full p-1 transition-colors shrink-0 ${useMaxLeverage ? "bg-emerald-500" : "bg-slate-400 dark:bg-slate-700"}`,
 												children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `w-4 h-4 bg-white rounded-full transition-transform ${useMaxLeverage ? "translate-x-5" : "translate-x-0"}` })
 											})]
 										}),
 										!useMaxLeverage && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											className: "animate-fadeIn",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "text-[11px] text-slate-400 font-medium block mb-1.5",
+												className: "text-[11px] text-[var(--text)] font-medium block mb-1.5",
 												children: t("leverageInputLabel")
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 												type: "number",
 												value: leverage,
 												onChange: (e) => setLeverage(Number(e.target.value)),
-												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all"
+												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all text-[var(--text-h)]"
 											})]
 										})
 									]
 								}),
 								!isPaper && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "pt-2 border-t border-slate-800 animate-fadeIn space-y-3",
+									className: "pt-2 border-t border-[var(--border)] animate-fadeIn space-y-3",
 									children: [
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-											className: "font-bold text-xs text-amber-400",
+											className: "font-bold text-xs text-amber-500",
 											children: t("mexcApiHeader")
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-											className: "text-[11px] text-slate-400 font-medium block mb-1",
+											className: "text-[11px] text-[var(--text)] font-medium block mb-1",
 											children: t("apiKeyLabel")
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 											type: "text",
 											placeholder: "mx0glk...",
 											value: apiKey,
 											onChange: (e) => setApiKey(e.target.value),
-											className: "w-full app-input border rounded-xl p-3 text-xs font-mono outline-none focus:border-emerald-500 transition-all"
+											className: "w-full app-input border rounded-xl p-3 text-xs font-mono outline-none focus:border-emerald-500 transition-all text-[var(--text-h)]"
 										})] }),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-											className: "text-[11px] text-slate-400 font-medium block mb-1",
+											className: "text-[11px] text-[var(--text)] font-medium block mb-1",
 											children: t("apiSecretLabel")
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											className: "relative",
@@ -10912,11 +10918,11 @@ function App() {
 												placeholder: "••••••••••••••••",
 												value: apiSecret,
 												onChange: (e) => setApiSecret(e.target.value),
-												className: "w-full app-input border rounded-xl p-3 pr-10 text-xs font-mono outline-none focus:border-emerald-500 transition-all"
+												className: "w-full app-input border rounded-xl p-3 pr-10 text-xs font-mono outline-none focus:border-emerald-500 transition-all text-[var(--text-h)]"
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 												type: "button",
 												onClick: () => setShowSecret(!showSecret),
-												className: "absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 text-xs",
+												className: "absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text)] hover:text-[var(--text-h)] text-xs",
 												children: showSecret ? "👁️" : "🔒"
 											})]
 										})] })
@@ -10935,23 +10941,23 @@ function App() {
 						className: "p-6 rounded-2xl app-card border text-center space-y-4 animate-fadeIn",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "w-12 h-12 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold",
+								className: "w-12 h-12 bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold",
 								children: "⚡"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-								className: "font-bold text-base text-white",
+								className: "font-bold text-base text-[var(--text-h)]",
 								children: t("vipTitle")
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-xs text-slate-400 mt-1 max-w-xs mx-auto",
+								className: "text-xs text-[var(--text)] mt-1 max-w-xs mx-auto",
 								children: t("vipDesc")
 							})] }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "py-2",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-4xl font-black text-white",
+									className: "text-4xl font-black text-[var(--text-h)]",
 									children: "$100"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-xs text-slate-400",
+									className: "text-xs text-[var(--text)]",
 									children: [" ", t("perMonth")]
 								})]
 							}),
@@ -10972,7 +10978,7 @@ function App() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
 						onClick: () => setActiveTab("status"),
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "status" ? "text-emerald-400" : "text-slate-500 hover:text-slate-300"}`,
+						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "status" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-base",
 							children: "📊"
@@ -10981,7 +10987,7 @@ function App() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
 						onClick: () => setActiveTab("settings"),
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "settings" ? "text-emerald-400" : "text-slate-500 hover:text-slate-300"}`,
+						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "settings" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-base",
 							children: "⚙️"
@@ -10990,7 +10996,7 @@ function App() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
 						onClick: () => setActiveTab("sub"),
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "sub" ? "text-emerald-400" : "text-slate-500 hover:text-slate-300"}`,
+						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "sub" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-base",
 							children: "💳"
@@ -11006,4 +11012,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-CItbcG-4.js.map
+//# sourceMappingURL=index-CQFup56s.js.map
