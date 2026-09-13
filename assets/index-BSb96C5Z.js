@@ -10593,7 +10593,14 @@ function App() {
 		const fetchSettings = async () => {
 			try {
 				const initData = tg?.initData || "";
-				const res = await fetch(`${API_URL}user/settings`, { headers: { "Authorization": `Bearer ${initData}` } });
+				const res = await fetch(`${API_URL}user/settings`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						"Authorization": `Bearer ${initData}`
+					},
+					body: JSON.stringify(payload)
+				});
 				if (res.ok) {
 					const data = await res.json();
 					if (data.success && data.user) {
@@ -11069,4 +11076,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-CY-zOxDA.js.map
+//# sourceMappingURL=index-BSb96C5Z.js.map
