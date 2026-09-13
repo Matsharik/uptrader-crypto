@@ -10598,16 +10598,29 @@ function App() {
 					const data = await res.json();
 					if (data.success && data.user) {
 						const u = data.user;
-						const rawIsPaper = u.is_paper_trading ?? u.is_paper ?? u.isPaper;
-						const fetchedIsPaper = rawIsPaper !== void 0 ? Boolean(Number(rawIsPaper)) : true;
+						const rawPaper = u.is_paper_trading ?? u.isPaperTrading ?? u.is_paper ?? u.isPaper;
+						const fetchedIsPaper = rawPaper !== void 0 ? Boolean(Number(rawPaper)) : true;
+						const rawRisk = u.risk_per_trade_usdt ?? u.riskPerTradeUsdt ?? u.risk ?? 10;
+						const rawLeverage = u.leverage ?? 10;
+						const rawMaxPositions = u.max_open_positions ?? u.maxOpenPositions ?? 3;
+						const rawUseMaxLeverage = u.use_max_leverage ?? u.useMaxLeverage;
+						console.log("📦 [API RESPONSE] Получен объект пользователя:", u);
+						console.log("⚙️ [HYDRATION] Итоговые распарсенные значения:", {
+							fetchedIsPaper,
+							risk: rawRisk,
+							leverage: rawLeverage,
+							maxPositions: rawMaxPositions,
+							useMaxLeverage: rawUseMaxLeverage,
+							hasApiKey: Boolean(u.api_key || u.apiKey)
+						});
 						setIsPaper(fetchedIsPaper);
-						setRisk(Number(u.risk_per_trade_usdt ?? u.risk ?? 10));
-						setLeverage(Number(u.leverage ?? 10));
-						setUseMaxLeverage(u.use_max_leverage !== void 0 ? Boolean(Number(u.use_max_leverage)) : true);
-						setMaxPositions(Number(u.max_open_positions ?? 3));
+						setRisk(Number(rawRisk));
+						setLeverage(Number(rawLeverage));
+						setMaxPositions(Number(rawMaxPositions));
+						setUseMaxLeverage(rawUseMaxLeverage !== void 0 ? Boolean(Number(rawUseMaxLeverage)) : true);
 						setApiKey(u.api_key || u.apiKey || "");
 						setApiSecret(u.api_secret_encrypted || u.api_secret || u.apiSecret || "");
-						if (u.wallet_balance) setBalance(u.wallet_balance);
+						if (u.wallet_balance !== void 0) setBalance(u.wallet_balance);
 						if (u.active_positions_count !== void 0) setActiveSignalsCount(u.active_positions_count);
 						if (Array.isArray(u.positions)) setPositions(u.positions);
 						if (!fetchedIsPaper && (!u.api_key || !(u.api_secret_encrypted || u.api_secret))) setActiveTab("settings");
@@ -10622,6 +10635,35 @@ function App() {
 		};
 		fetchSettings();
 	}, []);
+	const [savedSettings, setSavedSettings] = (0, import_react.useState)(null);
+	const applySettingsToForm = (data) => {
+		const rawPaper = data.is_paper_trading ?? data.isPaperTrading ?? data.is_paper ?? data.isPaper;
+		setIsPaper(rawPaper !== void 0 ? Boolean(Number(rawPaper)) : true);
+		setRisk(Number(data.risk_per_trade_usdt ?? data.riskPerTradeUsdt ?? data.risk ?? 10));
+		setLeverage(Number(data.leverage ?? 10));
+		setMaxPositions(Number(data.max_open_positions ?? data.maxOpenPositions ?? 3));
+		const rawUseMax = data.use_max_leverage ?? data.useMaxLeverage;
+		setUseMaxLeverage(rawUseMax !== void 0 ? Boolean(Number(rawUseMax)) : true);
+		setApiKey(data.api_key || data.apiKey || "");
+		setApiSecret(data.api_secret_encrypted || data.api_secret || data.apiSecret || "");
+	};
+	(0, import_react.useEffect)(() => {
+		const fetchUserSettings = async () => {
+			try {
+				const data = await (await fetch("/api/user/settings")).json();
+				if (data) {
+					setSavedSettings(data);
+					applySettingsToForm(data);
+				}
+			} catch (err) {
+				console.error("Ошибка загрузки настроек:", err);
+			}
+		};
+		fetchUserSettings();
+	}, []);
+	(0, import_react.useEffect)(() => {
+		if (activeTab === "settings" && savedSettings) applySettingsToForm(savedSettings);
+	}, [activeTab]);
 	const handleSaveSettings = async () => {
 		try {
 			const initData = window.Telegram?.WebApp?.initData || "";
@@ -10647,6 +10689,7 @@ function App() {
 			if (data.success) {
 				safeAlert(t("saveSuccess"));
 				setActiveTab("status");
+				setSavedSettings(payload);
 			} else safeAlert(data.error || t("saveError"));
 		} catch (err) {
 			safeAlert(t("networkError"));
@@ -11026,4 +11069,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-3qZ80SbK.js.map
+//# sourceMappingURL=index-CY-zOxDA.js.map
