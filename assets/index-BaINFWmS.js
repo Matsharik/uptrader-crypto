@@ -10546,6 +10546,16 @@ function App() {
 	const [subLoading, setSubLoading] = (0, import_react.useState)(false);
 	const [showSecret, setShowSecret] = (0, import_react.useState)(false);
 	const [lang, setLang] = (0, import_react.useState)("ru");
+	const handleNumberChange = (setter) => (e) => {
+		let val = e.target.value;
+		if (val !== "" && !val.includes(".")) val = val.replace(/^0+(?=\d)/, "");
+		setter(val);
+	};
+	const isRiskInvalid = risk === "" || isNaN(Number(risk)) || Number(risk) <= 0;
+	const isMaxPositionsInvalid = maxPositions === "" || isNaN(Number(maxPositions)) || Number(maxPositions) <= 0;
+	const isLeverageInvalid = !useMaxLeverage && (leverage === "" || isNaN(Number(leverage)) || Number(leverage) <= 0);
+	const isApiInvalid = !isPaper && (!apiKey?.toString().trim() || !apiSecret?.toString().trim());
+	const isFormInvalid = isRiskInvalid || isMaxPositionsInvalid || isLeverageInvalid || isApiInvalid;
 	const [isPaper, setIsPaper] = (0, import_react.useState)(true);
 	const [risk, setRisk] = (0, import_react.useState)(10);
 	const [leverage, setLeverage] = (0, import_react.useState)(10);
@@ -10850,16 +10860,18 @@ function App() {
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 												type: "number",
 												value: risk,
-												onChange: (e) => setRisk(Number(e.target.value)),
-												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all text-[var(--text-h)]"
+												onChange: handleNumberChange(setRisk),
+												placeholder: "10",
+												className: `w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none transition-all text-[var(--text-h)] ${isRiskInvalid ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
 											})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 												className: "text-[11px] text-[var(--text)] font-medium block mb-1.5",
 												children: t("maxPositionsLabel")
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 												type: "number",
 												value: maxPositions,
-												onChange: (e) => setMaxPositions(Number(e.target.value)),
-												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all text-[var(--text-h)]"
+												onChange: handleNumberChange(setMaxPositions),
+												placeholder: "3",
+												className: `w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none transition-all text-[var(--text-h)] ${isMaxPositionsInvalid ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
 											})] })]
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -10885,8 +10897,9 @@ function App() {
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 												type: "number",
 												value: leverage,
-												onChange: (e) => setLeverage(Number(e.target.value)),
-												className: "w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none focus:border-emerald-500 transition-all text-[var(--text-h)]"
+												onChange: handleNumberChange(setLeverage),
+												placeholder: "10",
+												className: `w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none transition-all text-[var(--text-h)] ${isLeverageInvalid ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
 											})]
 										})
 									]
@@ -10906,7 +10919,7 @@ function App() {
 											placeholder: "mx0glk...",
 											value: apiKey,
 											onChange: (e) => setApiKey(e.target.value),
-											className: "w-full app-input border rounded-xl p-3 text-xs font-mono outline-none focus:border-emerald-500 transition-all text-[var(--text-h)]"
+											className: `w-full app-input border rounded-xl p-3 text-xs font-mono outline-none transition-all text-[var(--text-h)] ${!isPaper && !apiKey?.toString().trim() ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
 										})] }),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 											className: "text-[11px] text-[var(--text)] font-medium block mb-1",
@@ -10918,7 +10931,7 @@ function App() {
 												placeholder: "••••••••••••••••",
 												value: apiSecret,
 												onChange: (e) => setApiSecret(e.target.value),
-												className: "w-full app-input border rounded-xl p-3 pr-10 text-xs font-mono outline-none focus:border-emerald-500 transition-all text-[var(--text-h)]"
+												className: `w-full app-input border rounded-xl p-3 pr-10 text-xs font-mono outline-none transition-all text-[var(--text-h)] ${!isPaper && !apiSecret?.toString().trim() ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 												type: "button",
 												onClick: () => setShowSecret(!showSecret),
@@ -10931,7 +10944,8 @@ function App() {
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 									type: "button",
 									onClick: handleSaveSettings,
-									className: "w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/10 active:scale-[0.99]",
+									disabled: isFormInvalid,
+									className: "w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-emerald-500 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/10 active:scale-[0.99]",
 									children: t("saveBtn")
 								})
 							]
@@ -11012,4 +11026,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-CQFup56s.js.map
+//# sourceMappingURL=index-BaINFWmS.js.map
