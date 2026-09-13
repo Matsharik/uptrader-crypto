@@ -10146,239 +10146,661 @@ var require_client = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 	module.exports = require_react_dom_client_production();
 }));
 //#endregion
-//#region src/locales.js
-var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
-var import_client = /* @__PURE__ */ __toESM(require_client(), 1);
-var translations = {
-	ru: {
-		subtitle: "MEXC Futures Bot",
-		trialBadge: "🎁 Триал (5 дн.)",
-		tabStatus: "Статус",
-		tabSettings: "Настройки",
-		tabSub: "Подписка",
-		accountBalance: "Ваш баланс",
-		hiddenBalance: "Скрыт",
-		modeLabel: "Режим торговли",
-		demoMode: "Тестовый (Demo)",
-		realMode: "Реальный счет",
-		riskPerTrade: "Риск на сделку",
-		activePositions: "Открытые позиции",
-		openCount: "открыто",
-		noSignals: "Нет активных сделок",
-		positionsTracked: "Позиции отслеживаются сервером",
-		botModeHeader: "Режим работы бота",
-		riskManagementHeader: "Управление рисками",
-		demoBtn: "Тестовый (Demo)",
-		realBtn: "Реальный счет",
-		riskInputLabel: "Риск на сделку (USDT)",
-		maxPositionsLabel: "Макс. позиций (шт)",
-		useMaxLeverageLabel: "Использовать макс. плечо",
-		useMaxLeverageDesc: "Бот сам возьмет высшее плечо биржи",
-		leverageInputLabel: "Фиксированное плечо (x)",
-		mexcApiHeader: "Подключение биржи (MEXC)",
-		apiKeyLabel: "API Key",
-		apiSecretLabel: "Secret Key",
-		saveBtn: "Сохранить настройки",
-		vipTitle: "UPTRADE VIP",
-		vipDesc: "Полный доступ к авто-исполнению сетапов SMC и Price Action на MEXC",
-		perMonth: "/ месяц",
-		payBtn: "Оплатить подписку",
-		saveSuccess: "✅ Настройки сохранены!",
-		saveError: "Ошибка сохранения параметров",
-		networkError: "Ошибка сети при сохранении. Проверьте соединение.",
-		invoiceError: "Ошибка при выписке счета CryptoBot"
-	},
-	en: {
-		subtitle: "MEXC Futures Bot",
-		trialBadge: "🎁 Trial (5 days)",
-		tabStatus: "Status",
-		tabSettings: "Settings",
-		tabSub: "Subscription",
-		accountBalance: "Your Balance",
-		hiddenBalance: "Hidden",
-		modeLabel: "Trading Mode",
-		demoMode: "Test (Demo)",
-		realMode: "Real Account",
-		riskPerTrade: "Risk per Trade",
-		activePositions: "Open Positions",
-		openCount: "open",
-		noSignals: "No active positions",
-		positionsTracked: "Positions are tracked by server",
-		botModeHeader: "Bot Operating Mode",
-		riskManagementHeader: "Risk Management",
-		demoBtn: "Test (Demo)",
-		realBtn: "Real Account",
-		riskInputLabel: "Risk per Trade (USDT)",
-		maxPositionsLabel: "Max Positions (qty)",
-		useMaxLeverageLabel: "Use Max Leverage",
-		useMaxLeverageDesc: "Bot will pick the highest available exchange leverage",
-		leverageInputLabel: "Fixed Leverage (x)",
-		mexcApiHeader: "MEXC Exchange Connection",
-		apiKeyLabel: "API Key",
-		apiSecretLabel: "Secret Key",
-		saveBtn: "Save Settings",
-		vipTitle: "UPTRADE VIP",
-		vipDesc: "Full access to auto-execution of SMC & Price Action setups on MEXC",
-		perMonth: "/ month",
-		payBtn: "Pay Subscription",
-		saveSuccess: "✅ Settings saved successfully!",
-		saveError: "Failed to save settings",
-		networkError: "Network error while saving. Check connection.",
-		invoiceError: "CryptoBot invoice creation error"
-	},
-	es: {
-		subtitle: "MEXC Futures Bot",
-		trialBadge: "🎁 Prueba (5 días)",
-		tabStatus: "Estado",
-		tabSettings: "Ajustes",
-		tabSub: "Suscripción",
-		accountBalance: "Tu Saldo",
-		hiddenBalance: "Oculto",
-		modeLabel: "Modo de Trading",
-		demoMode: "Prueba (Demo)",
-		realMode: "Cuenta Real",
-		riskPerTrade: "Riesgo / Operación",
-		activePositions: "Posiciones Abiertas",
-		openCount: "abiertas",
-		noSignals: "No hay operaciones activas",
-		positionsTracked: "Las posiciones son rastreadas por el servidor",
-		botModeHeader: "Modo de Operación del Bot",
-		riskManagementHeader: "Gestión de Riesgo",
-		demoBtn: "Prueba (Demo)",
-		realBtn: "Cuenta Real",
-		riskInputLabel: "Riesgo por Operación (USDT)",
-		maxPositionsLabel: "Máx. Posiciones (cant.)",
-		useMaxLeverageLabel: "Usar Apalancamiento Máx.",
-		useMaxLeverageDesc: "El bot usará el máximo apalancamiento permitido",
-		leverageInputLabel: "Apalancamiento Fijo (x)",
-		mexcApiHeader: "Conexión con MEXC",
-		apiKeyLabel: "API Key",
-		apiSecretLabel: "Secret Key",
-		saveBtn: "Guardar Ajustes",
-		vipTitle: "UPTRADE VIP",
-		vipDesc: "Acceso completo a la ejecución automática de setups SMC y Price Action en MEXC",
-		perMonth: "/ mes",
-		payBtn: "Pagar Suscripción",
-		saveSuccess: "✅ ¡Configuración guardada con éxito!",
-		saveError: "Error al guardar la configuración",
-		networkError: "Error de red al guardar. Compruebe la conexión.",
-		invoiceError: "Error al generar factura de CryptoBot"
-	},
-	zh: {
-		subtitle: "MEXC 合约机器人",
-		trialBadge: "🎁 试用 (5天)",
-		tabStatus: "状态",
-		tabSettings: "设置",
-		tabSub: "订阅",
-		accountBalance: "您的余额",
-		hiddenBalance: "隐藏",
-		modeLabel: "交易模式",
-		demoMode: "测试 (Demo)",
-		realMode: "实盘账户",
-		riskPerTrade: "每单风险",
-		activePositions: "当前持仓",
-		openCount: "个持仓",
-		noSignals: "暂无活跃持仓",
-		positionsTracked: "持仓正由服务器实时跟踪",
-		botModeHeader: "机器人运行模式",
-		riskManagementHeader: "风险管理",
-		demoBtn: "测试 (Demo)",
-		realBtn: "实盘账户",
-		riskInputLabel: "单笔交易风险 (USDT)",
-		maxPositionsLabel: "最大持仓数 (个)",
-		useMaxLeverageLabel: "使用最高杠杆",
-		useMaxLeverageDesc: "机器人将自动选取交易所支持的最高杠杆",
-		leverageInputLabel: "固定杠杆倍数 (x)",
-		mexcApiHeader: "MEXC 交易所连接",
-		apiKeyLabel: "API Key",
-		apiSecretLabel: "Secret Key",
-		saveBtn: "保存设置",
-		vipTitle: "UPTRADE VIP",
-		vipDesc: "全自动执行 MEXC 上的 SMC 和 Price Action 策略",
-		perMonth: "/ 月",
-		payBtn: "立即订阅",
-		saveSuccess: "✅ 设置保存成功！",
-		saveError: "保存设置失败",
-		networkError: "网络错误，请检查网络连接。",
-		invoiceError: "CryptoBot 账单生成失败"
-	},
-	tr: {
-		subtitle: "MEXC Vadeli İşlem Botu",
-		trialBadge: "🎁 Deneme (5 Gün)",
-		tabStatus: "Durum",
-		tabSettings: "Ayarlar",
-		tabSub: "Abonelik",
-		accountBalance: "Bakiyeniz",
-		hiddenBalance: "Gizli",
-		modeLabel: "İşlem Modu",
-		demoMode: "Test (Demo)",
-		realMode: "Gerçek Hesap",
-		riskPerTrade: "Risk / İşlem",
-		activePositions: "Açık Pozisyonlar",
-		openCount: "açık",
-		noSignals: "Aktif işlem bulunmuyor",
-		positionsTracked: "Pozisyonlar sunucu tarafından takip ediliyor",
-		botModeHeader: "Bot Çalışma Modu",
-		riskManagementHeader: "Risk Yönetimi",
-		demoBtn: "Test (Demo)",
-		realBtn: "Gerçek Hesap",
-		riskInputLabel: "İşlem Başına Risk (USDT)",
-		maxPositionsLabel: "Maks. Pozisyon (adet)",
-		useMaxLeverageLabel: "Maks. Kaldıraç Kullan",
-		useMaxLeverageDesc: "Bot otomatik olarak borsadaki en yüksek kaldıraçı seçer",
-		leverageInputLabel: "Sabit Kaldıraç (x)",
-		mexcApiHeader: "MEXC Borsa Bağlantısı",
-		apiKeyLabel: "API Key",
-		apiSecretLabel: "Secret Key",
-		saveBtn: "Ayarları Kaydet",
-		vipTitle: "UPTRADE VIP",
-		vipDesc: "MEXC üzerindeki SMC ve Price Action kurulumlarının otomatik yürütülmesine tam erişim",
-		perMonth: "/ ay",
-		payBtn: "Aboneliği Öde",
-		saveSuccess: "✅ Ayarlar başarıyla kaydedildi!",
-		saveError: "Ayarlar kaydedilemedi",
-		networkError: "Kaydederken ağ hatası oluştu. Bağlantınızı kontrol edin.",
-		invoiceError: "CryptoBot fatura oluşturma hatası"
-	},
-	de: {
-		subtitle: "MEXC Futures Bot",
-		trialBadge: "🎁 Testversion (5 Tage)",
-		tabStatus: "Status",
-		tabSettings: "Einstellungen",
-		tabSub: "Abonnement",
-		accountBalance: "Ihr Kontostand",
-		hiddenBalance: "Ausgeblendet",
-		modeLabel: "Handelsmodus",
-		demoMode: "Test (Demo)",
-		realMode: "Echtgeldkonto",
-		riskPerTrade: "Risiko / Trade",
-		activePositions: "Offene Positionen",
-		openCount: "offen",
-		noSignals: "Keine aktiven Positionen",
-		positionsTracked: "Positionen werden vom Server überwacht",
-		botModeHeader: "Bot-Betriebsmodus",
-		riskManagementHeader: "Risikomanagement",
-		demoBtn: "Test (Demo)",
-		realBtn: "Echtgeldkonto",
-		riskInputLabel: "Risiko pro Trade (USDT)",
-		maxPositionsLabel: "Max. Positionen (Anzahl)",
-		useMaxLeverageLabel: "Max. Hebel verwenden",
-		useMaxLeverageDesc: "Bot wählt automatisch den höchsten Hebel der Börse",
-		leverageInputLabel: "Fester Hebel (x)",
-		mexcApiHeader: "MEXC Börsen-Anbindung",
-		apiKeyLabel: "API Key",
-		apiSecretLabel: "Secret Key",
-		saveBtn: "Einstellungen speichern",
-		vipTitle: "UPTRADE VIP",
-		vipDesc: "Vollständiger Zugriff auf automatische SMC- & Price Action-Setups auf MEXC",
-		perMonth: "/ Monat",
-		payBtn: "Abonnement bezahlen",
-		saveSuccess: "✅ Einstellungen erfolgreich gespeichert!",
-		saveError: "Fehler beim Speichern der Einstellungen",
-		networkError: "Netzwerkfehler beim Speichern. Bitte Verbindung prüfen.",
-		invoiceError: "Fehler bei CryptoBot Rechnungsstellung"
+//#region node_modules/lucide-react/dist/esm/shared/src/utils/toKebabCase.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var toKebabCase = (string) => string?.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+//#endregion
+//#region node_modules/lucide-react/dist/esm/shared/src/utils/toLucideIconData.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+function toLucideIconData(iconName, iconNode, aliases = []) {
+	if (iconNode == null) throw new Error("[lucide]: iconNode is required when icon name is used");
+	return {
+		name: toKebabCase(iconName),
+		size: 24,
+		node: iconNode,
+		...aliases.length > 0 ? { aliases } : {}
+	};
+}
+//#endregion
+//#region node_modules/lucide-react/dist/esm/shared/src/utils/toCamelCase.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var toCamelCase = (string) => {
+	let out = "";
+	let upperNext = false;
+	for (const ch of string) {
+		if (ch === "-" || ch === "_" || ch <= " ") {
+			upperNext = out.length > 0;
+			continue;
+		}
+		if (out.length === 0) out += ch.toLowerCase();
+		else out += upperNext ? ch.toUpperCase() : ch;
+		upperNext = false;
 	}
+	return out;
 };
+//#endregion
+//#region node_modules/lucide-react/dist/esm/shared/src/utils/toPascalCase.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var toPascalCase = (string) => {
+	const camelCase = toCamelCase(string);
+	return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
+//#endregion
+//#region node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var mergeClasses = (...classes) => classes.filter((className, index, array) => {
+	return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
+}).join(" ").trim();
+//#endregion
+//#region node_modules/lucide-react/dist/esm/shared/src/build/defaultAttributes.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var defaultAttributes = {
+	xmlns: "http://www.w3.org/2000/svg",
+	width: 24,
+	height: 24,
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	"stroke-width": 2,
+	"stroke-linecap": "round",
+	"stroke-linejoin": "round"
+};
+//#endregion
+//#region node_modules/lucide-react/dist/esm/shared/src/build/buildLucideIconNode.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+function isDefined(value) {
+	return value !== null && value !== void 0;
+}
+function buildLucideIconNode(icon, params = {}) {
+	const attributeNames = params.attributeNames ?? {};
+	const getAttributeName = (attributeName) => attributeNames[attributeName] ?? attributeName;
+	const viewBoxWidth = icon.size ?? icon.width ?? defaultAttributes["width"];
+	const viewBoxHeight = icon.size ?? icon.height ?? defaultAttributes["height"];
+	const aliasClassNames = icon.aliases?.filter((alias) => typeof alias === "string" && alias.trim() !== "").map((alias) => `lucide-${alias}`) ?? [];
+	const iconClassNames = [...icon.name ? [`lucide-${icon.name}`] : [], ...aliasClassNames];
+	const classNamesFromClassName = params.className?.split(" ").filter(Boolean) ?? [];
+	const className = params.includeDefaultClasses === false ? mergeClasses(...classNamesFromClassName) : mergeClasses("lucide", ...iconClassNames, ...classNamesFromClassName);
+	const calculatedStrokeWidth = params.absoluteStrokeWidth ? Number(params.strokeWidth ?? defaultAttributes["stroke-width"]) * Number(icon.size ?? icon.width ?? defaultAttributes["width"]) / Number(params.size ?? params.width ?? defaultAttributes["width"]) : params.strokeWidth ?? defaultAttributes["stroke-width"];
+	return [
+		"svg",
+		{
+			...Object.entries(defaultAttributes).reduce((attrs, [attrName, value]) => {
+				attrs[getAttributeName(attrName)] = value;
+				return attrs;
+			}, {}),
+			..."color" in params && params.color && { [getAttributeName("stroke")]: params.color },
+			..."size" in params && isDefined(params.size) && {
+				[getAttributeName("width")]: params.size,
+				[getAttributeName("height")]: params.size
+			},
+			..."width" in params && isDefined(params.width) && { [getAttributeName("width")]: params.width },
+			..."height" in params && isDefined(params.height) && { [getAttributeName("height")]: params.height },
+			[getAttributeName("stroke-width")]: calculatedStrokeWidth,
+			...className && { [getAttributeName("class")]: className },
+			[getAttributeName("viewBox")]: `0 0 ${viewBoxWidth} ${viewBoxHeight}`,
+			...params.hasA11yProp === false ? { [getAttributeName("aria-hidden")]: "true" } : {},
+			..."attributes" in params && params.attributes
+		},
+		icon.node.map((child) => {
+			const [name, attrs, children] = child;
+			const nextAttrs = params.nonScalingStroke ? {
+				[getAttributeName("vector-effect")]: "non-scaling-stroke",
+				...attrs
+			} : attrs;
+			return children ? [
+				name,
+				nextAttrs,
+				children
+			] : [name, nextAttrs];
+		})
+	];
+}
+//#endregion
+//#region node_modules/lucide-react/dist/esm/shared/src/build/buildLucideIconForReact.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+function buildLucideIconForReact(icon, params = {}) {
+	return buildLucideIconNode(icon, {
+		...params,
+		attributeNames: {
+			...params.attributeNames,
+			class: "className",
+			"stroke-width": "strokeWidth",
+			"stroke-linecap": "strokeLinecap",
+			"stroke-linejoin": "strokeLinejoin",
+			"vector-effect": "vectorEffect"
+		}
+	});
+}
+//#endregion
+//#region node_modules/lucide-react/dist/esm/shared/src/utils/hasA11yProp.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var hasA11yProp = (props) => {
+	for (const prop in props) if (prop.startsWith("aria-") || prop === "role" || prop === "title") return true;
+	return false;
+};
+//#endregion
+//#region node_modules/lucide-react/dist/esm/context.mjs
+var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var LucideContext = (0, import_react.createContext)({});
+var useLucideContext = () => (0, import_react.useContext)(LucideContext);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/Icon.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Icon = (0, import_react.forwardRef)(({ color, size, width, height, strokeWidth, absoluteStrokeWidth, nonScalingStroke, className = "", children, iconNode = [], icon = {
+	node: iconNode,
+	aliases: [],
+	size: 24
+}, ...rest }, ref) => {
+	const { size: contextSize = 24, strokeWidth: contextStrokeWidth = 2, absoluteStrokeWidth: contextAbsoluteStrokeWidth = false, nonScalingStroke: contextNonScalingStroke = false, color: contextColor = "currentColor", className: contextClass = "" } = useLucideContext() ?? {};
+	const hasAccessibleProp = Boolean(children) || hasA11yProp(rest);
+	const [name, svgAttributes, builtIconNode = []] = buildLucideIconForReact(icon, {
+		color: color ?? contextColor,
+		width: width ?? size ?? contextSize,
+		height: height ?? size ?? contextSize,
+		strokeWidth: strokeWidth ?? contextStrokeWidth,
+		absoluteStrokeWidth: absoluteStrokeWidth ?? contextAbsoluteStrokeWidth,
+		nonScalingStroke: nonScalingStroke ?? contextNonScalingStroke,
+		className: mergeClasses(contextClass, className),
+		hasA11yProp: hasAccessibleProp,
+		attributes: rest
+	});
+	return (0, import_react.createElement)(name, {
+		ref,
+		...svgAttributes
+	}, [...builtIconNode.map(([tag, attrs]) => (0, import_react.createElement)(tag, attrs)), ...Array.isArray(children) ? children : [children]]);
+});
+//#endregion
+//#region node_modules/lucide-react/dist/esm/createLucideIcon.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+function createLucideIcon(iconDataOrName, iconNode = [], aliases = []) {
+	const iconData = typeof iconDataOrName === "string" ? toLucideIconData(iconDataOrName, iconNode, aliases) : iconDataOrName;
+	const Component = (0, import_react.forwardRef)(({ className, ...props }, ref) => (0, import_react.createElement)(Icon, {
+		ref,
+		icon: iconData,
+		className,
+		...props
+	}));
+	if (iconData.name) Component.displayName = toPascalCase(iconData.name);
+	return Component;
+}
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/award.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$15 = {
+	name: "award",
+	size: 24,
+	node: [["path", {
+		d: "m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526",
+		key: "1yiouv"
+	}], ["circle", {
+		cx: "12",
+		cy: "8",
+		r: "6",
+		key: "1vp47v"
+	}]]
+};
+__iconData$15.node;
+var Award = createLucideIcon(__iconData$15);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/book-open.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$14 = {
+	name: "book-open",
+	size: 24,
+	node: [["path", {
+		d: "M12 5v16",
+		key: "1f6ucr"
+	}], ["path", {
+		d: "M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z",
+		key: "1fyvmf"
+	}]]
+};
+__iconData$14.node;
+var BookOpen = createLucideIcon(__iconData$14);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/check.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$13 = {
+	name: "check",
+	size: 24,
+	node: [["path", {
+		d: "M20 6 9 17l-5-5",
+		key: "1gmf2c"
+	}]]
+};
+__iconData$13.node;
+var Check = createLucideIcon(__iconData$13);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/chevron-right.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$12 = {
+	name: "chevron-right",
+	size: 24,
+	node: [["path", {
+		d: "m9 18 6-6-6-6",
+		key: "mthhwq"
+	}]]
+};
+__iconData$12.node;
+var ChevronRight = createLucideIcon(__iconData$12);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/circle-check.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$11 = {
+	name: "circle-check",
+	size: 24,
+	node: [["circle", {
+		cx: "12",
+		cy: "12",
+		r: "10",
+		key: "1mglay"
+	}], ["path", {
+		d: "m16 9-5.5 5.5L8 12",
+		key: "xofnsj"
+	}]],
+	aliases: ["check-circle-2"]
+};
+__iconData$11.node;
+var CircleCheck = createLucideIcon(__iconData$11);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/circle-question-mark.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$10 = {
+	name: "circle-question-mark",
+	size: 24,
+	node: [
+		["circle", {
+			cx: "12",
+			cy: "12",
+			r: "10",
+			key: "1mglay"
+		}],
+		["path", {
+			d: "M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3",
+			key: "1u773s"
+		}],
+		["path", {
+			d: "M12 17h.01",
+			key: "p32p05"
+		}]
+	],
+	aliases: ["help-circle", "circle-help"]
+};
+__iconData$10.node;
+var CircleQuestionMark = createLucideIcon(__iconData$10);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/copy.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$9 = {
+	name: "copy",
+	size: 24,
+	node: [["rect", {
+		width: "14",
+		height: "14",
+		x: "8",
+		y: "8",
+		rx: "2",
+		ry: "2",
+		key: "17jyea"
+	}], ["path", {
+		d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2",
+		key: "zix9uf"
+	}]]
+};
+__iconData$9.node;
+var Copy = createLucideIcon(__iconData$9);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/flame.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$8 = {
+	name: "flame",
+	size: 24,
+	node: [["path", {
+		d: "M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4",
+		key: "1slcih"
+	}]]
+};
+__iconData$8.node;
+var Flame = createLucideIcon(__iconData$8);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/lock.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$7 = {
+	name: "lock",
+	size: 24,
+	node: [["rect", {
+		width: "18",
+		height: "11",
+		x: "3",
+		y: "11",
+		rx: "2",
+		ry: "2",
+		key: "1w4ew1"
+	}], ["path", {
+		d: "M7 11V7a5 5 0 0 1 10 0v4",
+		key: "fwvmzm"
+	}]]
+};
+__iconData$7.node;
+var Lock = createLucideIcon(__iconData$7);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/refresh-cw.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$6 = {
+	name: "refresh-cw",
+	size: 24,
+	node: [
+		["path", {
+			d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8",
+			key: "v9h5vc"
+		}],
+		["path", {
+			d: "M21 3v5h-5",
+			key: "1q7to0"
+		}],
+		["path", {
+			d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16",
+			key: "3uifl3"
+		}],
+		["path", {
+			d: "M8 16H3v5",
+			key: "1cv678"
+		}]
+	]
+};
+__iconData$6.node;
+var RefreshCw = createLucideIcon(__iconData$6);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/shield-alert.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$5 = {
+	name: "shield-alert",
+	size: 24,
+	node: [
+		["path", {
+			d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+			key: "oel41y"
+		}],
+		["path", {
+			d: "M12 8v4",
+			key: "1got3b"
+		}],
+		["path", {
+			d: "M12 16h.01",
+			key: "1drbdi"
+		}]
+	]
+};
+__iconData$5.node;
+var ShieldAlert = createLucideIcon(__iconData$5);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/sparkles.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$4 = {
+	name: "sparkles",
+	size: 24,
+	node: [
+		["path", {
+			d: "M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z",
+			key: "1s2grr"
+		}],
+		["path", {
+			d: "M20 2v4",
+			key: "1rf3ol"
+		}],
+		["path", {
+			d: "M22 4h-4",
+			key: "gwowj6"
+		}],
+		["circle", {
+			cx: "4",
+			cy: "20",
+			r: "2",
+			key: "6kqj1y"
+		}]
+	],
+	aliases: ["stars"]
+};
+__iconData$4.node;
+var Sparkles = createLucideIcon(__iconData$4);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/trophy.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$3 = {
+	name: "trophy",
+	size: 24,
+	node: [
+		["path", {
+			d: "M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2",
+			key: "pwuv1l"
+		}],
+		["path", {
+			d: "M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2",
+			key: "1y54w1"
+		}],
+		["path", {
+			d: "M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3",
+			key: "e30mpu"
+		}],
+		["path", {
+			d: "M4 22h16",
+			key: "57wxv0"
+		}],
+		["path", {
+			d: "M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z",
+			key: "1mhfuq"
+		}],
+		["path", {
+			d: "M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3",
+			key: "i0yafy"
+		}]
+	]
+};
+__iconData$3.node;
+var Trophy = createLucideIcon(__iconData$3);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/users.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$2 = {
+	name: "users",
+	size: 24,
+	node: [
+		["path", {
+			d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",
+			key: "1yyitq"
+		}],
+		["path", {
+			d: "M16 3.128a4 4 0 0 1 0 7.744",
+			key: "16gr8j"
+		}],
+		["path", {
+			d: "M22 21v-2a4 4 0 0 0-3-3.87",
+			key: "kshegd"
+		}],
+		["circle", {
+			cx: "9",
+			cy: "7",
+			r: "4",
+			key: "nufk8"
+		}]
+	]
+};
+__iconData$2.node;
+var Users = createLucideIcon(__iconData$2);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/video.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData$1 = {
+	name: "video",
+	size: 24,
+	node: [["path", {
+		d: "m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5",
+		key: "ftymec"
+	}], ["rect", {
+		x: "2",
+		y: "6",
+		width: "14",
+		height: "12",
+		rx: "2",
+		key: "158x01"
+	}]]
+};
+__iconData$1.node;
+var Video = createLucideIcon(__iconData$1);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/zap.mjs
+/**
+* @license lucide-react v1.45.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var __iconData = {
+	name: "zap",
+	size: 24,
+	node: [["path", {
+		d: "M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z",
+		key: "1v7up4"
+	}]]
+};
+__iconData.node;
+var Zap = createLucideIcon(__iconData);
 //#endregion
 //#region node_modules/react/cjs/react-jsx-runtime.production.js
 /**
@@ -10413,617 +10835,736 @@ var require_react_jsx_runtime_production = /* @__PURE__ */ __commonJSMin(((expor
 	exports.jsxs = jsxProd;
 }));
 //#endregion
-//#region src/components/PositionCard.tsx
-var import_jsx_runtime = (/* @__PURE__ */ __commonJSMin(((exports, module) => {
+//#region node_modules/react/jsx-runtime.js
+var require_jsx_runtime = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 	module.exports = require_react_jsx_runtime_production();
-})))();
-var MexcPositionCard = ({ pos }) => {
-	const isLong = pos.side === "LONG" || pos.side === "BUY";
-	const isProfit = pos.pnl >= 0;
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "w-full bg-[#131823] border border-slate-800/80 rounded-2xl p-4 space-y-3 font-sans shadow-lg text-slate-200",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex items-center justify-between",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center gap-2",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: `w-5 h-5 rounded flex items-center justify-center font-extrabold text-xs ${isLong ? "bg-emerald-500/20 text-emerald-400" : "bg-rose-500/20 text-rose-400"}`,
-						children: isLong ? "B" : "S"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-						className: "font-bold text-sm text-white tracking-wide",
-						children: [pos.symbol, " Perpetual"]
-					})]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-					className: "bg-[#1c2434] text-slate-400 text-[11px] px-2 py-0.5 rounded font-medium border border-slate-800",
-					children: [
-						pos.marginType || "Cross",
-						" ",
-						pos.leverage,
-						"X >"
-					]
-				})]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex justify-between items-baseline pt-1",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "text-[11px] text-slate-400 font-medium border-b border-dashed border-slate-600",
-					children: "Unrealized PNL (USDT)"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: `text-base font-extrabold font-mono ${isProfit ? "text-emerald-400" : "text-rose-500"}`,
-					children: [isProfit ? `+${pos.pnl.toFixed(4)}` : pos.pnl.toFixed(4), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-						className: "text-xs ml-1",
-						children: [
-							"[",
-							isProfit ? `+${pos.pnlPercent.toFixed(2)}` : pos.pnlPercent.toFixed(2),
-							"%]"
-						]
-					})]
-				})]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "grid grid-cols-3 gap-y-2.5 gap-x-1 pt-1 text-left",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
-						children: "Size (USDT)"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-xs font-semibold font-mono text-slate-100",
-						children: pos.size.toLocaleString()
-					})] }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
-						children: "Margin (USDT)"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-xs font-semibold font-mono text-slate-100",
-						children: pos.margin.toFixed(2)
-					})] }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
-						children: "Margin Ratio"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-xs font-semibold font-mono text-slate-100",
-						children: pos.marginRatio ? `${pos.marginRatio.toFixed(2)}%` : "--"
-					})] }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
-						children: "Avg. Price"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-xs font-semibold font-mono text-slate-100",
-						children: pos.entryPrice
-					})] }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
-						children: "Fair Price"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-xs font-semibold font-mono text-slate-100",
-						children: pos.markPrice
-					})] }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
-						children: "Liq. Price"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-xs font-semibold font-mono text-amber-400",
-						children: pos.liqPrice || "--"
-					})] })
-				]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "pt-2 border-t border-slate-800/60 flex justify-between items-center text-[11px]",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center gap-1.5",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-slate-400",
-						children: "TP/SL"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-						className: "font-mono text-slate-300 font-semibold",
-						children: [
-							pos.tp ? pos.tp : "--",
-							" / ",
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-rose-400",
-								children: pos.sl ? pos.sl : "--"
-							})
-						]
-					})]
-				}), pos.realizedPnl !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "text-slate-400",
-					children: ["Realized PNL ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: `font-mono font-semibold ${pos.realizedPnl >= 0 ? "text-emerald-400" : "text-rose-400"}`,
-						children: pos.realizedPnl >= 0 ? `+${pos.realizedPnl}` : pos.realizedPnl
-					})]
-				})]
-			})
-		]
-	});
-};
+}));
 //#endregion
-//#region src/App.tsx
-var API_URL = "https://slovesny.ru/api-trade/";
+//#region src/App.jsx
+var import_client = /* @__PURE__ */ __toESM(require_client(), 1);
+var import_jsx_runtime = require_jsx_runtime();
 function App() {
-	const [activeTab, setActiveTab] = (0, import_react.useState)("status");
+	const API_URL = "https://slovesny.ru/api-sotka/";
+	const [activeTab, setActiveTab] = (0, import_react.useState)("map");
 	const [loading, setLoading] = (0, import_react.useState)(true);
-	const [subLoading, setSubLoading] = (0, import_react.useState)(false);
-	const [showSecret, setShowSecret] = (0, import_react.useState)(false);
-	const [lang, setLang] = (0, import_react.useState)("ru");
-	const handleNumberChange = (setter) => (e) => {
-		let val = e.target.value;
-		if (val !== "" && !val.includes(".")) val = val.replace(/^0+(?=\d)/, "");
-		setter(val);
-	};
-	const isRiskInvalid = risk === "" || isNaN(Number(risk)) || Number(risk) <= 0;
-	const isMaxPositionsInvalid = maxPositions === "" || isNaN(Number(maxPositions)) || Number(maxPositions) <= 0;
-	const isLeverageInvalid = !useMaxLeverage && (leverage === "" || isNaN(Number(leverage)) || Number(leverage) <= 0);
-	const isApiInvalid = !isPaper && (!apiKey?.toString().trim() || !apiSecret?.toString().trim());
-	const isFormInvalid = isRiskInvalid || isMaxPositionsInvalid || isLeverageInvalid || isApiInvalid;
-	const [isPaper, setIsPaper] = (0, import_react.useState)(true);
-	const [risk, setRisk] = (0, import_react.useState)(10);
-	const [leverage, setLeverage] = (0, import_react.useState)(10);
-	const [useMaxLeverage, setUseMaxLeverage] = (0, import_react.useState)(true);
-	const [maxPositions, setMaxPositions] = (0, import_react.useState)(3);
-	const [apiKey, setApiKey] = (0, import_react.useState)("");
-	const [apiSecret, setApiSecret] = (0, import_react.useState)("");
-	const [balance, setBalance] = (0, import_react.useState)(null);
-	const [activeSignalsCount, setActiveSignalsCount] = (0, import_react.useState)(0);
-	const [positions, setPositions] = (0, import_react.useState)([]);
-	const t = (key) => {
-		return translations[lang]?.[key] || translations["en"]?.[key] || translations["ru"]?.[key] || key;
-	};
-	const safeAlert = (msg) => {
-		const tg = window.Telegram?.WebApp;
-		if (tg?.showAlert) tg.showAlert(msg);
-		else alert(msg);
-	};
-	(0, import_react.useEffect)(() => {
-		const tg = window.Telegram?.WebApp;
-		if (tg) {
-			if (tg.setHeaderColor) tg.setHeaderColor("secondary_bg_color");
-			if (tg.setBackgroundColor) tg.setBackgroundColor("bg_color");
+	const [xp, setXp] = (0, import_react.useState)(0);
+	const [userClass, setUserClass] = (0, import_react.useState)(10);
+	const [isPro, setIsPro] = (0, import_react.useState)(false);
+	const [referralCode, setReferralCode] = (0, import_react.useState)("");
+	const [selectedTopic, setSelectedTopic] = (0, import_react.useState)("Алгебра: Уравнения");
+	const [selectedSubtopic, setSelectedSubtopic] = (0, import_react.useState)("Квадратные уравнения");
+	const [activeBlockId, setActiveBlockId] = (0, import_react.useState)(2);
+	const [payPlan, setPayPlan] = (0, import_react.useState)("indiv");
+	const [payDuration, setPayDuration] = (0, import_react.useState)("3m");
+	const [copied, setCopied] = (0, import_react.useState)(false);
+	const mapData = [
+		{
+			id: 1,
+			title: "Поляна 1: Дискриминант",
+			status: "completed",
+			score: "5/5"
+		},
+		{
+			id: 2,
+			title: "Поляна 2: Теорема Виета",
+			status: "current",
+			score: "0/5"
+		},
+		{
+			id: 3,
+			title: "Поляна 3: Дробно-рациональные",
+			status: "locked",
+			score: "0/5"
+		},
+		{
+			id: 4,
+			title: "Поляна 4: Уравнения с параметром",
+			status: "locked",
+			score: "0/5"
 		}
-	}, []);
-	(0, import_react.useEffect)(() => {
+	];
+	useEffect(() => {
 		const tg = window.Telegram?.WebApp;
 		if (tg) {
 			tg.ready();
 			tg.expand();
+			if (typeof tg.requestFullscreen === "function") tg.requestFullscreen();
 			if (typeof tg.disableVerticalSwipes === "function") tg.disableVerticalSwipes();
-			const userLang = tg.initDataUnsafe?.user?.language_code;
-			if (userLang && userLang in translations) setLang(userLang);
 		}
-		const fetchSettings = async () => {
+		const fetchUserData = async () => {
 			try {
 				const initData = tg?.initData || "";
-				const res = await fetch(`${API_URL}user/settings`, { headers: { "Authorization": `Bearer ${initData}` } });
+				const res = await fetch(`${API_URL}user/profile`, { headers: { "Authorization": `Bearer ${initData}` } });
 				if (res.ok) {
 					const data = await res.json();
 					if (data.success && data.user) {
 						const u = data.user;
-						const rawIsPaper = u.is_paper_trading ?? u.is_paper ?? u.isPaper;
-						const fetchedIsPaper = rawIsPaper !== void 0 ? Boolean(Number(rawIsPaper)) : true;
-						setIsPaper(fetchedIsPaper);
-						setRisk(Number(u.risk_per_trade_usdt ?? u.risk ?? 10));
-						setLeverage(Number(u.leverage ?? 10));
-						setUseMaxLeverage(u.use_max_leverage !== void 0 ? Boolean(Number(u.use_max_leverage)) : true);
-						setMaxPositions(Number(u.max_open_positions ?? 3));
-						setApiKey(u.api_key || u.apiKey || "");
-						setApiSecret(u.api_secret_encrypted || u.api_secret || u.apiSecret || "");
-						if (u.wallet_balance) setBalance(u.wallet_balance);
-						if (u.active_positions_count !== void 0) setActiveSignalsCount(u.active_positions_count);
-						if (Array.isArray(u.positions)) setPositions(u.positions);
-						if (!fetchedIsPaper && (!u.api_key || !(u.api_secret_encrypted || u.api_secret))) setActiveTab("settings");
-					} else setActiveTab("settings");
-				} else setActiveTab("settings");
+						setXp(Number(u.xp ?? 0));
+						setUserClass(Number(u.grade_class ?? 10));
+						setIsPro(Boolean(u.is_pro));
+						setSelectedTopic(u.current_topic || "Алгебра: Уравнения");
+						setSelectedSubtopic(u.current_subtopic || "Квадратные уравнения");
+						setActiveBlockId(Number(u.active_block_id ?? 1));
+						setReferralCode(u.referral_code || "");
+						if (!u.grade_class) setActiveTab("test");
+					}
+				}
 			} catch (e) {
-				console.error("Ошибка загрузки профиля:", e);
-				setActiveTab("settings");
+				console.error("Ошибка загрузки профиля Сотка:", e);
 			} finally {
 				setLoading(false);
 			}
 		};
-		fetchSettings();
+		fetchUserData();
 	}, []);
-	const handleSaveSettings = async () => {
-		try {
-			const initData = window.Telegram?.WebApp?.initData || "";
-			const payload = {
-				is_paper_trading: isPaper ? 1 : 0,
-				risk_per_trade_usdt: risk,
-				leverage,
-				use_max_leverage: useMaxLeverage ? 1 : 0,
-				max_open_positions: maxPositions,
-				api_key: apiKey,
-				api_secret: apiSecret
-			};
-			const res = await fetch(`${API_URL}user/settings`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-					"Authorization": `Bearer ${initData}`
-				},
-				body: JSON.stringify(payload)
-			});
-			if (!res.ok) throw new Error(`HTTP: ${res.status}`);
-			const data = await res.json();
-			if (data.success) {
-				safeAlert(t("saveSuccess"));
-				setActiveTab("status");
-			} else safeAlert(data.error || t("saveError"));
-		} catch (err) {
-			safeAlert(t("networkError"));
-		}
-	};
-	const handleCreateInvoice = async () => {
-		setSubLoading(true);
-		try {
-			const tg = window.Telegram?.WebApp;
-			const initData = tg?.initData || "";
-			const res = await fetch(`${API_URL}create-invoice`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-					"Authorization": `Bearer ${initData}`
-				},
-				body: JSON.stringify({
-					amount: 100,
-					asset: "USDT"
-				})
-			});
-			if (!res.ok) throw new Error(`HTTP: ${res.status}`);
-			const data = await res.json();
-			const payUrl = data.pay_url || data.url || data.invoiceUrl || data.result?.pay_url || data.invoice?.pay_url;
-			if (data.success !== false && payUrl) {
-				if (tg?.openTelegramLink) tg.openTelegramLink(payUrl);
-				else if (tg?.openLink) tg.openLink(payUrl);
-				else window.open(payUrl, "_blank");
-			} else safeAlert(data.error || t("invoiceError"));
-		} catch (err) {
-			console.error("Ошибка оплаты:", err);
-			safeAlert(t("networkError"));
-		} finally {
-			setSubLoading(false);
-		}
-	};
-	if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "min-h-screen app-bg flex items-center justify-center",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" })
-	});
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "h-screen h-[100dvh] w-full app-bg flex flex-col font-sans overflow-hidden",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
-				className: "w-full px-5 py-4 app-bar border-b flex items-center justify-between shrink-0 z-10",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center gap-3",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center font-black text-white text-base shadow-lg shadow-emerald-500/20",
-						children: "U"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-						className: "font-bold text-sm tracking-wide text-[var(--text-h)]",
-						children: "UPTRADE CRYPTO"
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "min-h-screen bg-[#0d0e15] text-slate-100 flex justify-center font-sans",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "w-full max-w-md bg-[#13141f] min-h-screen flex flex-col justify-between shadow-2xl relative pb-20 border-x border-slate-800/50",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
+					className: "p-4 glass-panel sticky top-0 z-50 flex items-center justify-between border-b border-slate-800",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center gap-2",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "w-8 h-8 rounded-xl bg-indigo-600 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/30",
+							children: "М"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "font-bold text-lg tracking-wide bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent",
+							children: "MathPro"
+						})]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex items-center gap-1.5 mt-0.5",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-2 h-2 rounded-full bg-emerald-500 animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-[11px] text-[var(--text)] font-medium",
-							children: t("subtitle")
-						})]
-					})] })]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center gap-2",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
-						value: lang,
-						onChange: (e) => setLang(e.target.value),
-						className: "app-input border text-[11px] rounded-lg px-2 py-1 outline-none uppercase font-bold focus:border-emerald-500 text-[var(--text-h)]",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-								value: "ru",
-								className: "app-bg",
-								children: "RU"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-								value: "en",
-								className: "app-bg",
-								children: "EN"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-								value: "es",
-								className: "app-bg",
-								children: "ES"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-								value: "zh",
-								className: "app-bg",
-								children: "ZH"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-								value: "tr",
-								className: "app-bg",
-								children: "TR"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-								value: "de",
-								className: "app-bg",
-								children: "DE"
-							})
-						]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20",
-						children: t("trialBadge")
-					})]
-				})]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
-				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 18px)" },
-				className: "flex-1 w-full overflow-y-auto overscroll-contain p-4 space-y-4 pb-24 no-scrollbar",
-				children: [
-					activeTab === "status" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "space-y-4 animate-fadeIn",
+						className: "flex items-center gap-3",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "p-5 rounded-2xl app-card border relative overflow-hidden",
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl" }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-xs text-[var(--text)] font-medium",
-									children: t("accountBalance")
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "text-3xl font-extrabold mt-1 text-[var(--text-h)] tracking-tight",
-									children: [
-										isPaper ? "∞" : balance ? `$${balance}` : t("hiddenBalance"),
-										" ",
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-											className: "text-sm font-normal text-[var(--text)]",
-											children: "USDT"
-										})
-									]
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-[var(--border)] text-xs",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-[var(--text)] block",
-										children: t("modeLabel")
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: `font-semibold ${isPaper ? "text-amber-500" : "text-emerald-500"}`,
-										children: isPaper ? t("demoMode") : t("realMode")
-									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-[var(--text)] block",
-										children: t("riskPerTrade")
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-										className: "font-semibold text-[var(--text-h)]",
-										children: [
-											"$",
-											risk,
-											" USDT"
-										]
-									})] })]
-								})
-							]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "space-y-3",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex justify-between items-center px-1",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "font-bold text-sm text-[var(--text-h)]",
-									children: t("activePositions")
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-[11px] px-2 py-0.5 rounded bg-[var(--bg)] text-[var(--text)] border border-[var(--border)] font-mono",
-									children: [
-										(positions || []).length,
-										" / ",
-										maxPositions,
-										" ",
-										t("openCount")
-									]
-								})]
-							}), !positions || positions.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "text-center py-8 border border-dashed rounded-xl app-card",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "text-xs text-[var(--text)]",
-									children: t("noSignals")
-								})
-							}) : positions.map((pos) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MexcPositionCard, { pos }, pos.id || pos.symbol))]
+							className: "flex items-center gap-1 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-full text-xs text-amber-400 font-semibold",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Zap, { className: "w-3.5 h-3.5 fill-amber-400" }), " 1,240 XP"]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: () => setActiveTab("payment"),
+							className: "bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1 rounded-full text-xs font-medium transition shadow-sm",
+							children: "PRO"
 						})]
-					}),
-					activeTab === "settings" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "space-y-4 animate-fadeIn",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "p-5 rounded-2xl app-card border space-y-5",
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
+					className: "flex-1 overflow-y-auto no-scrollbar p-4",
+					children: [
+						activeTab === "map" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-6",
 							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "font-bold text-sm text-[var(--text-h)] mb-3",
-									children: t("botModeHeader")
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "grid grid-cols-2 app-input p-1 rounded-xl border",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-										type: "button",
-										onClick: () => setIsPaper(true),
-										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${isPaper ? "bg-[var(--bg)] text-amber-500 shadow border border-[var(--border)]" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
-										children: t("demoBtn")
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-										type: "button",
-										onClick: () => setIsPaper(false),
-										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${!isPaper ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/20" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
-										children: t("realBtn")
-									})]
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+									className: "text-xs text-slate-400 font-medium mb-1 block",
+									children: "Слой 1: Выберите тему"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+									value: selectedTopic,
+									onChange: (e) => setSelectedTopic(e.target.value),
+									className: "w-full bg-slate-900 border border-slate-700 text-slate-200 text-sm rounded-xl p-3 outline-none focus:border-indigo-500",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "Алгебра: Уравнения" }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "Геометрия: Треугольники" }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "Тригонометрия" }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "Начала анализа" })
+									]
+								})] }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+									className: "text-xs text-slate-400 font-medium mb-2 block",
+									children: "Слой 2: Разблокированные подтемы"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "flex gap-2 overflow-x-auto no-scrollbar pb-1",
+									children: [
+										"Квадратные уравнения",
+										"Биквадратные",
+										"Системы",
+										"Модули"
+									].map((sub, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+										onClick: () => setSelectedSubtopic(sub),
+										className: `px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap border transition ${selectedSubtopic === sub ? "bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-600/30" : "bg-slate-900/80 border-slate-800 text-slate-400 hover:text-slate-200"}`,
+										children: [idx === 0 ? "✓ " : "", sub]
+									}, sub))
 								})] }),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "space-y-3",
+									className: "bg-slate-900/60 rounded-2xl p-5 border border-slate-800/80 relative overflow-hidden",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex justify-between items-center mb-4",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h3", {
+											className: "font-bold text-sm text-slate-300",
+											children: [
+												"Слой 3: Карты полян (",
+												selectedSubtopic,
+												")"
+											]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "text-[10px] text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20",
+											children: "Строгий порядок"
+										})]
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "relative py-4",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+											className: "absolute top-0 left-0 w-full h-full pointer-events-none path-pulse",
+											style: { zIndex: 0 },
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+												d: "M 50 40 Q 200 40 250 110 T 80 200 T 260 280",
+												fill: "transparent",
+												stroke: "#33374b",
+												strokeWidth: "6",
+												strokeLinecap: "round"
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+												d: "M 50 40 Q 200 40 250 110 T 80 200 T 260 280",
+												fill: "transparent",
+												stroke: "#6366f1",
+												strokeWidth: "3",
+												strokeDasharray: "6 6",
+												strokeLinecap: "round"
+											})]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "space-y-12 relative z-10",
+											children: mapData.map((node, index) => {
+												const aligns = [
+													"justify-start pl-4",
+													"justify-end pr-8",
+													"justify-start pl-8",
+													"justify-end pr-4"
+												];
+												const isCurrent = node.status === "current";
+												const isDone = node.status === "completed";
+												return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+													className: `flex items-center ${aligns[index % aligns.length]}`,
+													children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+														disabled: node.status === "locked",
+														onClick: () => setActiveBlockId(node.id),
+														className: `group relative flex items-center gap-3 p-3 rounded-2xl border transition-all duration-300 text-left ${isCurrent ? "bg-indigo-950/90 border-indigo-500 text-white node-glow-active scale-105" : isDone ? "bg-slate-900 border-emerald-500/50 text-slate-200 node-glow-done" : "bg-slate-900/50 border-slate-800 text-slate-500 opacity-60 cursor-not-allowed"}`,
+														children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+															className: `w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm ${isCurrent ? "bg-indigo-600 text-white" : isDone ? "bg-emerald-500/20 text-emerald-400" : "bg-slate-800 text-slate-600"}`,
+															children: isDone ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "w-5 h-5" }) : node.status === "locked" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Lock, { className: "w-4 h-4" }) : index + 1
+														}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+															className: "text-xs font-bold",
+															children: node.title
+														}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+															className: "text-[10px] text-slate-400 mt-0.5",
+															children: ["Прогресс: ", node.score]
+														})] })]
+													})
+												}, node.id);
+											})
+										})]
+									})]
+								})
+							]
+						}),
+						activeTab === "video" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-4",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "flex items-center justify-between",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+										className: "text-lg font-bold",
+										children: "Видео-урок"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-xs bg-slate-800 text-indigo-400 px-2.5 py-1 rounded-full font-medium border border-slate-700",
+										children: "Cloudflare R2 Direct"
+									})]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "aspect-video bg-black rounded-2xl border border-slate-800 overflow-hidden relative shadow-xl",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("video", {
+										controls: true,
+										className: "w-full h-full object-cover",
+										poster: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("source", {
+											src: "https://pub-r2-demo.cloudflare.com/sample-lesson.mp4",
+											type: "video/mp4"
+										}), "Ваш браузер не поддерживает видеоплеер."]
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "bg-slate-900/80 p-4 rounded-2xl border border-slate-800 space-y-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+										className: "font-bold text-sm",
+										children: "Урок 4.2: Методы решения квадратных уравнений"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-xs text-slate-400 leading-relaxed",
+										children: "Разбор теории для ЦТ/ЕГЭ. Дискриминант, теорема Виета и разложение на множители. Смотрите внимательно, после урока откроется Поляна #2."
+									})]
+								})
+							]
+						}),
+						activeTab === "test" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-4",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "bg-slate-900/80 p-4 rounded-2xl border border-slate-800",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+										className: "text-base font-bold mb-1",
+										children: "Стартовое тестирование / Выбор класса"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-xs text-slate-400",
+										children: "Можете пересдать вводный тест или сразу выбрать нужный класс подготовки."
+									})]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "p-3.5 bg-amber-500/10 border border-amber-500/30 rounded-2xl flex gap-3 items-start",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldAlert, { className: "w-5 h-5 text-amber-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+										className: "text-xs text-amber-200/90 leading-normal",
+										children: [
+											"При выборе 10 класса необходимо решить ",
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "font-bold text-amber-400",
+												children: "хотя бы по 1 задаче"
+											}),
+											" из программы 5, 6, 7, 8 и 9 классов для допуска!"
+										]
+									})]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "grid grid-cols-2 gap-2.5",
 									children: [
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-											className: "font-bold text-sm text-[var(--text-h)]",
-											children: t("riskManagementHeader")
-										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-											className: "grid grid-cols-2 gap-3",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "text-[11px] text-[var(--text)] font-medium block mb-1.5",
-												children: t("riskInputLabel")
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-												type: "number",
-												value: risk,
-												onChange: handleNumberChange(setRisk),
-												placeholder: "10",
-												className: `w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none transition-all text-[var(--text-h)] ${isRiskInvalid ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
-											})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "text-[11px] text-[var(--text)] font-medium block mb-1.5",
-												children: t("maxPositionsLabel")
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-												type: "number",
-												value: maxPositions,
-												onChange: handleNumberChange(setMaxPositions),
-												placeholder: "3",
-												className: `w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none transition-all text-[var(--text-h)] ${isMaxPositionsInvalid ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
-											})] })]
-										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-											className: "flex items-center justify-between app-input p-3 rounded-xl border",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-												className: "text-xs font-semibold text-[var(--text-h)] block",
-												children: t("useMaxLeverageLabel")
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-												className: "text-[10px] text-[var(--text)] block mt-0.5",
-												children: t("useMaxLeverageDesc")
-											})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-												type: "button",
-												onClick: () => setUseMaxLeverage(!useMaxLeverage),
-												className: `w-11 h-6 rounded-full p-1 transition-colors shrink-0 ${useMaxLeverage ? "bg-emerald-500" : "bg-slate-400 dark:bg-slate-700"}`,
-												children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `w-4 h-4 bg-white rounded-full transition-transform ${useMaxLeverage ? "translate-x-5" : "translate-x-0"}` })
+										5,
+										6,
+										7,
+										8,
+										9,
+										10,
+										11
+									].map((cls) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+										className: "p-3.5 bg-slate-900 hover:bg-slate-800/80 border border-slate-800 rounded-xl text-left transition flex justify-between items-center",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "font-bold text-sm",
+											children: [cls, " Класс"]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "text-[10px] text-slate-500",
+											children: "База + Профиль"
+										})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, { className: "w-4 h-4 text-slate-600" })]
+									}, cls))
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+									className: "w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/20",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RefreshCw, { className: "w-4 h-4" }), " Пересдать стартовый тест"]
+								})
+							]
+						}),
+						activeTab === "exam" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "space-y-4",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "bg-gradient-to-br from-indigo-900/40 to-purple-900/30 p-5 rounded-2xl border border-indigo-500/30",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex justify-between items-start mb-3",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+											className: "text-base font-bold",
+											children: "Симулятор ЦТ / ЦЭ 2026"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs text-slate-400 mt-0.5",
+											children: "Полное соответствие спецификации РИКЗ"
+										})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "bg-red-500/20 text-red-400 text-[10px] font-bold px-2 py-0.5 rounded border border-red-500/30",
+											children: "120 МИН"
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "text-xs text-slate-300 space-y-1 mb-4",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: "• Часть А: 10 заданий с выбором ответа" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: "• Часть Б: 20 заданий с открытым ответом" })]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+										className: "w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-indigo-600/30",
+										children: "Начать пробный экзамен"
+									})
+								]
+							})
+						}),
+						activeTab === "battle" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-4",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "bg-slate-900 p-5 rounded-2xl border border-slate-800 text-center",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-2xl flex items-center justify-center mx-auto mb-3 text-amber-400",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Flame, { className: "w-6 h-6" })
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+										className: "text-base font-bold",
+										children: "Math Battle 1v1"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-xs text-slate-400 mt-1",
+										children: "Решай задачи быстрее соперника в реальном времени!"
+									})
+								]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-3",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+										className: "text-xs font-bold text-slate-300",
+										children: "Создать приватную комнату"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+										className: "text-[10px] text-slate-500 block mb-1",
+										children: "Ставка (XP / Монеты)"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+										className: "w-full bg-slate-950 border border-slate-800 text-xs rounded-xl p-2.5 outline-none",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "50 XP (Дружеский дуэль)" }),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "200 XP (Рейтинговый)" }),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "500 XP (Хардкор)" })
+										]
+									})] }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+										className: "w-full py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-xs transition shadow-lg shadow-amber-500/20",
+										children: "Cоздать комнату и получить код"
+									})
+								]
+							})]
+						}),
+						activeTab === "formulas" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-4",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex justify-between items-center",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+									className: "text-base font-bold",
+									children: "Прогон пройденных формул"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-[10px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded",
+									children: "Только изученное (14)"
+								})]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "bg-gradient-to-br from-slate-900 to-indigo-950/40 p-6 rounded-2xl border border-indigo-500/30 min-h-[220px] flex flex-col justify-between text-center relative overflow-hidden",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "text-[10px] text-indigo-400 font-semibold uppercase tracking-wider",
+										children: "Алгебра • Дискриминант"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "my-auto space-y-2",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "text-2xl font-mono font-bold tracking-widest text-white",
+											children: "D = b² - 4ac"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs text-slate-400",
+											children: "Корни: x₁‚₂ = (-b ± √D) / (2a)"
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex gap-2",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+											className: "flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 rounded-xl transition",
+											children: "Повторить позже"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+											className: "flex-1 py-2 bg-emerald-600 hover:bg-emerald-500 text-xs text-white font-bold rounded-xl transition",
+											children: "Знаю отлично"
+										})]
+									})
+								]
+							})]
+						}),
+						activeTab === "hints" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-3",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "flex justify-between items-center mb-1",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+										className: "text-base font-bold",
+										children: "Магазин подсказок"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "text-xs text-amber-400 font-semibold flex items-center gap-1",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Zap, { className: "w-3.5 h-3.5 fill-amber-400" }), " 1,240 XP"]
+									})]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "text-xs text-slate-400 mb-2",
+									children: "Открывайте готовые решение для сложных задач за баллы XP"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "space-y-2.5 max-h-[480px] overflow-y-auto no-scrollbar pr-1",
+									children: [
+										1,
+										2,
+										3,
+										4,
+										5,
+										6,
+										7,
+										8
+									].map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "space-y-0.5",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "text-xs font-bold text-slate-200",
+												children: [
+													"Задача B",
+													item,
+													": Неравенства с модулем"
+												]
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "text-[10px] text-slate-500",
+												children: "Раздел: Алгебра 10-11 класс"
 											})]
-										}),
-										!useMaxLeverage && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-											className: "animate-fadeIn",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "text-[11px] text-[var(--text)] font-medium block mb-1.5",
-												children: t("leverageInputLabel")
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-												type: "number",
-												value: leverage,
-												onChange: handleNumberChange(setLeverage),
-												placeholder: "10",
-												className: `w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none transition-all text-[var(--text-h)] ${isLeverageInvalid ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+											className: "bg-indigo-600/20 hover:bg-indigo-600 border border-indigo-500/30 hover:border-indigo-500 text-indigo-300 hover:text-white px-3 py-1.5 rounded-lg text-xs font-medium transition flex items-center gap-1",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sparkles, { className: "w-3 h-3" }), " 50 XP"]
+										})]
+									}, item))
+								})
+							]
+						}),
+						activeTab === "payment" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-5",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "text-center space-y-1",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+										className: "text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent",
+										children: "Выберите подписку PRO"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-xs text-slate-400",
+										children: "Полный доступ ко всем полянам и разборам"
+									})]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "grid grid-cols-2 p-1 bg-slate-900 rounded-xl border border-slate-800",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+										onClick: () => setPayPlan("indiv"),
+										className: `py-2 text-xs font-bold rounded-lg transition ${payPlan === "indiv" ? "bg-indigo-600 text-white shadow" : "text-slate-400"}`,
+										children: "Индивидуальный"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+										onClick: () => setPayPlan("team10"),
+										className: `py-2 text-xs font-bold rounded-lg transition ${payPlan === "team10" ? "bg-indigo-600 text-white shadow" : "text-slate-400"}`,
+										children: "На 10 человек (-40%)"
+									})]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "space-y-2.5",
+									children: [
+										{
+											id: "1m",
+											label: "1 Месяц",
+											price: payPlan === "indiv" ? "29 BYN" : "180 BYN"
+										},
+										{
+											id: "3m",
+											label: "3 Месяца (Выгодно)",
+											price: payPlan === "indiv" ? "69 BYN" : "450 BYN",
+											badge: "ПОПУЛЯРНОЕ"
+										},
+										{
+											id: "ct",
+											label: "До самого ЦТ (Июнь)",
+											price: payPlan === "indiv" ? "119 BYN" : "790 BYN",
+											badge: "МАКСИМУМ"
+										}
+									].map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										onClick: () => setPayDuration(item.id),
+										className: `p-4 rounded-2xl border cursor-pointer transition flex items-center justify-between ${payDuration === item.id ? "bg-indigo-950/60 border-indigo-500 text-white" : "bg-slate-900/60 border-slate-800 text-slate-400"}`,
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex items-center gap-2",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "font-bold text-sm text-slate-200",
+												children: item.label
+											}), item.badge && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-[9px] bg-amber-500/20 text-amber-300 font-bold px-1.5 py-0.5 rounded border border-amber-500/30",
+												children: item.badge
 											})]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "text-[10px] text-slate-500",
+											children: "Все обновления включены"
+										})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "text-right",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "font-bold text-base text-white",
+												children: item.price
+											})
+										})]
+									}, item.id))
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+									className: "w-full py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold rounded-xl text-xs shadow-xl shadow-indigo-600/30 transition",
+									children: ["Оплатить ", payPlan === "team10" ? "групповой доступ" : "подписку"]
+								})
+							]
+						}),
+						activeTab === "referral" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-4",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "bg-slate-900 p-5 rounded-2xl border border-slate-800 text-center space-y-2",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "w-12 h-12 bg-indigo-600/20 border border-indigo-500/30 text-indigo-400 rounded-2xl flex items-center justify-center mx-auto",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Users, { className: "w-6 h-6" })
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+											className: "text-base font-bold",
+											children: "Реферальная программа"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+											className: "text-xs text-slate-400 leading-relaxed",
+											children: [
+												"Приглашай друзей и получай ",
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "text-emerald-400 font-bold",
+													children: "20%"
+												}),
+												" с каждой их оплаты прямо на свой кошелек!"
+											]
 										})
 									]
 								}),
-								!isPaper && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "pt-2 border-t border-[var(--border)] animate-fadeIn space-y-3",
-									children: [
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-											className: "font-bold text-xs text-amber-500",
-											children: t("mexcApiHeader")
-										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-											className: "text-[11px] text-[var(--text)] font-medium block mb-1",
-											children: t("apiKeyLabel")
-										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-											type: "text",
-											placeholder: "mx0glk...",
-											value: apiKey,
-											onChange: (e) => setApiKey(e.target.value),
-											className: `w-full app-input border rounded-xl p-3 text-xs font-mono outline-none transition-all text-[var(--text-h)] ${!isPaper && !apiKey?.toString().trim() ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
-										})] }),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-											className: "text-[11px] text-[var(--text)] font-medium block mb-1",
-											children: t("apiSecretLabel")
-										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-											className: "relative",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-												type: showSecret ? "text" : "password",
-												placeholder: "••••••••••••••••",
-												value: apiSecret,
-												onChange: (e) => setApiSecret(e.target.value),
-												className: `w-full app-input border rounded-xl p-3 pr-10 text-xs font-mono outline-none transition-all text-[var(--text-h)] ${!isPaper && !apiSecret?.toString().trim() ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-												type: "button",
-												onClick: () => setShowSecret(!showSecret),
-												className: "absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text)] hover:text-[var(--text-h)] text-xs",
-												children: showSecret ? "👁️" : "🔒"
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-3",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+										className: "text-xs font-bold text-slate-300 block",
+										children: "Куда выводить заработанное?"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "grid grid-cols-2 gap-2",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+											className: "p-3 bg-slate-950 border border-slate-800 hover:border-indigo-500 rounded-xl text-left transition",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "text-xs font-bold text-slate-200",
+												children: "Бел. Рубли (BYN)"
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "text-[10px] text-slate-500",
+												children: "Карта / ЕРИП"
 											})]
-										})] })
-									]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+											className: "p-3 bg-slate-950 border border-slate-800 hover:border-indigo-500 rounded-xl text-left transition",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "text-xs font-bold text-slate-200",
+												children: "Криптовалюта"
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "text-[10px] text-slate-500",
+												children: "USDT (TRC20) / TON"
+											})]
+										})]
+									})]
 								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-									type: "button",
-									onClick: handleSaveSettings,
-									disabled: isFormInvalid,
-									className: "w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-emerald-500 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/10 active:scale-[0.99]",
-									children: t("saveBtn")
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "bg-slate-900 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between gap-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-xs font-mono text-slate-400 truncate",
+										children: "mathpro.by/ref?id=839201"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+										onClick: () => {
+											setCopied(true);
+											setTimeout(() => setCopied(false), 2e3);
+										},
+										className: "bg-indigo-600 hover:bg-indigo-500 text-white p-2 rounded-lg text-xs font-medium transition shrink-0",
+										children: copied ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "w-4 h-4" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Copy, { className: "w-4 h-4" })
+									})]
 								})
 							]
-						})
-					}),
-					activeTab === "sub" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "p-6 rounded-2xl app-card border text-center space-y-4 animate-fadeIn",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "w-12 h-12 bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold",
-								children: "⚡"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-								className: "font-bold text-base text-[var(--text-h)]",
-								children: t("vipTitle")
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-xs text-[var(--text)] mt-1 max-w-xs mx-auto",
-								children: t("vipDesc")
-							})] }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "py-2",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-4xl font-black text-[var(--text-h)]",
-									children: "$100"
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-xs text-[var(--text)]",
-									children: [" ", t("perMonth")]
+						}),
+						activeTab === "leaderboard" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-3",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex justify-between items-center mb-2",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+									className: "text-base font-bold",
+									children: "Общий лидерборд"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-[10px] text-slate-500",
+									children: "Обновляется live"
 								})]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-								type: "button",
-								onClick: handleCreateInvoice,
-								disabled: subLoading,
-								className: "w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/10 active:scale-[0.99] flex items-center justify-center gap-2",
-								children: subLoading ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" }) : t("payBtn")
-							})
-						]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "space-y-2 max-h-[520px] overflow-y-auto no-scrollbar",
+								children: Array.from({ length: 20 }).map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "bg-slate-900/80 p-3 rounded-xl border border-slate-800/80 flex items-center justify-between",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex items-center gap-3",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+												className: "text-xs font-mono font-bold text-slate-500 w-5 text-center",
+												children: ["#", i + 1]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-bold text-slate-300",
+												children: String.fromCharCode(65 + i % 26)
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "text-xs font-semibold text-slate-200",
+												children: ["Ученик_", 100 + i]
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "text-[10px] text-slate-500",
+												children: ["Пройдено полян: ", 45 - i]
+											})] })
+										]
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "text-xs font-bold text-indigo-400",
+										children: [3400 - i * 110, " XP"]
+									})]
+								}, i))
+							})]
+						})
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
+					className: "glass-panel fixed bottom-0 max-w-md w-full border-t border-slate-800 p-2 z-50",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "flex justify-around items-center",
+						children: [
+							{
+								id: "map",
+								label: "Путь",
+								icon: BookOpen
+							},
+							{
+								id: "video",
+								label: "Уроки",
+								icon: Video
+							},
+							{
+								id: "test",
+								label: "Тест",
+								icon: RefreshCw
+							},
+							{
+								id: "exam",
+								label: "ЦТ 2026",
+								icon: Trophy
+							},
+							{
+								id: "battle",
+								label: "Дуэль",
+								icon: Flame
+							},
+							{
+								id: "formulas",
+								label: "Формулы",
+								icon: Sparkles
+							},
+							{
+								id: "hints",
+								label: "Подсказки",
+								icon: CircleQuestionMark
+							},
+							{
+								id: "referral",
+								label: "Реф",
+								icon: Users
+							},
+							{
+								id: "leaderboard",
+								label: "Топ",
+								icon: Award
+							}
+						].map((tab) => {
+							const Icon = tab.icon;
+							const isActive = activeTab === tab.id;
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+								onClick: () => setActiveTab(tab.id),
+								className: `flex flex-col items-center p-1.5 rounded-xl transition ${isActive ? "text-indigo-400" : "text-slate-500 hover:text-slate-300"}`,
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-[9px] mt-1 font-medium",
+									children: tab.label
+								})]
+							}, tab.id);
+						})
 					})
-				]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-				className: "shrink-0 w-full app-bar backdrop-blur-md border-t flex justify-around p-2 z-20",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-						type: "button",
-						onClick: () => setActiveTab("status"),
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "status" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-base",
-							children: "📊"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("tabStatus") })]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-						type: "button",
-						onClick: () => setActiveTab("settings"),
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "settings" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-base",
-							children: "⚙️"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("tabSettings") })]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-						type: "button",
-						onClick: () => setActiveTab("sub"),
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "sub" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-base",
-							children: "💳"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("tabSub") })]
-					})
-				]
-			})
-		]
+				})
+			]
+		})
 	});
 }
 //#endregion
-//#region src/main.tsx
+//#region src/main.jsx
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-BaINFWmS.js.map
+//# sourceMappingURL=index-C5e7pBHP.js.map
