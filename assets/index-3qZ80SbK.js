@@ -10551,11 +10551,6 @@ function App() {
 		if (val !== "" && !val.includes(".")) val = val.replace(/^0+(?=\d)/, "");
 		setter(val);
 	};
-	const isRiskInvalid = risk === "" || isNaN(Number(risk)) || Number(risk) <= 0;
-	const isMaxPositionsInvalid = maxPositions === "" || isNaN(Number(maxPositions)) || Number(maxPositions) <= 0;
-	const isLeverageInvalid = !useMaxLeverage && (leverage === "" || isNaN(Number(leverage)) || Number(leverage) <= 0);
-	const isApiInvalid = !isPaper && (!apiKey?.toString().trim() || !apiSecret?.toString().trim());
-	const isFormInvalid = isRiskInvalid || isMaxPositionsInvalid || isLeverageInvalid || isApiInvalid;
 	const [isPaper, setIsPaper] = (0, import_react.useState)(true);
 	const [risk, setRisk] = (0, import_react.useState)(10);
 	const [leverage, setLeverage] = (0, import_react.useState)(10);
@@ -10566,6 +10561,11 @@ function App() {
 	const [balance, setBalance] = (0, import_react.useState)(null);
 	const [activeSignalsCount, setActiveSignalsCount] = (0, import_react.useState)(0);
 	const [positions, setPositions] = (0, import_react.useState)([]);
+	const isRiskInvalid = risk === "" || isNaN(Number(risk)) || Number(risk) <= 0;
+	const isMaxPositionsInvalid = maxPositions === "" || isNaN(Number(maxPositions)) || Number(maxPositions) <= 0;
+	const isLeverageInvalid = !useMaxLeverage && (leverage === "" || isNaN(Number(leverage)) || Number(leverage) <= 0);
+	const isApiInvalid = !isPaper && (!apiKey?.toString().trim() || !apiSecret?.toString().trim());
+	const isFormInvalid = isRiskInvalid || isMaxPositionsInvalid || isLeverageInvalid || isApiInvalid;
 	const t = (key) => {
 		return translations[lang]?.[key] || translations["en"]?.[key] || translations["ru"]?.[key] || key;
 	};
@@ -11026,4 +11026,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-BaINFWmS.js.map
+//# sourceMappingURL=index-3qZ80SbK.js.map
