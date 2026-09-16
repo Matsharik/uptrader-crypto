@@ -10798,7 +10798,7 @@ function App() {
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "text-3xl font-extrabold mt-1 text-[var(--text-h)] tracking-tight",
 									children: [
-										isPaper ? "∞" : balance ? `$${balance}` : t("hiddenBalance"),
+										savedSettings ? Boolean(Number(savedSettings.is_paper_trading ?? savedSettings.isPaperTrading ?? savedSettings.is_paper ?? 1)) : isPaper ? "∞" : balance ? `$${balance}` : t("hiddenBalance"),
 										" ",
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 											className: "text-sm font-normal text-[var(--text)]",
@@ -10813,7 +10813,7 @@ function App() {
 										children: t("modeLabel")
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 										className: `font-semibold ${isPaper ? "text-amber-500" : "text-emerald-500"}`,
-										children: isPaper ? t("demoMode") : t("realMode")
+										children: savedSettings ? Boolean(Number(savedSettings.is_paper_trading ?? savedSettings.isPaperTrading ?? savedSettings.is_paper ?? 1)) : isPaper ? t("demoMode") : t("realMode")
 									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 										className: "text-[var(--text)] block",
 										children: t("riskPerTrade")
@@ -11053,4 +11053,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-DRUQZiY9.js.map
+//# sourceMappingURL=index-CCW4eA_Y.js.map
