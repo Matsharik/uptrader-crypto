@@ -10546,6 +10546,7 @@ function App() {
 	const [subLoading, setSubLoading] = (0, import_react.useState)(false);
 	const [showSecret, setShowSecret] = (0, import_react.useState)(false);
 	const [lang, setLang] = (0, import_react.useState)("ru");
+	const [isLifetime, setIsLifetime] = (0, import_react.useState)(true);
 	const handleNumberChange = (setter) => (e) => {
 		let val = e.target.value;
 		if (val !== "" && !val.includes(".")) val = val.replace(/^0+(?=\d)/, "");
@@ -10581,6 +10582,7 @@ function App() {
 			if (tg.setBackgroundColor) tg.setBackgroundColor("bg_color");
 		}
 	}, []);
+	const [savedSettings, setSavedSettings] = (0, import_react.useState)(null);
 	(0, import_react.useEffect)(() => {
 		const tg = window.Telegram?.WebApp;
 		if (tg) {
@@ -10594,32 +10596,25 @@ function App() {
 			try {
 				const initData = tg?.initData || "";
 				const res = await fetch(`${API_URL}user/settings`, {
-					method: "POST",
+					method: "GET",
 					headers: {
 						"Content-Type": "application/json",
 						"Authorization": `Bearer ${initData}`
-					},
-					body: JSON.stringify(payload)
+					}
 				});
 				if (res.ok) {
 					const data = await res.json();
 					if (data.success && data.user) {
 						const u = data.user;
+						setSavedSettings(u);
+						const rawLifetime = u.is_lifetime ?? u.isLifetime;
+						setIsLifetime(rawLifetime !== void 0 ? Boolean(Number(rawLifetime)) : true);
 						const rawPaper = u.is_paper_trading ?? u.isPaperTrading ?? u.is_paper ?? u.isPaper;
 						const fetchedIsPaper = rawPaper !== void 0 ? Boolean(Number(rawPaper)) : true;
 						const rawRisk = u.risk_per_trade_usdt ?? u.riskPerTradeUsdt ?? u.risk ?? 10;
 						const rawLeverage = u.leverage ?? 10;
 						const rawMaxPositions = u.max_open_positions ?? u.maxOpenPositions ?? 3;
 						const rawUseMaxLeverage = u.use_max_leverage ?? u.useMaxLeverage;
-						console.log("📦 [API RESPONSE] Получен объект пользователя:", u);
-						console.log("⚙️ [HYDRATION] Итоговые распарсенные значения:", {
-							fetchedIsPaper,
-							risk: rawRisk,
-							leverage: rawLeverage,
-							maxPositions: rawMaxPositions,
-							useMaxLeverage: rawUseMaxLeverage,
-							hasApiKey: Boolean(u.api_key || u.apiKey)
-						});
 						setIsPaper(fetchedIsPaper);
 						setRisk(Number(rawRisk));
 						setLeverage(Number(rawLeverage));
@@ -10642,7 +10637,6 @@ function App() {
 		};
 		fetchSettings();
 	}, []);
-	const [savedSettings, setSavedSettings] = (0, import_react.useState)(null);
 	const applySettingsToForm = (data) => {
 		const rawPaper = data.is_paper_trading ?? data.isPaperTrading ?? data.is_paper ?? data.isPaper;
 		setIsPaper(rawPaper !== void 0 ? Boolean(Number(rawPaper)) : true);
@@ -10654,20 +10648,6 @@ function App() {
 		setApiKey(data.api_key || data.apiKey || "");
 		setApiSecret(data.api_secret_encrypted || data.api_secret || data.apiSecret || "");
 	};
-	(0, import_react.useEffect)(() => {
-		const fetchUserSettings = async () => {
-			try {
-				const data = await (await fetch(`${API_URL}user/settings`)).json();
-				if (data) {
-					setSavedSettings(data);
-					applySettingsToForm(data);
-				}
-			} catch (err) {
-				console.error("Ошибка загрузки настроек:", err);
-			}
-		};
-		fetchUserSettings();
-	}, []);
 	(0, import_react.useEffect)(() => {
 		if (activeTab === "settings" && savedSettings) applySettingsToForm(savedSettings);
 	}, [activeTab]);
@@ -11057,14 +11037,11 @@ function App() {
 							children: "⚙️"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("tabSettings") })]
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+					!isLifetime && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						type: "button",
 						onClick: () => setActiveTab("sub"),
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "sub" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-base",
-							children: "💳"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("tabSub") })]
+						className: `py-2.5 text-xs font-bold rounded-xl transition-all ${activeTab === "sub" ? "bg-amber-500 text-slate-950" : "text-amber-500 font-semibold"}`,
+						children: t("subTab")
 					})
 				]
 			})
@@ -11076,4 +11053,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-BqhBtFKf.js.map
+//# sourceMappingURL=index-DRUQZiY9.js.map
