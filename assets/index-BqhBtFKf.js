@@ -10657,7 +10657,7 @@ function App() {
 	(0, import_react.useEffect)(() => {
 		const fetchUserSettings = async () => {
 			try {
-				const data = await (await fetch("/api/user/settings")).json();
+				const data = await (await fetch(`${API_URL}user/settings`)).json();
 				if (data) {
 					setSavedSettings(data);
 					applySettingsToForm(data);
@@ -11076,4 +11076,4 @@ function App() {
 import_client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(App, {}) }));
 //#endregion
 
-//# sourceMappingURL=index-BSb96C5Z.js.map
+//# sourceMappingURL=index-BqhBtFKf.js.map
