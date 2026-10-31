@@ -12205,16 +12205,15 @@ var require_react_jsx_runtime_production = /* @__PURE__ */ __commonJSMin(((expor
 var import_jsx_runtime = (/* @__PURE__ */ __commonJSMin(((exports, module) => {
 	module.exports = require_react_jsx_runtime_production();
 })))();
-var ApiKeySetupModal = ({ isOpen, onClose, onSaveKeys, referralLink = "https://promote.mexc.com/a/OpDxvtmT", lang }) => {
+var ApiKeySetupModal = ({ isOpen, onClose, onSaveKeys, referralLink = "https://app.hyperliquid.xyz/join/SETUP", lang }) => {
 	const [step, setStep] = (0, import_react.useState)(1);
-	const [mexcUid, setMexcUid] = (0, import_react.useState)("");
-	const [apiKey, setApiKey] = (0, import_react.useState)("");
-	const [apiSecret, setApiSecret] = (0, import_react.useState)("");
+	const [mainWallet, setMainWallet] = (0, import_react.useState)("");
+	const [agentKey, setAgentKey] = (0, import_react.useState)("");
 	const [isLoading, setIsLoading] = (0, import_react.useState)(false);
 	const [error, setError] = (0, import_react.useState)(null);
 	if (!isOpen) return null;
 	const tg = window.Telegram?.WebApp;
-	const t = mexcModalTranslations[(lang || tg?.initDataUnsafe?.user?.language_code || navigator.language?.slice(0, 2) || "ru").toLowerCase()] || mexcModalTranslations["ru"];
+	mexcModalTranslations[(lang || tg?.initDataUnsafe?.user?.language_code || navigator.language?.slice(0, 2) || "ru").toLowerCase()] || mexcModalTranslations["ru"];
 	const handleDismiss = () => {
 		tg?.HapticFeedback?.impactOccurred("light");
 		localStorage.setItem("mexc_setup_prompted", "true");
@@ -12228,8 +12227,8 @@ var ApiKeySetupModal = ({ isOpen, onClose, onSaveKeys, referralLink = "https://p
 	};
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		if (!apiKey.trim() || !apiSecret.trim()) {
-			setError(t.errFill);
+		if (!mainWallet.trim() || !agentKey.trim()) {
+			setError("Заполните все поля");
 			return;
 		}
 		try {
@@ -12237,14 +12236,13 @@ var ApiKeySetupModal = ({ isOpen, onClose, onSaveKeys, referralLink = "https://p
 			setError(null);
 			tg?.HapticFeedback?.impactOccurred("heavy");
 			await onSaveKeys({
-				apiKey: apiKey.trim(),
-				apiSecret: apiSecret.trim(),
-				mexcUid: mexcUid.trim()
+				mainWallet: mainWallet.trim(),
+				agentKey: agentKey.trim()
 			});
 			localStorage.setItem("mexc_setup_prompted", "true");
 			onClose();
 		} catch (err) {
-			setError(err.message || t.errSave);
+			setError(err.message || "Ошибка сохранения ключей");
 		} finally {
 			setIsLoading(false);
 		}
@@ -12263,35 +12261,32 @@ var ApiKeySetupModal = ({ isOpen, onClose, onSaveKeys, referralLink = "https://p
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						style: styles.badge,
-						children: t.badgeStep1
+						children: "HYPERLIQUID API"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 						style: styles.title,
-						children: t.titleStep1
+						children: "Подключение HL"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						style: styles.description,
-						children: t.descStep1
+						children: "Для работы бота вам понадобится аккаунт Hyperliquid."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						style: styles.buttonGroup,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 							onClick: handleOpenReferral,
 							style: styles.primaryBtn,
-							children: t.btnRegister
+							children: "Регистрация ↗"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-							onClick: () => {
-								tg?.HapticFeedback?.impactOccurred("light");
-								setStep(2);
-							},
+							onClick: () => setStep(2),
 							style: styles.secondaryBtn,
-							children: t.btnHasAccount
+							children: "У меня есть аккаунт"
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						onClick: handleDismiss,
 						style: styles.skipBtn,
-						children: t.btnSkip
+						children: "Пропустить"
 					})
 				]
 			}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
@@ -12300,33 +12295,33 @@ var ApiKeySetupModal = ({ isOpen, onClose, onSaveKeys, referralLink = "https://p
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						style: styles.badge,
-						children: t.badgeStep2
+						children: "ШАГ 2: КЛЮЧИ"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 						style: styles.title,
-						children: t.titleStep2
+						children: "Введите ключи HL"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						style: styles.instructions,
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								style: styles.instStep,
-								children: t.instStep1
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								style: styles.instStep,
-								children: t.instStep2
+								children: "1. Перейдите на app.hyperliquid.xyz/API"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
 								style: styles.instStep,
 								children: [
-									t.instStep3,
-									" ",
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										style: { color: "#ff4d4f" },
-										children: t.instWarning
-									})
+									"2. Создайте ",
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "Agent Wallet" }),
+									" (API Key)."
 								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+								style: styles.instStep,
+								children: ["3. Вставьте адрес основного кошелька и приватный ключ агента. ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									style: { color: "#ff4d4f" },
+									children: "Никому не передавайте ключ!"
+								})]
 							})
 						]
 					}),
@@ -12338,25 +12333,12 @@ var ApiKeySetupModal = ({ isOpen, onClose, onSaveKeys, referralLink = "https://p
 						style: styles.fieldGroup,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 							style: styles.label,
-							children: t.labelUid
+							children: "Main Wallet (0x...)"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 							type: "text",
-							value: mexcUid,
-							onChange: (e) => setMexcUid(e.target.value),
-							placeholder: "12345678",
-							style: styles.input
-						})]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						style: styles.fieldGroup,
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-							style: styles.label,
-							children: t.labelKey
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-							type: "text",
-							value: apiKey,
-							onChange: (e) => setApiKey(e.target.value),
-							placeholder: "mx0glk...",
+							value: mainWallet,
+							onChange: (e) => setMainWallet(e.target.value),
+							placeholder: "0x1234...",
 							required: true,
 							style: styles.input
 						})]
@@ -12365,11 +12347,11 @@ var ApiKeySetupModal = ({ isOpen, onClose, onSaveKeys, referralLink = "https://p
 						style: styles.fieldGroup,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 							style: styles.label,
-							children: t.labelSecret
+							children: "Agent Private Key (0x...)"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 							type: "password",
-							value: apiSecret,
-							onChange: (e) => setApiSecret(e.target.value),
+							value: agentKey,
+							onChange: (e) => setAgentKey(e.target.value),
 							placeholder: "••••••••••••••••",
 							required: true,
 							style: styles.input
@@ -12381,12 +12363,12 @@ var ApiKeySetupModal = ({ isOpen, onClose, onSaveKeys, referralLink = "https://p
 							type: "submit",
 							disabled: isLoading,
 							style: styles.primaryBtn,
-							children: isLoading ? t.btnSaving : t.btnSave
+							children: isLoading ? "Сохранение..." : "Сохранить"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 							type: "button",
 							onClick: () => setStep(1),
 							style: styles.secondaryBtn,
-							children: t.btnBack
+							children: "Назад"
 						})]
 					})
 				]
@@ -14206,6 +14188,28 @@ function App() {
 	const [balance, setBalance] = (0, import_react.useState)(null);
 	const [activeSignalsCount, setActiveSignalsCount] = (0, import_react.useState)(0);
 	const [positions, setPositions] = (0, import_react.useState)([]);
+	(0, import_react.useEffect)(() => {
+		const tg = window.Telegram?.WebApp;
+		let intervalId;
+		const fetchPositions = async () => {
+			if (!tg?.initData) return;
+			try {
+				const res = await fetch(`${API_URL}user/positions`, { headers: { "Authorization": `Bearer ${tg.initData}` } });
+				if (res.ok) {
+					const data = await res.json();
+					if (data.success && data.positions) {
+						setPositions(data.positions);
+						setActiveSignalsCount(data.positions.length);
+					}
+				}
+			} catch (e) {}
+		};
+		if (!isPaper) {
+			fetchPositions();
+			intervalId = setInterval(fetchPositions, 3e3);
+		}
+		return () => clearInterval(intervalId);
+	}, [isPaper]);
 	const [showTournamentReqModal, setShowTournamentReqModal] = (0, import_react.useState)(false);
 	const shortcut = useShortcutHint();
 	const LINK_STATES = [
@@ -14367,9 +14371,8 @@ function App() {
 				leverage,
 				use_max_leverage: useMaxLeverage ? 1 : 0,
 				max_open_positions: maxPositions,
-				api_uid: apiUid,
-				api_key: apiKey,
-				api_secret: apiSecret
+				hl_main_wallet: apiUid,
+				hl_agent_private_key: apiSecret
 			};
 			const res = await fetch(`${API_URL}user/settings`, {
 				method: "POST",
@@ -14395,10 +14398,10 @@ function App() {
 			safeAlert(t("networkError"));
 		}
 	};
-	const handleSaveKeysFromModal = async ({ apiKey: newKey, apiSecret: newSecret, mexcUid: newUid }) => {
-		setApiKey(newKey);
-		setApiSecret(newSecret);
-		setApiUid(newUid);
+	const handleSaveKeysFromModal = async ({ mainWallet, agentKey }) => {
+		setApiUid(mainWallet);
+		setApiSecret(agentKey);
+		setApiKey("");
 		const initData = window.Telegram?.WebApp?.initData || "";
 		const payload = {
 			pairs: JSON.stringify(pairs),
@@ -14408,9 +14411,8 @@ function App() {
 			leverage,
 			use_max_leverage: useMaxLeverage ? 1 : 0,
 			max_open_positions: maxPositions,
-			api_uid: newUid,
-			api_key: newKey,
-			api_secret: newSecret
+			hl_main_wallet: mainWallet,
+			hl_agent_private_key: agentKey
 		};
 		const res = await fetch(`${API_URL}user/settings`, {
 			method: "POST",
@@ -15261,7 +15263,7 @@ function App() {
 				isOpen: isKeyModalOpen,
 				onClose: () => setIsKeyModalOpen(false),
 				onSaveKeys: handleSaveKeysFromModal,
-				referralLink: "https://promote.mexc.com/a/OpDxvtmT"
+				referralLink: "https://app.hyperliquid.xyz/join/SETUP"
 			}),
 			showTrialModal && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center p-4 animate-fadeIn",
