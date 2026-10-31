@@ -14237,6 +14237,18 @@ function App() {
 	};
 	const [savedSettings, setSavedSettings] = (0, import_react.useState)(null);
 	(0, import_react.useEffect)(() => {
+		if (!savedSettings) return;
+		const isChanged = Number(risk) !== Number(savedSettings.risk_per_trade_usdt) || Number(leverage) !== Number(savedSettings.leverage) || isPaper !== Boolean(Number(savedSettings.is_paper_trading)) || useMaxLeverage !== Boolean(Number(savedSettings.use_max_leverage)) || Number(maxPositions) !== Number(savedSettings.max_open_positions);
+		setIsDirty(isChanged);
+	}, [
+		risk,
+		leverage,
+		isPaper,
+		useMaxLeverage,
+		maxPositions,
+		savedSettings
+	]);
+	(0, import_react.useEffect)(() => {
 		const tg = window.Telegram?.WebApp;
 		if (tg) {
 			if (tg.setHeaderColor) tg.setHeaderColor("secondary_bg_color");
@@ -14260,18 +14272,6 @@ function App() {
 			const userLang = tg.initDataUnsafe?.user?.language_code;
 			if (userLang && userLang in translations) setLang(userLang);
 		}
-		(0, import_react.useEffect)(() => {
-			if (!savedSettings) return;
-			const isChanged = Number(risk) !== Number(savedSettings.risk_per_trade_usdt) || Number(leverage) !== Number(savedSettings.leverage) || isPaper !== Boolean(Number(savedSettings.is_paper_trading)) || useMaxLeverage !== Boolean(Number(savedSettings.use_max_leverage)) || Number(maxPositions) !== Number(savedSettings.max_open_positions);
-			setIsDirty(isChanged);
-		}, [
-			risk,
-			leverage,
-			isPaper,
-			useMaxLeverage,
-			maxPositions,
-			savedSettings
-		]);
 		const fetchSettings = async () => {
 			try {
 				const initData = tg?.initData || "";
