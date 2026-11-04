@@ -11843,7 +11843,6 @@ var translations = {
 		strategiesHeader: "Strategies",
 		tabTournaments: "Tournaments",
 		subtitle: "MEXC Futures Bot",
-		trialBadge: "🎁 Trial (5 days)",
 		tabScanner: "Scanner",
 		tabReferral: "Earn",
 		tabStatus: "Status",
@@ -12319,7 +12318,7 @@ var ApiKeySetupModal = ({ isOpen, onClose, onSaveKeys, referralLink = "https://a
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
 								style: styles.instStep,
 								children: ["3. Вставьте адрес основного кошелька и приватный ключ агента. ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									style: { color: "#ff4d4f" },
+									style: { color: "#F87171" },
 									children: "Никому не передавайте ключ!"
 								})]
 							})
@@ -12383,8 +12382,7 @@ var styles = {
 		left: 0,
 		right: 0,
 		bottom: 0,
-		backgroundColor: "rgba(0, 0, 0, 0.85)",
-		backdropFilter: "blur(8px)",
+		backgroundColor: "rgba(0, 0, 0, 0.8)",
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "center",
@@ -12392,15 +12390,14 @@ var styles = {
 		padding: "16px"
 	},
 	modal: {
-		backgroundColor: "#161b22",
-		border: "1px solid #30363d",
+		backgroundColor: "#121212",
+		border: "1px solid rgba(255, 255, 255, 0.1)",
 		borderRadius: "16px",
 		width: "100%",
-		maxWidth: "420px",
+		maxWidth: "400px",
 		padding: "24px",
 		position: "relative",
-		boxShadow: "0 20px 40px rgba(0,0,0,0.6)",
-		color: "#f0f6fc"
+		color: "#EDEDED"
 	},
 	closeBtn: {
 		position: "absolute",
@@ -12408,48 +12405,48 @@ var styles = {
 		right: "16px",
 		background: "none",
 		border: "none",
-		color: "#8b949e",
-		fontSize: "20px",
+		color: "#737373",
+		fontSize: "16px",
 		cursor: "pointer",
-		padding: "4px 8px"
+		padding: "4px"
 	},
 	content: {
 		display: "flex",
 		flexDirection: "column",
-		gap: "16px"
+		gap: "20px"
 	},
 	badge: {
 		alignSelf: "flex-start",
-		backgroundColor: "rgba(56, 139, 253, 0.15)",
-		color: "#58a6ff",
-		fontSize: "11px",
-		fontWeight: 700,
+		backgroundColor: "rgba(255, 255, 255, 0.05)",
+		color: "#EDEDED",
+		fontSize: "10px",
+		fontWeight: 600,
 		padding: "4px 8px",
 		borderRadius: "6px",
 		letterSpacing: "0.5px"
 	},
 	title: {
 		fontSize: "20px",
-		fontWeight: 700,
+		fontWeight: 600,
 		margin: 0,
-		color: "#ffffff"
+		color: "#FFFFFF"
 	},
 	description: {
-		fontSize: "14px",
-		color: "#8b949e",
+		fontSize: "13px",
+		color: "#A3A3A3",
 		lineHeight: "1.5",
 		margin: 0
 	},
 	instructions: {
-		backgroundColor: "#0d1117",
-		border: "1px solid #21262d",
+		backgroundColor: "#0A0A0A",
+		border: "1px solid rgba(255, 255, 255, 0.05)",
 		borderRadius: "8px",
 		padding: "12px",
-		fontSize: "13px",
-		color: "#c9d1d9",
+		fontSize: "12px",
+		color: "#A3A3A3",
 		display: "flex",
 		flexDirection: "column",
-		gap: "6px"
+		gap: "8px"
 	},
 	instStep: {
 		margin: 0,
@@ -12458,31 +12455,32 @@ var styles = {
 	fieldGroup: {
 		display: "flex",
 		flexDirection: "column",
-		gap: "6px"
+		gap: "8px"
 	},
 	label: {
-		fontSize: "12px",
-		fontWeight: 600,
-		color: "#8b949e"
+		fontSize: "11px",
+		fontWeight: 500,
+		color: "#A3A3A3"
 	},
 	input: {
-		backgroundColor: "#0d1117",
-		border: "1px solid #30363d",
+		backgroundColor: "#0A0A0A",
+		border: "1px solid rgba(255, 255, 255, 0.1)",
 		borderRadius: "8px",
-		padding: "10px 12px",
-		color: "#ffffff",
+		padding: "12px",
+		color: "#FFFFFF",
 		fontSize: "14px",
-		outline: "none"
+		outline: "none",
+		fontFamily: "monospace"
 	},
 	buttonGroup: {
 		display: "flex",
 		flexDirection: "column",
-		gap: "10px",
+		gap: "8px",
 		marginTop: "8px"
 	},
 	primaryBtn: {
-		backgroundColor: "#238636",
-		color: "#ffffff",
+		backgroundColor: "#FFFFFF",
+		color: "#000000",
 		border: "none",
 		borderRadius: "8px",
 		padding: "12px",
@@ -12491,30 +12489,30 @@ var styles = {
 		cursor: "pointer"
 	},
 	secondaryBtn: {
-		backgroundColor: "#21262d",
-		color: "#c9d1d9",
-		border: "1px solid #30363d",
+		backgroundColor: "transparent",
+		color: "#EDEDED",
+		border: "1px solid rgba(255, 255, 255, 0.1)",
 		borderRadius: "8px",
-		padding: "10px",
+		padding: "12px",
 		fontSize: "14px",
+		fontWeight: 500,
 		cursor: "pointer"
 	},
 	skipBtn: {
 		background: "none",
 		border: "none",
-		color: "#8b949e",
-		fontSize: "13px",
+		color: "#737373",
+		fontSize: "12px",
 		cursor: "pointer",
-		textDecoration: "underline",
 		marginTop: "4px"
 	},
 	errorAlert: {
-		backgroundColor: "rgba(248, 81, 73, 0.15)",
-		border: "1px solid #f85149",
-		color: "#ff7b72",
-		padding: "8px 12px",
-		borderRadius: "6px",
-		fontSize: "13px"
+		backgroundColor: "rgba(248, 81, 73, 0.1)",
+		border: "1px solid rgba(248, 81, 73, 0.2)",
+		color: "#F87171",
+		padding: "10px 12px",
+		borderRadius: "8px",
+		fontSize: "12px"
 	}
 };
 //#endregion
@@ -12624,25 +12622,25 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 		}
 	};
 	if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "flex justify-center items-center py-12 text-xs text-slate-500 animate-pulse",
+		className: "flex justify-center items-center py-12 text-xs text-neutral-500 animate-pulse",
 		children: t("refLoading")
 	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "flex flex-col gap-3 p-3 text-slate-100 pb-20",
+		className: "flex flex-col gap-4 p-4 text-neutral-200 pb-20 bg-[#0A0A0A] min-h-screen",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex flex-col gap-2 bg-slate-900/80 border border-slate-800 p-4 rounded-2xl backdrop-blur-md",
+				className: "flex flex-col gap-2 bg-[#121212] border border-white/5 p-4 rounded-xl",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "self-start px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-400 font-bold text-[10px] tracking-wider uppercase border border-amber-500/20",
+						className: "self-start px-2 py-0.5 rounded bg-white/5 text-neutral-400 font-semibold text-[10px] uppercase tracking-wider",
 						children: t("refBadge")
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-						className: "text-xl font-bold text-white leading-tight",
+						className: "text-lg font-semibold text-white leading-tight",
 						children: t("refTitle")
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-xs text-slate-400 leading-relaxed",
+						className: "text-xs text-neutral-400 leading-relaxed",
 						children: t("refSubtitle")
 					})
 				]
@@ -12650,40 +12648,40 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "grid grid-cols-2 gap-3",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex flex-col items-center justify-center p-3.5 bg-slate-900/90 border border-slate-800 rounded-xl",
+					className: "flex flex-col items-center justify-center p-4 bg-[#121212] border border-white/5 rounded-xl",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-2xl font-bold text-emerald-400 font-mono",
+						className: "text-2xl font-semibold text-white font-mono",
 						children: stats.totalInvited
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[11px] text-slate-400 text-center mt-1",
+						className: "text-[11px] text-neutral-500 text-center mt-1",
 						children: t("refStatInvited")
 					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex flex-col items-center justify-center p-3.5 bg-slate-900/90 border border-slate-800 rounded-xl",
+					className: "flex flex-col items-center justify-center p-4 bg-[#121212] border border-white/5 rounded-xl",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-						className: "text-2xl font-bold text-emerald-400 font-mono",
+						className: "text-2xl font-semibold text-emerald-500 font-mono",
 						children: ["$", stats.estimatedEarningsUsdt]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[11px] text-slate-400 text-center mt-1",
+						className: "text-[11px] text-neutral-500 text-center mt-1",
 						children: t("refStatEarned")
 					})]
 				})]
 			}),
 			referredBy && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex flex-col gap-2 p-3.5 bg-slate-900/90 border border-slate-800 rounded-xl animate-fadeIn",
+				className: "flex flex-col gap-3 p-4 bg-[#121212] border border-white/5 rounded-xl animate-fadeIn",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center justify-between mb-1",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-						className: "text-xs font-semibold text-slate-400",
+						className: "text-xs font-medium text-neutral-400",
 						children: "Реферальный кэшбэк"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-						className: "text-lg font-bold text-emerald-400 font-mono",
+						className: "text-lg font-semibold text-emerald-500 font-mono",
 						children: [
 							"$",
 							stats.cashbackBalance || "0.00",
 							" ",
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-xs",
+								className: "text-xs text-neutral-500",
 								children: "USDT"
 							})
 						]
@@ -12692,9 +12690,9 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 					type: "button",
 					onClick: handleWithdrawCashback,
 					disabled: cashbackStatus === "loading" || Number(stats.cashbackBalance) <= 0,
-					className: `w-full py-2.5 rounded-lg font-bold text-xs uppercase tracking-wide transition-all flex items-center justify-center gap-2 ${Number(stats.cashbackBalance) <= 0 ? "bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700" : "bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-lg shadow-amber-500/20 active:scale-95"}`,
+					className: `w-full py-3 rounded-lg font-semibold text-xs tracking-wide transition-all flex items-center justify-center gap-2 border ${Number(stats.cashbackBalance) <= 0 ? "bg-[#0A0A0A] text-neutral-600 border-white/5 cursor-not-allowed" : "bg-white text-black border-transparent hover:bg-neutral-200 active:scale-[0.98]"}`,
 					children: [
-						cashbackStatus === "loading" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" }),
+						cashbackStatus === "loading" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" }),
 						cashbackStatus === "success" && "✓ Выведено",
 						cashbackStatus === "error" && "✗ Ошибка",
 						cashbackStatus === "idle" && "Вывести кэшбэк"
@@ -12702,14 +12700,14 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex flex-col gap-2 p-3.5 bg-slate-900/90 border border-slate-800 rounded-xl",
+				className: "flex flex-col gap-3 p-4 bg-[#121212] border border-white/5 rounded-xl",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center justify-between",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-						className: "text-xs font-semibold text-slate-400",
+						className: "text-xs font-medium text-neutral-400",
 						children: "Вывести по MEXC UID"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-						className: "text-[11px] font-bold text-emerald-400 font-mono",
+						className: "text-[11px] font-medium text-emerald-500 font-mono",
 						children: ["$", stats.earningBalance || "0.00"]
 					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -12719,14 +12717,14 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 						placeholder: "Введите ваш MEXC UID",
 						value: mexcUid,
 						onChange: (e) => setMexcUid(e.target.value),
-						className: "flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300 font-mono outline-none focus:border-slate-700"
+						className: "flex-1 bg-[#0A0A0A] border border-white/10 rounded-lg px-3 py-2 text-xs text-white font-mono outline-none focus:border-white/30 transition-colors"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
 						onClick: handleWithdrawUid,
 						disabled: !mexcUid.trim() || uidStatus === "loading",
-						className: `px-4 py-2 font-semibold text-xs rounded-lg transition-all shrink-0 flex items-center justify-center min-w-[70px] ${!mexcUid.trim() ? "bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700" : "bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-lg shadow-amber-500/20 active:scale-95"}`,
+						className: `px-4 py-2 font-semibold text-xs rounded-lg transition-all shrink-0 flex items-center justify-center min-w-[80px] border ${!mexcUid.trim() ? "bg-[#0A0A0A] text-neutral-600 border-white/5 cursor-not-allowed" : "bg-white text-black border-transparent hover:bg-neutral-200 active:scale-[0.98]"}`,
 						children: [
-							uidStatus === "loading" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-3.5 h-3.5 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" }),
+							uidStatus === "loading" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-3.5 h-3.5 border-2 border-black border-t-transparent rounded-full animate-spin" }),
 							uidStatus === "success" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 								className: "text-base leading-none",
 								children: "✓"
@@ -12741,9 +12739,9 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex flex-col gap-2 p-3.5 bg-slate-900/90 border border-slate-800 rounded-xl",
+				className: "flex flex-col gap-2 p-4 bg-[#121212] border border-white/5 rounded-xl",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-					className: "text-xs font-semibold text-slate-400",
+					className: "text-xs font-medium text-neutral-400",
 					children: t("refLinkLabel")
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex gap-2",
@@ -12751,11 +12749,11 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 						type: "text",
 						readOnly: true,
 						value: shareUrl,
-						className: "flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300 font-mono outline-none focus:border-slate-700"
+						className: "flex-1 bg-[#0A0A0A] border border-white/10 rounded-lg px-3 py-2 text-xs text-neutral-400 font-mono outline-none"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						type: "button",
 						onClick: handleCopy,
-						className: "px-3 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-emerald-400 font-semibold text-xs rounded-lg transition-all active:scale-95 shrink-0",
+						className: "px-3 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs rounded-lg transition-all active:scale-95 shrink-0",
 						children: copied ? "✓" : t("refCopy")
 					})]
 				})]
@@ -12763,7 +12761,7 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 				type: "button",
 				onClick: handleShare,
-				className: "w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-500 active:scale-[0.99] text-white font-bold text-sm rounded-xl transition-all shadow-lg shadow-emerald-950/40 flex items-center justify-center gap-2 mt-1",
+				className: "w-full py-3.5 px-4 bg-white hover:bg-neutral-200 active:scale-[0.98] text-black font-semibold text-sm rounded-xl transition-all flex items-center justify-center gap-2 mt-1",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "✈️" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("refShareBtn") })]
 			})
 		]
@@ -12877,26 +12875,26 @@ var VISIBLE_TYPES = ["signal", "filter"];
 var TYPE_STYLES = {
 	signal: {
 		border: "border-l-emerald-500",
-		bg: "bg-emerald-500/5",
-		dot: "bg-emerald-400",
+		bg: "bg-[#121212]",
+		dot: "bg-emerald-500",
 		label: "SIGNAL"
 	},
 	filter: {
 		border: "border-l-amber-500",
-		bg: "bg-amber-500/5",
-		dot: "bg-amber-400",
+		bg: "bg-[#121212]",
+		dot: "bg-amber-500",
 		label: "FILTER"
 	},
 	warning: {
 		border: "border-l-rose-500",
-		bg: "bg-rose-500/5",
-		dot: "bg-rose-400",
+		bg: "bg-[#121212]",
+		dot: "bg-rose-500",
 		label: "WARN"
 	},
 	info: {
-		border: "border-l-slate-600",
-		bg: "bg-slate-800/40",
-		dot: "bg-slate-500",
+		border: "border-l-neutral-600",
+		bg: "bg-[#121212]",
+		dot: "bg-neutral-600",
 		label: "INFO"
 	}
 };
@@ -12959,24 +12957,21 @@ var ScannerTab = ({ apiUrl, triggerHaptic, lang }) => {
 		}
 		return log.message;
 	};
-	if (!dictReady) return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "flex flex-col items-center justify-center py-12 gap-2 text-slate-500",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-			className: "text-[11px]",
-			children: "…"
-		})]
+	if (!dictReady) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "flex flex-col items-center justify-center py-12 gap-2 text-neutral-500 bg-[#0A0A0A] min-h-screen",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" })
 	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "flex flex-col gap-3 p-3 text-slate-100 pb-20",
+		className: "flex flex-col gap-4 p-4 text-neutral-200 pb-20 bg-[#0A0A0A] min-h-screen",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "flex items-center justify-between bg-slate-900/80 border border-slate-800 p-3 rounded-2xl backdrop-blur-md",
+			className: "flex items-center justify-between bg-[#121212] border border-white/5 p-3 rounded-xl",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center gap-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-					className: "relative flex h-3 w-3",
-					children: [isAutoRefresh && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `relative inline-flex rounded-full h-3 w-3 ${isAutoRefresh ? "bg-emerald-500" : "bg-slate-500"}` })]
+					className: "relative flex h-2.5 w-2.5",
+					children: [isAutoRefresh && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `relative inline-flex rounded-full h-2.5 w-2.5 ${isAutoRefresh ? "bg-emerald-500" : "bg-neutral-600"}` })]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "text-xs font-bold uppercase tracking-wider text-slate-300",
+					className: "text-xs font-semibold uppercase tracking-wider text-neutral-300",
 					children: isAutoRefresh ? trOr("scanner.ui.liveScanner", "Live Scanner") : trOr("scanner.ui.paused", "Paused")
 				})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -12987,7 +12982,7 @@ var ScannerTab = ({ apiUrl, triggerHaptic, lang }) => {
 						triggerHaptic?.("light");
 						setShowFilters((v) => !v);
 					},
-					className: "text-xs px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-medium hover:bg-slate-700 transition-all",
+					className: "text-[11px] px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-neutral-300 font-medium hover:bg-white/10 transition-all",
 					children: showFilters ? trOr("scanner.ui.onlySignals", "Only signals") : trOr("scanner.ui.showFilters", "Show filters")
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 					type: "button",
@@ -12995,22 +12990,22 @@ var ScannerTab = ({ apiUrl, triggerHaptic, lang }) => {
 						triggerHaptic?.("light");
 						setIsAutoRefresh((v) => !v);
 					},
-					className: "text-xs px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-medium hover:bg-slate-700 transition-all",
+					className: "text-[11px] px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-neutral-300 font-medium hover:bg-white/10 transition-all",
 					children: isAutoRefresh ? trOr("scanner.ui.pauseBtn", "Pause") : trOr("scanner.ui.startBtn", "Start")
 				})]
 			})]
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 			className: "flex flex-col gap-2",
 			children: isLoading ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "text-center py-8 text-xs text-slate-500 animate-pulse",
+				className: "text-center py-8 text-xs text-neutral-500 animate-pulse",
 				children: trOr("scanner.ui.loading", "Loading…")
 			}) : visibleLogs.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "text-center py-8 text-xs text-slate-500 bg-slate-900/40 border border-slate-800/60 rounded-2xl",
+				className: "text-center py-8 text-xs text-neutral-500 bg-[#121212] border border-white/5 rounded-xl",
 				children: trOr("scanner.ui.empty", "No entries yet")
 			}) : visibleLogs.map((log) => {
 				const style = TYPE_STYLES[log.type] || TYPE_STYLES.info;
 				return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: `flex flex-col gap-1.5 p-3 rounded-xl border-l-4 ${style.border} ${style.bg} border-y border-r border-slate-800/80 transition-all hover:border-slate-700`,
+					className: `flex flex-col gap-2 p-3.5 rounded-xl border-l-2 ${style.border} ${style.bg} border-y border-r border-white/5 transition-all`,
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "flex items-center justify-between text-[11px]",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -13018,24 +13013,24 @@ var ScannerTab = ({ apiUrl, triggerHaptic, lang }) => {
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `h-1.5 w-1.5 rounded-full ${style.dot}` }),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "font-bold text-slate-200",
+									className: "font-semibold text-white",
 									children: log.symbol
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px]",
+									className: "px-1.5 py-0.5 rounded bg-white/5 text-neutral-400 font-mono text-[10px]",
 									children: log.strategy
 								}),
 								log.side && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: `px-1.5 py-0.5 rounded font-bold text-[10px] ${log.side === "LONG" ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-rose-500/20 text-rose-400 border border-rose-500/30"}`,
+									className: `px-1.5 py-0.5 rounded font-medium text-[10px] border ${log.side === "LONG" ? "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" : "bg-rose-500/10 text-rose-500 border-rose-500/20"}`,
 									children: log.side
 								})
 							]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-slate-500 font-mono",
+							className: "text-neutral-500 font-mono",
 							children: log.time
 						})]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-xs text-slate-300 leading-relaxed font-sans",
+						className: "text-xs text-neutral-300 leading-relaxed font-sans",
 						children: renderMessage(log)
 					})]
 				}, log.id);
@@ -13055,7 +13050,7 @@ var L = {
 		registerBtn: "Зарегистрироваться",
 		unregisterBtn: "Отменить регистрацию",
 		registeredBadge: "✓ Вы зарегистрированы",
-		rulesLinkBtn: "📄 Пост с правилами в Telegram",
+		rulesLinkBtn: "📄 Пост с правилами",
 		leaderboard: "Таблица рейтинга",
 		noTournament: "Сейчас нет активных турниров",
 		noTournamentSub: "Следующий спринт анонсируем в канале.",
@@ -13084,7 +13079,7 @@ var L = {
 		registerBtn: "Register",
 		unregisterBtn: "Unregister",
 		registeredBadge: "✓ Registered",
-		rulesLinkBtn: "📄 Rules post in Telegram",
+		rulesLinkBtn: "📄 Rules post",
 		leaderboard: "Leaderboard",
 		noTournament: "No active tournaments",
 		noTournamentSub: "Next sprint will be announced in the channel.",
@@ -13214,23 +13209,23 @@ var TournamentTab = ({ apiUrl, lang, triggerHaptic, isLifetime, isReferral }) =>
 		else window.open(url, "_blank");
 	};
 	if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "flex justify-center items-center py-12 text-xs text-slate-500 animate-pulse",
+		className: "flex justify-center items-center py-12 text-xs text-neutral-500 animate-pulse bg-[#0A0A0A] min-h-screen",
 		children: tr("loading")
 	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "flex flex-col gap-3 p-1 pb-20 text-slate-100",
+		className: "flex flex-col gap-4 p-4 pb-20 text-neutral-200 bg-[#0A0A0A] min-h-screen",
 		children: [
 			reqModalOpen && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center p-4 animate-fadeIn",
+				className: "fixed inset-0 z-50 bg-black/80 flex items-end sm:items-center justify-center p-4",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "w-full max-w-md app-card rounded-2xl border border-[var(--border)] p-5 space-y-4 shadow-2xl",
+					className: "w-full max-w-md bg-[#121212] rounded-xl border border-white/10 p-5 space-y-5",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							className: "text-base font-bold text-[var(--text-h)]",
+							className: "text-base font-semibold text-white",
 							children: tr("reqTitle")
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-xs text-[var(--text)]",
+							className: "text-xs text-neutral-400",
 							children: tr("reqSub")
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -13260,17 +13255,17 @@ var TournamentTab = ({ apiUrl, lang, triggerHaptic, isLifetime, isReferral }) =>
 							]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex gap-2 pt-1",
+							className: "flex gap-2 pt-2",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								type: "button",
 								onClick: () => setReqModalOpen(false),
-								className: "flex-1 py-3 rounded-xl text-xs font-bold border border-[var(--border)] app-input text-[var(--text)]",
+								className: "flex-1 py-3 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-neutral-300 hover:bg-white/10 transition-colors",
 								children: tr("reqSkip")
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								type: "button",
 								onClick: checkRequirements,
 								disabled: reqChecking,
-								className: "flex-1 py-3 rounded-xl text-xs font-bold bg-emerald-500 text-slate-950 disabled:opacity-50",
+								className: "flex-1 py-3 rounded-lg text-xs font-semibold bg-white text-black hover:bg-neutral-200 transition-colors disabled:opacity-50",
 								children: reqChecking ? "…" : tr("reqCheck")
 							})]
 						})
@@ -13278,49 +13273,49 @@ var TournamentTab = ({ apiUrl, lang, triggerHaptic, isLifetime, isReferral }) =>
 				})
 			}),
 			tournament ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "app-card border rounded-2xl p-4 space-y-3",
+				className: "bg-[#121212] border border-white/5 rounded-xl p-4 space-y-4",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "flex items-start justify-between gap-2",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "self-start px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-400 font-bold text-[10px] tracking-wider uppercase border border-amber-500/20",
+								className: "self-start px-2 py-0.5 rounded bg-white/5 text-neutral-400 font-semibold text-[10px] uppercase tracking-wider border border-white/5",
 								children: tr("activeHeader")
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-								className: "text-lg font-bold text-[var(--text-h)] mt-2 leading-tight",
+								className: "text-lg font-semibold text-white mt-2 leading-tight",
 								children: tournament.title
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-[11px] text-[var(--text)] font-mono mt-0.5",
+								className: "text-[11px] text-neutral-500 font-mono mt-0.5",
 								children: tournament.asset
 							})
 						] })
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-xs text-[var(--text)] leading-relaxed",
+						className: "text-xs text-neutral-400 leading-relaxed",
 						children: tournament.description
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "grid grid-cols-2 gap-2 text-xs",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "app-input border rounded-xl p-3",
+							className: "bg-[#0A0A0A] border border-white/5 rounded-lg p-3",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-[10px] text-[var(--text)] block uppercase font-bold",
+								className: "text-[10px] text-neutral-500 block uppercase font-semibold",
 								children: tr("prizesLabel")
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-[var(--text-h)] font-semibold mt-0.5 block",
+								className: "text-white font-medium mt-1 block",
 								children: tournament.prizePool
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "app-input border rounded-xl p-3",
+							className: "bg-[#0A0A0A] border border-white/5 rounded-lg p-3",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-[10px] text-[var(--text)] block uppercase font-bold",
+								className: "text-[10px] text-neutral-500 block uppercase font-semibold",
 								children: tr("rulesLabel")
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								type: "button",
 								onClick: () => openTgLink(tournament.rulesUrl),
-								className: "text-emerald-500 font-semibold mt-0.5 text-left text-[11px]",
+								className: "text-white font-medium mt-1 text-left text-[11px] underline decoration-white/30 underline-offset-2 hover:decoration-white transition-all",
 								children: tr("rulesLinkBtn")
 							})]
 						})]
@@ -13329,56 +13324,56 @@ var TournamentTab = ({ apiUrl, lang, triggerHaptic, isLifetime, isReferral }) =>
 						type: "button",
 						onClick: handleRegister,
 						disabled: registering,
-						className: `w-full py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all active:scale-[0.99] ${tournament.registered ? "bg-slate-700/40 border border-[var(--border)] text-[var(--text)]" : "bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/20"} disabled:opacity-50`,
+						className: `w-full py-3 rounded-lg text-xs font-semibold tracking-wide transition-all active:scale-[0.98] border ${tournament.registered ? "bg-transparent border-white/10 text-neutral-400 hover:bg-white/5" : "bg-white text-black border-transparent hover:bg-neutral-200"} disabled:opacity-50`,
 						children: registering ? "…" : tournament.registered ? tr("registeredBadge") + " — " + tr("unregisterBtn") : tr("registerBtn")
 					})
 				]
 			}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "app-card border rounded-2xl p-6 text-center space-y-1",
+				className: "bg-[#121212] border border-white/5 rounded-xl p-6 text-center space-y-1",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "text-sm font-bold text-[var(--text-h)]",
+					className: "text-sm font-semibold text-white",
 					children: tr("noTournament")
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "text-xs text-[var(--text)]",
+					className: "text-xs text-neutral-400",
 					children: tr("noTournamentSub")
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "app-card border rounded-2xl overflow-hidden",
+				className: "bg-[#121212] border border-white/5 rounded-xl overflow-hidden",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 					type: "button",
 					onClick: () => {
 						triggerHaptic("light");
 						setAwardsOpen((v) => !v);
 					},
-					className: "w-full flex items-center justify-between p-4",
+					className: "w-full flex items-center justify-between p-4 hover:bg-white/5 transition-colors",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "font-bold text-sm text-[var(--text-h)]",
+						className: "font-semibold text-sm text-white",
 						children: tr("awardsHeader")
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 						className: "flex items-center gap-2",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-[11px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 font-bold border border-emerald-500/20",
+							className: "text-[11px] px-2 py-0.5 rounded bg-white/5 text-neutral-300 font-mono border border-white/5",
 							children: badges.length
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-[var(--text)] text-xs",
+							className: "text-neutral-500 text-xs",
 							children: awardsOpen ? "▾" : "▸"
 						})]
 					})]
 				}), awardsOpen && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "px-4 pb-4",
 					children: badges.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-xs text-[var(--text)] text-center py-3",
+						className: "text-xs text-neutral-500 text-center py-3",
 						children: tr("awardsEmpty")
 					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "grid grid-cols-3 gap-2",
 						children: badges.map((b) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "app-input border rounded-xl p-2.5 flex flex-col items-center text-center gap-1",
+							className: "bg-[#0A0A0A] border border-white/5 rounded-lg p-3 flex flex-col items-center text-center gap-1.5",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 								className: "text-2xl",
 								children: b.emoji
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-[10px] font-bold text-[var(--text-h)] leading-tight",
+								className: "text-[10px] font-medium text-neutral-300 leading-tight",
 								children: b.title
 							})]
 						}, b.id))
@@ -13389,23 +13384,23 @@ var TournamentTab = ({ apiUrl, lang, triggerHaptic, isLifetime, isReferral }) =>
 	});
 };
 var ReqRow = ({ done, label, doneLabel, actionLabel, onAction }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-	className: "flex items-center justify-between app-input border rounded-xl p-3",
+	className: "flex items-center justify-between bg-[#0A0A0A] border border-white/5 rounded-lg p-3",
 	children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 		className: "flex items-center gap-2 text-xs",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-			className: `w-5 h-5 rounded-full flex items-center justify-center text-[11px] ${done ? "bg-emerald-500 text-slate-950" : "bg-slate-700/40 text-[var(--text)]"}`,
+			className: `w-4 h-4 rounded-full flex items-center justify-center text-[10px] ${done ? "bg-white text-black" : "bg-white/10 text-neutral-500"}`,
 			children: done ? "✓" : "•"
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-			className: done ? "text-[var(--text-h)] font-semibold" : "text-[var(--text)]",
+			className: done ? "text-white font-medium" : "text-neutral-400",
 			children: label
 		})]
 	}), done ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-		className: "text-[10px] text-emerald-500 font-bold",
+		className: "text-[10px] text-emerald-500 font-semibold",
 		children: doneLabel
 	}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 		type: "button",
 		onClick: onAction,
-		className: "text-[11px] px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 font-bold",
+		className: "text-[11px] px-3 py-1.5 rounded bg-white text-black font-semibold hover:bg-neutral-200 transition-colors",
 		children: actionLabel
 	})]
 });
@@ -13530,7 +13525,7 @@ var MexcPositionCard = ({ pos, lang = "ru" }) => {
 		}
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "w-full bg-[#131823] border border-slate-800/80 rounded-2xl p-4 space-y-3 font-sans shadow-lg text-slate-200",
+		className: "w-full bg-[#121212] border border-white/10 rounded-2xl p-4 space-y-3 font-sans text-[#EDEDED]",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center justify-between",
@@ -13544,12 +13539,12 @@ var MexcPositionCard = ({ pos, lang = "ru" }) => {
 						children: [pos.symbol, " Perpetual"]
 					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-					className: "bg-[#1c2434] text-slate-400 text-[11px] px-2 py-0.5 rounded font-medium border border-slate-800",
+					className: "bg-white/5 text-[#888] text-[10px] px-2 py-0.5 rounded font-medium border border-white/10",
 					children: [
 						pos.marginType || "Cross",
 						" ",
 						pos.leverage,
-						"X >"
+						"X"
 					]
 				})]
 			}),
@@ -13574,10 +13569,10 @@ var MexcPositionCard = ({ pos, lang = "ru" }) => {
 				className: "grid grid-cols-3 gap-y-2.5 gap-x-1 pt-1 text-left",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[10px] text-slate-400 border-b border-dashed border-slate-700 block mb-0.5",
+						className: "text-[10px] text-[#888] block mb-0.5",
 						children: "Size (USDT)"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-xs font-semibold font-mono text-slate-100",
+						className: "text-xs font-medium font-mono text-[#EDEDED]",
 						children: pos.size.toLocaleString()
 					})] }),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -14496,8 +14491,8 @@ function App() {
 	};
 	const isPaperMode = savedSettings ? Boolean(Number(savedSettings.is_paper_trading ?? savedSettings.isPaperTrading ?? savedSettings.is_paper ?? 1)) : Boolean(isPaper);
 	if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "min-h-screen app-bg flex items-center justify-center",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" })
+		className: "min-h-[100dvh] bg-[#0A0A0A] flex items-center justify-center",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-6 h-6 border-2 border-white/20 border-t-white rounded-full animate-spin" })
 	});
 	if (!hasSeenOnboarding) {
 		const steps = ONBOARDING_STEPS[lang] || ONBOARDING_STEPS["en"] || ONBOARDING_STEPS["ru"];
@@ -14531,71 +14526,54 @@ function App() {
 		};
 		const currentLabels = buttonLabels[lang] || buttonLabels["en"] || buttonLabels["ru"];
 		return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "fixed inset-0 w-screen h-screen bg-black text-white select-none overflow-hidden z-[99999] flex flex-col justify-between",
+			className: "fixed inset-0 w-screen h-[100dvh] bg-[#0A0A0A] text-white select-none overflow-hidden z-[99999] flex flex-col justify-between",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("style", { children: `
-        @keyframes onboardingTextAppear {
-          from {
-            opacity: 0;
-            transform: translateY(12px);
+          @keyframes onboardingTextAppear {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
           }
-          to {
-            opacity: 1;
-            transform: translateY(0);
+          .animate-text-step { animation: onboardingTextAppear 0.3s ease-out forwards; }
+          @keyframes kenBurnsZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.04); }
           }
-        }
-        .animate-text-step {
-          animation: onboardingTextAppear 0.35s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
-        }
-
-        /* Эффект плавного приближения фото */
-        @keyframes kenBurnsZoom {
-          0% {
-            transform: scale(1);
-          }
-          100% {
-            transform: scale(1.06);
-          }
-        }
-        .animate-ken-burns {
-          animation: kenBurnsZoom 7s ease-in-out infinite alternate;
-          will-change: transform;
-        }
-      ` }),
+          .animate-ken-burns { animation: kenBurnsZoom 8s ease-in-out infinite alternate; will-change: transform; }
+        ` }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none",
+					className: "absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none opacity-60",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: ONBOARDING_IMAGES[currentStepOnboarding],
 						alt: currentText.title,
 						className: "w-full h-full object-cover animate-ken-burns"
 					})
 				}, currentStepOnboarding),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/85 z-10 pointer-events-none" }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/90 via-[#0A0A0A]/60 to-[#0A0A0A]/95 z-10 pointer-events-none" }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "relative z-20 w-full h-full flex flex-col justify-between px-6 box-border flex-1",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 48px)" },
+						style: { paddingTop: "calc(env(safe-area-inset-top, 0px) + 40px)" },
 						className: "w-full flex flex-col items-start shrink-0 animate-text-step",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "flex gap-1.5 justify-start items-center w-full mb-8",
-								children: ONBOARDING_IMAGES.map((_, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `h-1.5 rounded-full transition-all duration-300 ${idx === currentStepOnboarding ? "w-6 bg-emerald-400" : "w-1.5 bg-white/30"}` }, idx))
+								children: ONBOARDING_IMAGES.map((_, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `h-1 rounded-full transition-all duration-300 ${idx === currentStepOnboarding ? "w-8 bg-white" : "w-2 bg-white/20"}` }, idx))
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-								className: "text-3xl sm:text-4xl font-extrabold tracking-tight text-left uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] leading-none max-w-[85%] w-full mb-3 text-emerald-400",
+								className: "text-2xl font-semibold tracking-tight text-left leading-tight max-w-[90%] w-full mb-3 text-white",
 								children: currentText.title
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-base sm:text-lg font-semibold text-left text-white/90 leading-snug drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)] max-w-[90%] w-full",
+								className: "text-sm text-neutral-300 leading-relaxed max-w-[95%] w-full",
 								children: currentText.desc
 							})
 						]
 					}, currentStepOnboarding), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "w-full pb-[calc(var(--tg-safe-area-inset-bottom,0px)+36px)] pt-4 shrink-0",
+						className: "w-full pb-[calc(env(safe-area-inset-bottom, 0px) + 24px)] pt-4 shrink-0",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 							type: "button",
 							onClick: handleNextStep,
-							className: "w-full py-4 bg-emerald-500 hover:bg-emerald-400 active:scale-[0.97] text-slate-950 font-black text-sm uppercase tracking-wider rounded-2xl shadow-xl shadow-emerald-500/20 transition-all duration-200",
+							className: "w-full py-4 bg-white text-black font-semibold text-sm rounded-xl transition-all active:scale-[0.98]",
 							children: isLastStep ? currentLabels.start : currentLabels.next
 						})
 					})]
@@ -14622,125 +14600,127 @@ function App() {
 		if (savedSettings) applySettingsToForm(savedSettings);
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "h-screen h-[100dvh] w-full app-bg flex flex-col font-sans overflow-hidden",
+		className: "h-[100dvh] w-full bg-[#0A0A0A] text-white flex flex-col font-sans overflow-hidden",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
-				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 48px)" },
-				className: "w-full px-5 pb-4 app-bar border-b flex flex-col gap-2 shrink-0 z-10",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "flex justify-center",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-						type: "button",
-						onClick: handleLinkCycle,
-						className: "min-h-[14px] text-[10px] font-mono tracking-tight text-[var(--text)] opacity-40 hover:opacity-70 transition-opacity select-none",
-						children: LINK_STATES[linkState] || "\xA0"
-					})
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center justify-between",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex items-center gap-3",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							onClick: () => window.Telegram?.WebApp?.openTelegramLink("https://t.me/uptradercrypto"),
-							className: "w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/20 cursor-pointer active:scale-95 transition-transform",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
-								viewBox: "0 0 24 24",
-								className: "w-6 h-6 text-white",
-								fill: "currentColor",
-								"aria-hidden": "true",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M22.05 2.9a1.2 1.2 0 0 0-1.3-.2L2.6 10.4c-1 .4-1 1.8.02 2.15l4.62 1.55 1.7 5.32c.32 1 1.62 1.2 2.22.35l2.4-3.4 4.7 3.45c.75.55 1.83.15 2.03-.75l3.1-14.9c.1-.5-.15-1-.34-1.27zM9.1 14.05l-.9 2.83-.86-2.68 9.5-6.35-7.74 6.2z" })
-							})
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-							className: "font-bold text-sm tracking-wide text-[var(--text-h)]",
-							children: "UPTRADE CRYPTO"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center gap-1.5 mt-0.5",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-2 h-2 rounded-full bg-emerald-500 animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-[11px] text-[var(--text)] font-medium",
-								children: t("subtitle")
-							})]
-						})] })]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex items-center gap-2",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
-								value: lang,
-								onChange: (e) => {
-									triggerHaptic("light");
-									setLang(e.target.value);
-								},
-								className: "app-input border text-[11px] rounded-lg px-2 py-1 outline-none uppercase font-bold focus:border-emerald-500 text-[var(--text-h)]",
+				className: "w-full shrink-0 z-20 flex flex-col border-b border-white/5 bg-[#0A0A0A]",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "flex justify-center border-b border-white/5 py-1",
+						style: { paddingTop: "env(safe-area-inset-top, 0px)" },
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							type: "button",
+							onClick: handleLinkCycle,
+							className: "text-[10px] font-mono tracking-wide text-neutral-500 hover:text-white transition-colors select-none",
+							children: LINK_STATES[linkState] || "\xA0"
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "w-full px-4 pb-3 pt-2 flex flex-col gap-2",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-between",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-center gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									onClick: () => window.Telegram?.WebApp?.openTelegramLink("https://t.me/uptradercrypto"),
+									className: "w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer active:scale-95 transition-transform",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+										viewBox: "0 0 24 24",
+										className: "w-5 h-5 text-white",
+										fill: "currentColor",
+										"aria-hidden": "true",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M22.05 2.9a1.2 1.2 0 0 0-1.3-.2L2.6 10.4c-1 .4-1 1.8.02 2.15l4.62 1.55 1.7 5.32c.32 1 1.62 1.2 2.22.35l2.4-3.4 4.7 3.45c.75.55 1.83.15 2.03-.75l3.1-14.9c.1-.5-.15-1-.34-1.27zM9.1 14.05l-.9 2.83-.86-2.68 9.5-6.35-7.74 6.2z" })
+									})
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+									className: "font-semibold text-sm tracking-wide text-white",
+									children: "Hyperliquid Bot"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "flex items-center gap-1.5 mt-0.5",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-[11px] text-neutral-400 font-medium",
+										children: "By Uptradercrypto"
+									})]
+								})] })]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-center gap-2",
 								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-										value: "ru",
-										className: "app-bg",
-										children: "RU"
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+										value: lang,
+										onChange: (e) => {
+											triggerHaptic("light");
+											setLang(e.target.value);
+										},
+										className: "bg-[#121212] border border-white/10 text-[11px] rounded-lg px-2 py-1.5 outline-none uppercase font-semibold text-white appearance-none",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												value: "ru",
+												children: "RU"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												value: "en",
+												children: "EN"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												value: "es",
+												children: "ES"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												value: "zh",
+												children: "ZH"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												value: "tr",
+												children: "TR"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												value: "de",
+												children: "DE"
+											})
+										]
 									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-										value: "en",
-										className: "app-bg",
-										children: "EN"
+									!apiUid && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+										type: "button",
+										onClick: () => {
+											triggerHaptic("light");
+											setIsKeyModalOpen(true);
+										},
+										className: "px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-all cursor-pointer active:scale-95 shrink-0",
+										children: "Connect HL"
 									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-										value: "es",
-										className: "app-bg",
-										children: "ES"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-										value: "zh",
-										className: "app-bg",
-										children: "ZH"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-										value: "tr",
-										className: "app-bg",
-										children: "TR"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-										value: "de",
-										className: "app-bg",
-										children: "DE"
+									apiUid && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+										href: "https://www.youtube.com/@uptradercrypto",
+										target: "_blank",
+										rel: "noopener noreferrer",
+										onClick: (e) => {
+											e.preventDefault();
+											triggerHaptic("light");
+											window.Telegram?.WebApp?.openLink("https://www.youtube.com/@uptradercrypto");
+										},
+										className: "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-all cursor-pointer active:scale-95 shrink-0",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+											viewBox: "0 0 24 24",
+											className: "w-3.5 h-3.5",
+											fill: "currentColor",
+											"aria-hidden": "true",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" })
+										}), "Academy"]
 									})
 								]
-							}),
-							!isReferral && !isLifetime && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-								type: "button",
-								onClick: () => {
-									triggerHaptic("light");
-									setShowTrialModal(true);
-								},
-								className: "px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all cursor-pointer active:scale-95",
-								children: t("trialBadge")
-							}),
-							!isReferral && isLifetime && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-								href: "https://www.youtube.com/@uptradercrypto",
-								target: "_blank",
-								rel: "noopener noreferrer",
-								onClick: () => {
-									triggerHaptic("light");
-									window.Telegram?.WebApp?.openLink("https://www.youtube.com/@uptradercrypto");
-								},
-								className: "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 hover:bg-red-500/20 transition-all cursor-pointer active:scale-95",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
-									viewBox: "0 0 24 24",
-									className: "w-3.5 h-3.5",
-									fill: "currentColor",
-									"aria-hidden": "true",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" })
-								}), t("academyBadge")]
-							})
-						]
-					})]
-				})]
+							})]
+						})
+					}),
+					" "
+				]
 			}),
-			shortcut.visible && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: `relative px-5 pt-3 transition-opacity duration-500 ${shortcut.fading ? "opacity-0" : "opacity-100"}`,
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-[6px] left-[34px] w-3 h-3 rotate-45 bg-emerald-500/10 border-l border-t border-emerald-500/20" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "relative flex items-center gap-2.5 pl-1.5 pr-2 py-1.5 rounded-2xl rounded-tl-sm bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm",
+			shortcut.visible && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: `relative px-4 pt-3 transition-opacity duration-500 ${shortcut.fading ? "opacity-0" : "opacity-100"}`,
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "relative flex items-center gap-2.5 pl-1.5 pr-2 py-1.5 rounded-lg bg-[#121212] border border-white/10",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 							type: "button",
 							onClick: shortcut.handleAdd,
-							className: "w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/20 active:scale-95 transition-transform shrink-0",
+							className: "w-8 h-8 rounded bg-white/5 flex items-center justify-center active:scale-95 transition-transform shrink-0",
 							"aria-label": t("addToHomeScreen"),
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "relative w-5 h-5",
@@ -14768,30 +14748,30 @@ function App() {
 							})
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 leading-tight",
-							children: t("addToHomeScreen")
+							className: "text-[11px] font-medium text-white leading-tight",
+							children: t("addToHomeScreen") || "Добавить на рабочий стол"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 							type: "button",
 							onClick: shortcut.handleDismiss,
-							className: "ml-1 w-5 h-5 rounded-full flex items-center justify-center text-emerald-600/60 dark:text-emerald-400/60 hover:bg-emerald-500/20 active:scale-90 transition shrink-0",
+							className: "ml-auto w-6 h-6 rounded flex items-center justify-center text-neutral-500 hover:text-white active:scale-90 transition shrink-0",
 							"aria-label": "Dismiss",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
 								viewBox: "0 0 24 24",
-								className: "w-3 h-3",
+								className: "w-3.5 h-3.5",
 								fill: "none",
 								stroke: "currentColor",
-								strokeWidth: "3",
+								strokeWidth: "2",
 								strokeLinecap: "round",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M6 6l12 12M18 6L6 18" })
 							})
 						})
 					]
-				})]
+				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
-				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 18px)" },
-				className: "flex-1 w-full overflow-y-auto overscroll-contain p-4 space-y-4 pb-24 no-scrollbar",
+				style: { paddingTop: "12px" },
+				className: "flex-1 w-full overflow-y-auto overscroll-contain px-4 pb-24 space-y-4 no-scrollbar",
 				children: [
 					activeTab === "scanner" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ScannerTab, {
 						apiUrl: API_URL,
@@ -14808,56 +14788,56 @@ function App() {
 					}),
 					activeTab === "status" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "space-y-4 animate-fadeIn",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "p-5 rounded-2xl app-card border relative overflow-hidden",
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl" }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-xs text-[var(--text)] font-medium",
-									children: t("accountBalance")
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "text-3xl font-extrabold mt-1 text-[var(--text-h)] tracking-tight",
-									children: [
-										Boolean(Number(savedSettings?.is_paper_trading ?? (isPaper ? 1 : 0))) ? "∞" : balance ? `$${balance}` : t("hiddenBalance"),
-										" ",
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-											className: "text-sm font-normal text-[var(--text)]",
-											children: "USDT"
-										})
-									]
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-[var(--border)] text-xs",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-[var(--text)] block",
-										children: t("modeLabel")
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: `font-semibold ${isPaperMode ? "text-amber-500" : "text-emerald-500"}`,
-										children: isPaperMode ? t("demoMode") : t("realMode")
-									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-[var(--text)] block",
-										children: t("riskPerTrade")
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-										className: "font-semibold text-[var(--text-h)]",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-5 rounded-xl bg-[#121212] border border-white/5 relative",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-xs text-neutral-400 font-medium",
+										children: t("accountBalance")
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "text-3xl font-semibold mt-1 text-white tracking-tight",
 										children: [
-											"$",
-											risk,
-											" USDT"
+											Boolean(Number(savedSettings?.is_paper_trading ?? (isPaper ? 1 : 0))) ? "∞" : balance ? `$${balance}` : t("hiddenBalance"),
+											" ",
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-sm font-normal text-neutral-500",
+												children: "USDT"
+											})
 										]
-									})] })]
-								})
-							]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "space-y-3",
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-white/5 text-xs",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "text-neutral-500 block",
+											children: t("modeLabel")
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: `font-semibold ${isPaperMode ? "text-amber-500" : "text-emerald-500"}`,
+											children: isPaperMode ? t("demoMode") : t("realMode")
+										})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "text-neutral-500 block",
+											children: t("riskPerTrade")
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+											className: "font-semibold text-white",
+											children: [
+												"$",
+												risk,
+												" USDT"
+											]
+										})] })]
+									})
+								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "space-y-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "flex justify-between items-center px-1",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-										className: "font-bold text-sm text-[var(--text-h)]",
+										className: "font-semibold text-sm text-white",
 										children: t("activePositions")
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-										className: "text-[11px] px-2 py-0.5 rounded bg-[var(--bg)] text-[var(--text)] border border-[var(--border)] font-mono",
+										className: "text-[11px] px-2 py-0.5 rounded bg-[#121212] text-neutral-400 border border-white/5 font-mono",
 										children: [
 											(positions || []).length,
 											" / ",
@@ -14866,94 +14846,94 @@ function App() {
 											t("openCount")
 										]
 									})]
-								}),
-								!positions || positions.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: "text-center py-8 border border-dashed rounded-xl app-card",
+								}), !positions || positions.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "text-center py-8 border border-white/5 rounded-xl bg-[#121212]",
 									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "text-xs text-[var(--text)]",
+										className: "text-xs text-neutral-500",
 										children: t("noSignals")
 									})
 								}) : positions.map((pos) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MexcPositionCard, {
 									pos,
 									lang
-								}, pos.id || pos.symbol)),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: "flex gap-4 overflow-x-auto pb-4 pt-2 no-scrollbar snap-x",
-									children: [
-										{
-											name: "TG Channel",
-											url: "https://t.me/uptradercrypto",
-											icon: "📢",
-											show: true
-										},
-										{
-											name: "150x DEX",
-											url: "https://www.asterdex.com/en/referral/79D00a",
-											icon: "⚡",
-											show: true
-										},
-										{
-											name: "Hyperliquid",
-											url: "https://app.hyperliquid.xyz/join/SETUP",
-											icon: "🌊",
-											show: true
-										},
-										{
-											name: "TG Gifts",
-											url: "https://t.me/tonnel_network_bot/gifts?startapp=ref_1711018223",
-											icon: "🎁",
-											show: true
-										},
-										{
-											name: "Whitebird",
-											url: "https://whitebird.io/signup?refid=QlszuAvf",
-											icon: "🕊️",
-											show: [
-												"ru",
-												"en",
-												"tr",
-												"de"
-											].includes(lang)
-										}
-									].filter((l) => l.show).map((link, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-										href: link.url,
-										target: "_blank",
-										rel: "noopener noreferrer",
-										onClick: (e) => {
-											e.preventDefault();
-											triggerHaptic("light");
-											window.Telegram?.WebApp?.openLink(link.url);
-										},
-										className: "flex flex-col items-center gap-1.5 shrink-0 snap-start active:scale-95 transition-transform",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-											className: "w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xl shadow-lg",
-											children: link.icon
-										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-											className: "text-[10px] text-slate-400 font-medium text-center w-[60px] leading-tight",
-											children: link.name
-										})]
-									}, i))
-								})
-							]
-						})]
+								}, pos.id || pos.symbol))]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "grid grid-cols-3 gap-2",
+								children: [
+									{
+										name: "TG Channel",
+										url: "https://t.me/uptradercrypto",
+										icon: "📢",
+										show: true
+									},
+									{
+										name: "150x DEX",
+										url: "https://www.asterdex.com/en/referral/79D00a",
+										icon: "⚡",
+										show: true
+									},
+									{
+										name: "Hyperliquid",
+										url: "https://app.hyperliquid.xyz/join/SETUP",
+										icon: "🌊",
+										show: true
+									},
+									{
+										name: "TG Gifts",
+										url: "https://t.me/tonnel_network_bot/gifts?startapp=ref_1711018223",
+										icon: "🎁",
+										show: true
+									},
+									{
+										name: "Whitebird",
+										url: "https://whitebird.io/signup?refid=QlszuAvf",
+										icon: "🕊️",
+										show: [
+											"ru",
+											"en",
+											"tr",
+											"de"
+										].includes(lang)
+									}
+								].filter((l) => l.show).map((link, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: link.url,
+									target: "_blank",
+									rel: "noopener noreferrer",
+									onClick: (e) => {
+										e.preventDefault();
+										triggerHaptic("light");
+										window.Telegram?.WebApp?.openLink(link.url);
+									},
+									className: "flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#121212] border border-white/5 hover:border-white/10 hover:bg-white/5 active:scale-95 transition-all",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-lg",
+										children: link.icon
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-[10px] text-neutral-400 font-medium text-center leading-tight",
+										children: link.name
+									})]
+								}, i))
+							})
+						]
 					}),
+					" // Закрываем activeTab === 'status'",
 					activeTab === "settings" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "space-y-4 animate-fadeIn",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "p-5 rounded-2xl app-card border space-y-5",
+							className: "p-5 rounded-xl bg-[#121212] border border-white/5 space-y-6",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "font-bold text-sm text-[var(--text-h)] mb-3",
+									className: "font-semibold text-sm text-white mb-3",
 									children: t("botModeHeader")
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "grid grid-cols-2 app-input p-1 rounded-xl border",
+									className: "grid grid-cols-2 bg-[#0A0A0A] p-1 rounded-lg border border-white/5",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 										type: "button",
 										onClick: () => {
 											triggerHaptic("light");
 											setIsPaper(true);
 										},
-										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${isPaper ? "bg-[var(--bg)] text-amber-500 shadow border border-[var(--border)]" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
+										className: `py-2 text-xs font-semibold rounded-md transition-all ${isPaper ? "bg-white/10 text-white" : "text-neutral-500 hover:text-neutral-300"}`,
 										children: t("demoBtn")
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 										type: "button",
@@ -14961,46 +14941,46 @@ function App() {
 											triggerHaptic("light");
 											setIsPaper(false);
 										},
-										className: `py-2.5 text-xs font-semibold rounded-lg transition-all ${!isPaper ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/20" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
+										className: `py-2 text-xs font-semibold rounded-md transition-all ${!isPaper ? "bg-white text-black" : "text-neutral-500 hover:text-neutral-300"}`,
 										children: t("realBtn")
 									})]
 								})] }),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "space-y-3",
+									className: "space-y-4",
 									children: [
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-											className: "font-bold text-sm text-[var(--text-h)]",
+											className: "font-semibold text-sm text-white",
 											children: t("riskManagementHeader")
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											className: "grid grid-cols-2 gap-3",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "text-[11px] text-[var(--text)] font-medium block mb-1.5",
+												className: "text-[11px] text-neutral-400 font-medium block mb-1.5",
 												children: t("riskInputLabel")
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 												type: "number",
 												value: risk,
 												onChange: handleNumberChange(setRisk),
 												placeholder: "10",
-												className: `w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none transition-all text-[var(--text-h)] ${isRiskInvalid ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
+												className: `w-full bg-[#0A0A0A] border rounded-lg p-3 text-sm font-semibold outline-none transition-all text-white ${isRiskInvalid ? "border-red-500/50 bg-red-500/5 focus:border-red-500" : "border-white/10 focus:border-white/30"}`
 											})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "text-[11px] text-[var(--text)] font-medium block mb-1.5",
+												className: "text-[11px] text-neutral-400 font-medium block mb-1.5",
 												children: t("maxPositionsLabel")
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 												type: "number",
 												value: maxPositions,
 												onChange: handleNumberChange(setMaxPositions),
 												placeholder: "3",
-												className: `w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none transition-all text-[var(--text-h)] ${isMaxPositionsInvalid ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
+												className: `w-full bg-[#0A0A0A] border rounded-lg p-3 text-sm font-semibold outline-none transition-all text-white ${isMaxPositionsInvalid ? "border-red-500/50 bg-red-500/5 focus:border-red-500" : "border-white/10 focus:border-white/30"}`
 											})] })]
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-											className: "flex items-center justify-between app-input p-3 rounded-xl border",
+											className: "flex items-center justify-between bg-[#0A0A0A] p-3 rounded-lg border border-white/5",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-												className: "text-xs font-semibold text-[var(--text-h)] block",
+												className: "text-xs font-semibold text-white block",
 												children: t("useMaxLeverageLabel")
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-												className: "text-[10px] text-[var(--text)] block mt-0.5",
+												className: "text-[10px] text-neutral-500 block mt-0.5",
 												children: t("useMaxLeverageDesc")
 											})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 												type: "button",
@@ -15008,55 +14988,45 @@ function App() {
 													triggerHaptic("light");
 													setUseMaxLeverage(!useMaxLeverage);
 												},
-												className: `w-11 h-6 rounded-full p-1 transition-colors shrink-0 ${useMaxLeverage ? "bg-emerald-500" : "bg-slate-400 dark:bg-slate-700"}`,
-												children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `w-4 h-4 bg-white rounded-full transition-transform ${useMaxLeverage ? "translate-x-5" : "translate-x-0"}` })
+												className: `w-10 h-5 rounded-full p-0.5 transition-colors shrink-0 ${useMaxLeverage ? "bg-white" : "bg-white/10"}`,
+												children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `w-4 h-4 rounded-full transition-transform ${useMaxLeverage ? "bg-black translate-x-5" : "bg-neutral-400 translate-x-0"}` })
 											})]
 										}),
 										!useMaxLeverage && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											className: "animate-fadeIn",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "text-[11px] text-[var(--text)] font-medium block mb-1.5",
+												className: "text-[11px] text-neutral-400 font-medium block mb-1.5",
 												children: t("leverageInputLabel")
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 												type: "number",
 												value: leverage,
 												onChange: handleNumberChange(setLeverage),
 												placeholder: "10",
-												className: `w-full app-input border rounded-xl p-3 text-sm font-semibold outline-none transition-all text-[var(--text-h)] ${isLeverageInvalid ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
+												className: `w-full bg-[#0A0A0A] border rounded-lg p-3 text-sm font-semibold outline-none transition-all text-white ${isLeverageInvalid ? "border-red-500/50 bg-red-500/5 focus:border-red-500" : "border-white/10 focus:border-white/30"}`
 											})]
 										})
 									]
 								}),
 								!isPaper && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "pt-2 border-t border-[var(--border)] animate-fadeIn space-y-3",
+									className: "pt-4 border-t border-white/5 animate-fadeIn space-y-4",
 									children: [
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-											className: "font-bold text-xs text-amber-500",
-											children: t("mexcApiHeader")
+											className: "font-semibold text-xs text-white",
+											children: t("mexcApiHeader") || "Hyperliquid API"
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-											className: "text-[11px] text-[var(--text)] font-medium block mb-1",
-											children: t("apiUidLabel")
+											className: "text-[11px] text-neutral-400 font-medium block mb-1",
+											children: t("apiUidLabel") || "Main Wallet"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 											type: "text",
-											placeholder: "578246...",
+											placeholder: "0x...",
 											value: apiUid,
 											onChange: (e) => setApiUid(e.target.value),
-											className: `w-full app-input border rounded-xl p-3 text-xs font-mono outline-none transition-all text-[var(--text-h)] ${!isPaper && !apiUid?.toString().trim() ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
+											className: `w-full bg-[#0A0A0A] border rounded-lg p-3 text-xs font-mono outline-none transition-all text-white ${!isPaper && !apiUid?.toString().trim() ? "border-red-500/50 bg-red-500/5 focus:border-red-500" : "border-white/10 focus:border-white/30"}`
 										})] }),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-											className: "text-[11px] text-[var(--text)] font-medium block mb-1",
-											children: t("apiKeyLabel")
-										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-											type: "text",
-											placeholder: "mx0glk...",
-											value: apiKey,
-											onChange: (e) => setApiKey(e.target.value),
-											className: `w-full app-input border rounded-xl p-3 text-xs font-mono outline-none transition-all text-[var(--text-h)] ${!isPaper && !apiKey?.toString().trim() ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
-										})] }),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-											className: "text-[11px] text-[var(--text)] font-medium block mb-1",
-											children: t("apiSecretLabel")
+											className: "text-[11px] text-neutral-400 font-medium block mb-1",
+											children: t("apiSecretLabel") || "Agent Private Key"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											className: "relative",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
@@ -15064,28 +15034,28 @@ function App() {
 												placeholder: "••••••••••••••••",
 												value: apiSecret,
 												onChange: (e) => setApiSecret(e.target.value),
-												className: `w-full app-input border rounded-xl p-3 pr-10 text-xs font-mono outline-none transition-all text-[var(--text-h)] ${!isPaper && !apiSecret?.toString().trim() ? "border-red-500 bg-red-500/5 focus:border-red-500" : "focus:border-emerald-500 border-[var(--border)]"}`
+												className: `w-full bg-[#0A0A0A] border rounded-lg p-3 pr-10 text-xs font-mono outline-none transition-all text-white ${!isPaper && !apiSecret?.toString().trim() ? "border-red-500/50 bg-red-500/5 focus:border-red-500" : "border-white/10 focus:border-white/30"}`
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 												type: "button",
 												onClick: () => {
 													triggerHaptic("light");
 													setShowSecret(!showSecret);
 												},
-												className: "absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text)] hover:text-[var(--text-h)] text-xs",
+												className: "absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-white text-xs transition-colors",
 												children: showSecret ? "👁️" : "🔒"
 											})]
 										})] })
 									]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "pt-2 border-t border-[var(--border)] space-y-3",
+									className: "pt-4 border-t border-white/5 space-y-3",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 										className: "flex items-center justify-between",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-											className: "font-bold text-sm text-[var(--text-h)]",
+											className: "font-semibold text-sm text-white",
 											children: t("pairsHeader") || "Торговые пары"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-											className: "text-[10px] text-[var(--text)]",
+											className: "text-[10px] text-neutral-500 font-mono",
 											children: [
 												pairs.length,
 												" / ",
@@ -15102,7 +15072,7 @@ function App() {
 													triggerHaptic("light");
 													setPairs((prev) => prev.includes(p.id) ? prev.filter((x) => x !== p.id) : [...prev, p.id]);
 												},
-												className: `flex items-center justify-between px-3 py-2.5 rounded-xl border text-xs font-semibold transition-all ${on ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-500" : "border-[var(--border)] app-input text-[var(--text)]"}`,
+												className: `flex items-center justify-between px-3 py-2.5 rounded-lg border text-xs font-semibold transition-all ${on ? "border-white/20 bg-white/5 text-white" : "border-white/5 bg-[#0A0A0A] text-neutral-400"}`,
 												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 													className: "flex items-center gap-2",
 													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -15110,29 +15080,29 @@ function App() {
 														children: p.icon
 													}), p.label]
 												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-													className: `w-9 h-5 rounded-full p-0.5 transition-colors ${on ? "bg-emerald-500" : "bg-slate-400/50"}`,
-													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block w-4 h-4 bg-white rounded-full transition-transform ${on ? "translate-x-4" : "translate-x-0"}` })
+													className: `w-8 h-4 rounded-full p-0.5 transition-colors ${on ? "bg-white" : "bg-white/10"}`,
+													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block w-3 h-3 rounded-full transition-transform ${on ? "bg-black translate-x-4" : "bg-neutral-500 translate-x-0"}` })
 												})]
 											}, p.id);
 										})
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "pt-2 border-t border-[var(--border)] space-y-3",
+									className: "pt-4 border-t border-white/5 space-y-3",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-										className: "font-bold text-sm text-[var(--text-h)]",
+										className: "font-semibold text-sm text-white",
 										children: t("htfContextHeader") || "HTF Context"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "text-[10px] text-[var(--text)] opacity-70 mt-0.5",
+										className: "text-[10px] text-neutral-500 mt-0.5",
 										children: t("htfContextSub")
 									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 										className: "space-y-2",
 										children: HTF_CONTEXT.map((s) => {
 											const on = htfContext.includes(s.id);
 											return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-												className: "flex items-center justify-between app-input border rounded-xl p-3",
+												className: "flex items-center justify-between bg-[#0A0A0A] border border-white/5 rounded-lg p-3",
 												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-													className: `text-xs font-semibold ${on ? "text-[var(--text-h)]" : "text-[var(--text)]"}`,
+													className: `text-xs font-semibold ${on ? "text-white" : "text-neutral-500"}`,
 													children: s.label
 												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 													type: "button",
@@ -15140,20 +15110,20 @@ function App() {
 														triggerHaptic("light");
 														setHtfContext((prev) => prev.includes(s.id) ? prev.filter((x) => x !== s.id) : [...prev, s.id]);
 													},
-													className: `w-11 h-6 rounded-full p-1 transition-colors shrink-0 ${on ? "bg-emerald-500" : "bg-slate-400 dark:bg-slate-700"}`,
-													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `w-4 h-4 bg-white rounded-full transition-transform ${on ? "translate-x-5" : "translate-x-0"}` })
+													className: `w-10 h-5 rounded-full p-0.5 transition-colors shrink-0 ${on ? "bg-white" : "bg-white/10"}`,
+													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `w-4 h-4 rounded-full transition-transform ${on ? "bg-black translate-x-5" : "bg-neutral-500 translate-x-0"}` })
 												})]
 											}, s.id);
 										})
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "pt-2 border-t border-[var(--border)] space-y-3",
+									className: "pt-4 border-t border-white/5 space-y-3",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-										className: "font-bold text-sm text-[var(--text-h)]",
+										className: "font-semibold text-sm text-white",
 										children: t("ltfEntryHeader") || "LTF Entry"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "text-[10px] text-[var(--text)] opacity-70 mt-0.5",
+										className: "text-[10px] text-neutral-500 mt-0.5",
 										children: t("ltfEntrySub")
 									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 										className: "space-y-2",
@@ -15165,34 +15135,34 @@ function App() {
 													triggerHaptic("light");
 													setEntryTrigger(s.id);
 												},
-												className: `w-full flex items-center justify-between app-input border rounded-xl p-3 transition-colors ${on ? "border-emerald-500" : ""}`,
+												className: `w-full flex items-center justify-between bg-[#0A0A0A] border rounded-lg p-3 transition-colors ${on ? "border-white/20" : "border-white/5"}`,
 												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-													className: `text-xs font-semibold ${on ? "text-[var(--text-h)]" : "text-[var(--text)]"}`,
+													className: `text-xs font-semibold ${on ? "text-white" : "text-neutral-500"}`,
 													children: s.label
 												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-													className: `w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${on ? "border-emerald-500" : "border-slate-400 dark:border-slate-700"}`,
-													children: on && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-2 h-2 rounded-full bg-emerald-500" })
+													className: `w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${on ? "border-white" : "border-neutral-600"}`,
+													children: on && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-2 h-2 rounded-full bg-white" })
 												})]
 											}, s.id);
 										})
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "pt-2 border-t border-[var(--border)] space-y-3",
+									className: "pt-4 border-t border-white/5 space-y-3",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-										className: "font-bold text-sm text-[var(--text-h)]",
+										className: "font-semibold text-sm text-white",
 										children: t("confirmationsHeader") || "Confirmations"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "text-[10px] text-[var(--text)] opacity-70 mt-0.5",
+										className: "text-[10px] text-neutral-500 mt-0.5",
 										children: t("confirmationsSub")
 									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 										className: "space-y-2",
 										children: CONFIRMATIONS.map((s) => {
 											const on = confirmations.includes(s.id);
 											return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-												className: "flex items-center justify-between app-input border rounded-xl p-3",
+												className: "flex items-center justify-between bg-[#0A0A0A] border border-white/5 rounded-lg p-3",
 												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-													className: `text-xs font-semibold ${on ? "text-[var(--text-h)]" : "text-[var(--text)]"}`,
+													className: `text-xs font-semibold ${on ? "text-white" : "text-neutral-500"}`,
 													children: s.label
 												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 													type: "button",
@@ -15200,8 +15170,8 @@ function App() {
 														triggerHaptic("light");
 														setConfirmations((prev) => prev.includes(s.id) ? prev.filter((x) => x !== s.id) : [...prev, s.id]);
 													},
-													className: `w-11 h-6 rounded-full p-1 transition-colors shrink-0 ${on ? "bg-emerald-500" : "bg-slate-400 dark:bg-slate-700"}`,
-													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `w-4 h-4 bg-white rounded-full transition-transform ${on ? "translate-x-5" : "translate-x-0"}` })
+													className: `w-10 h-5 rounded-full p-0.5 transition-colors shrink-0 ${on ? "bg-white" : "bg-white/10"}`,
+													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `w-4 h-4 rounded-full transition-transform ${on ? "bg-black translate-x-5" : "bg-neutral-500 translate-x-0"}` })
 												})]
 											}, s.id);
 										})
@@ -15211,7 +15181,7 @@ function App() {
 									type: "button",
 									onClick: handleSaveSettings,
 									disabled: isFormInvalid,
-									className: "w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-emerald-500 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/10 active:scale-[0.99]",
+									className: "w-full bg-white text-black font-semibold py-3.5 rounded-lg text-xs tracking-wide transition-all disabled:opacity-30 disabled:cursor-not-allowed mt-4",
 									children: t("saveBtn")
 								})
 							]
@@ -15225,26 +15195,26 @@ function App() {
 						isReferral
 					}),
 					activeTab === "sub" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "p-6 rounded-2xl app-card border text-center space-y-4 animate-fadeIn",
+						className: "p-6 rounded-xl bg-[#121212] border border-white/5 text-center space-y-4 animate-fadeIn",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "w-12 h-12 bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold",
+								className: "w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center mx-auto text-lg",
 								children: "⚡"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-								className: "font-bold text-base text-[var(--text-h)]",
+								className: "font-semibold text-base text-white",
 								children: t("vipTitle")
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-xs text-[var(--text)] mt-1 max-w-xs mx-auto",
+								className: "text-xs text-neutral-400 mt-1 max-w-xs mx-auto",
 								children: t("vipDesc")
 							})] }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "py-2",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-4xl font-black text-[var(--text-h)]",
+									className: "text-3xl font-semibold text-white",
 									children: "$100"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-xs text-[var(--text)]",
+									className: "text-xs text-neutral-500",
 									children: [" ", t("perMonth")]
 								})]
 							}),
@@ -15252,8 +15222,8 @@ function App() {
 								type: "button",
 								onClick: handleCreateInvoice,
 								disabled: subLoading,
-								className: "w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/10 active:scale-[0.99] flex items-center justify-center gap-2",
-								children: subLoading ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" }) : t("payBtn")
+								className: "w-full bg-white text-black font-semibold py-3.5 rounded-lg text-xs tracking-wide transition-all disabled:opacity-50 flex items-center justify-center gap-2",
+								children: subLoading ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" }) : t("payBtn")
 							})
 						]
 					})
@@ -15266,9 +15236,9 @@ function App() {
 				referralLink: "https://app.hyperliquid.xyz/join/SETUP"
 			}),
 			showTrialModal && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center p-4 animate-fadeIn",
+				className: "fixed inset-0 z-50 bg-black/80 flex items-end sm:items-center justify-center p-4 animate-fadeIn",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "w-full max-w-md app-card rounded-2xl border border-[var(--border)] p-5 space-y-4 shadow-2xl relative",
+					className: "w-full max-w-md bg-[#121212] rounded-xl border border-white/10 p-5 space-y-4 relative",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 							type: "button",
@@ -15276,25 +15246,25 @@ function App() {
 								triggerHaptic("light");
 								setShowTrialModal(false);
 							},
-							className: "absolute top-4 right-4 w-7 h-7 rounded-full flex items-center justify-center text-[var(--text)] hover:text-[var(--text-h)] hover:bg-[var(--bg)] transition text-xs font-bold",
+							className: "absolute top-4 right-4 w-6 h-6 flex items-center justify-center text-neutral-500 hover:text-white transition text-xs font-bold",
 							"aria-label": "Close",
 							children: "✕"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-start gap-3 pr-8",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0",
+								className: "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-emerald-500 text-lg",
+									className: "text-white text-lg",
 									children: "✦"
 								})
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex-1",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "text-sm font-bold text-[var(--text-h)] leading-snug",
+									className: "text-sm font-semibold text-white leading-snug",
 									children: t("trialTitle")
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "text-[11px] text-[var(--text)] leading-relaxed mt-1",
+									className: "text-[11px] text-neutral-400 leading-relaxed mt-1",
 									children: t("trialDesc")
 								})]
 							})]
@@ -15310,18 +15280,18 @@ function App() {
 									if (tg?.openLink) tg.openLink(referralLink);
 									else window.open(referralLink, "_blank");
 								},
-								className: "w-full flex items-center justify-between gap-3 app-input border rounded-xl p-3 text-left hover:border-emerald-500/40 active:scale-[0.99] transition-all",
+								className: "w-full flex items-center justify-between gap-3 bg-[#0A0A0A] border border-white/5 rounded-lg p-3 text-left hover:border-white/10 transition-all",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "flex-1 min-w-0",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-xs font-semibold text-[var(--text-h)] block",
+										className: "text-xs font-semibold text-white block",
 										children: t("trialOptionNewAccount")
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-[10px] text-[var(--text)] block mt-0.5 leading-snug",
+										className: "text-[10px] text-neutral-500 block mt-0.5 leading-snug",
 										children: t("trialOptionNewAccountSub")
 									})]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-[10px] font-bold px-2 py-1 rounded-lg bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 shrink-0",
+									className: "text-[10px] font-semibold px-2 py-1 rounded bg-white/5 text-white shrink-0",
 									children: t("trialOptionFree")
 								})]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
@@ -15331,52 +15301,52 @@ function App() {
 									setShowTrialModal(false);
 									handleTabChange("sub");
 								},
-								className: "w-full flex items-center justify-between gap-3 app-input border rounded-xl p-3 text-left hover:border-amber-500/40 active:scale-[0.99] transition-all",
+								className: "w-full flex items-center justify-between gap-3 bg-[#0A0A0A] border border-white/5 rounded-lg p-3 text-left hover:border-white/10 transition-all",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "flex-1 min-w-0",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-xs font-semibold text-[var(--text-h)] block",
+										className: "text-xs font-semibold text-white block",
 										children: t("trialOptionPay")
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-[10px] text-[var(--text)] block mt-0.5 leading-snug",
+										className: "text-[10px] text-neutral-500 block mt-0.5 leading-snug",
 										children: t("trialOptionPaySub")
 									})]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-[10px] font-bold px-2 py-1 rounded-lg bg-amber-500/10 text-amber-500 border border-amber-500/20 shrink-0",
+									className: "text-[10px] font-semibold px-2 py-1 rounded bg-white/5 text-white shrink-0",
 									children: "$100"
 								})]
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-[10px] text-[var(--text)] opacity-70 text-center leading-snug",
+							className: "text-[10px] text-neutral-500 text-center leading-snug",
 							children: t("trialFooter")
 						})
 					]
 				})
 			}),
 			showSavePrompt && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn",
+				className: "fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-fadeIn",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "w-full max-w-sm app-card rounded-2xl border border-[var(--border)] p-5 space-y-4 shadow-2xl",
+					className: "w-full max-w-sm bg-[#121212] rounded-xl border border-white/10 p-5 space-y-4",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-						className: "text-sm font-bold text-[var(--text-h)] text-center",
+						className: "text-sm font-semibold text-white text-center",
 						children: t("saveChangesTitle") || "Сохранить изменения?"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "flex flex-col gap-2",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								onClick: confirmSaveAndLeave,
-								className: "w-full py-3 bg-emerald-500 text-slate-950 font-bold rounded-xl text-xs uppercase tracking-wider",
+								className: "w-full py-3 bg-white text-black font-semibold rounded-lg text-xs transition-all",
 								children: t("saveBtn")
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								onClick: () => setShowSavePrompt(false),
-								className: "w-full py-3 bg-slate-800 text-white font-bold rounded-xl text-xs uppercase tracking-wider border border-slate-700",
+								className: "w-full py-3 bg-white/5 text-white font-semibold rounded-lg text-xs border border-white/10 hover:bg-white/10 transition-all",
 								children: t("discardBtn") || "Не сохранять"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								onClick: confirmDiscardAndLeave,
-								className: "w-full py-3 bg-rose-500/10 text-rose-500 font-bold rounded-xl text-xs uppercase tracking-wider border border-rose-500/20",
+								className: "w-full py-3 bg-red-500/10 text-red-500 font-semibold rounded-lg text-xs border border-red-500/20 hover:bg-red-500/20 transition-all",
 								children: t("discardLeaveBtn") || "Не сохранять и уйти"
 							})
 						]
@@ -15384,30 +15354,30 @@ function App() {
 				})
 			}),
 			showTournamentReqModal && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center p-4 animate-fadeIn",
+				className: "fixed inset-0 z-50 bg-black/80 flex items-end sm:items-center justify-center p-4 animate-fadeIn",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "w-full max-w-md app-card rounded-2xl border border-[var(--border)] p-5 space-y-4 shadow-2xl relative",
+					className: "w-full max-w-md bg-[#121212] rounded-xl border border-white/10 p-5 space-y-4 relative",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 							onClick: () => setShowTournamentReqModal(false),
-							className: "absolute top-4 right-4 w-7 h-7 rounded-full flex items-center justify-center text-[var(--text)] hover:bg-[var(--bg)] text-xs font-bold",
+							className: "absolute top-4 right-4 w-6 h-6 flex items-center justify-center text-neutral-500 hover:text-white transition text-xs font-bold",
 							children: "✕"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-start gap-3 pr-8",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0",
+								className: "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-amber-500 text-lg",
+									className: "text-white text-lg",
 									children: "🏆"
 								})
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex-1",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "text-sm font-bold text-[var(--text-h)] leading-snug",
+									className: "text-sm font-semibold text-white leading-snug",
 									children: t("tournReqTitle") || "Доступ к турнирам"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "text-[11px] text-[var(--text)] leading-relaxed mt-1",
+									className: "text-[11px] text-neutral-400 leading-relaxed mt-1",
 									children: t("tournReqDesc") || "Для участия в спринтах выполните условия:"
 								})]
 							})]
@@ -15415,42 +15385,42 @@ function App() {
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "space-y-2",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex items-center justify-between app-input border rounded-xl p-3",
+								className: "flex items-center justify-between bg-[#0A0A0A] border border-white/5 rounded-lg p-3",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-xs font-semibold text-[var(--text-h)]",
+									className: "text-xs font-semibold text-white",
 									children: t("tournReqSub") || "Подписка на канал"
 								}), savedSettings?.has_channel_sub ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-[10px] text-emerald-500 font-bold",
+									className: "text-[10px] text-emerald-500 font-semibold",
 									children: ["✓ ", t("done") || "Готово"]
 								}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 									onClick: () => window.Telegram?.WebApp?.openTelegramLink("https://t.me/uptradercrypto"),
-									className: "text-[11px] px-3 py-1.5 bg-emerald-500 text-slate-950 font-bold rounded-lg active:scale-95 transition-all",
+									className: "text-[10px] px-2 py-1 bg-white text-black font-semibold rounded hover:bg-neutral-200 transition-colors",
 									children: t("subscribe") || "Подписаться"
 								})]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex items-center justify-between app-input border rounded-xl p-3",
+								className: "flex items-center justify-between bg-[#0A0A0A] border border-white/5 rounded-lg p-3",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-xs font-semibold text-[var(--text-h)]",
+									className: "text-xs font-semibold text-white",
 									children: t("tournReqEmoji") || "Премиум-статус"
 								}), savedSettings?.has_premium_emoji ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-[10px] text-emerald-500 font-bold",
+									className: "text-[10px] text-emerald-500 font-semibold",
 									children: ["✓ ", t("done") || "Готово"]
 								}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 									onClick: () => window.Telegram?.WebApp?.openTelegramLink("https://t.me/premium"),
-									className: "text-[11px] px-3 py-1.5 bg-emerald-500 text-slate-950 font-bold rounded-lg active:scale-95 transition-all",
+									className: "text-[10px] px-2 py-1 bg-white text-black font-semibold rounded hover:bg-neutral-200 transition-colors",
 									children: t("openPremium") || "Открыть"
 								})]
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-[10px] text-[var(--text)] opacity-70 text-center leading-snug",
+							className: "text-[10px] text-neutral-500 text-center leading-snug",
 							children: t("tournReqFooter") || "Если вы уже выполнили условия, перезайдите в приложение."
 						})
 					]
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-				className: "shrink-0 w-full app-bar backdrop-blur-md border-t flex justify-around p-2 z-20",
+				className: "shrink-0 w-full bg-[#0A0A0A] border-t border-white/5 flex justify-around py-2 z-20 pb-[calc(env(safe-area-inset-bottom, 0px) + 8px)]",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
@@ -15458,7 +15428,7 @@ function App() {
 							triggerHaptic("light");
 							handleTabChange("status");
 						},
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "status" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
+						className: `flex-1 flex flex-col items-center gap-1 py-1 text-[10px] font-medium transition-all ${activeTab === "status" ? "text-white" : "text-neutral-500 hover:text-neutral-300"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-base",
 							children: "📊"
@@ -15470,7 +15440,7 @@ function App() {
 							triggerHaptic("light");
 							handleTabChange("scanner");
 						},
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "scanner" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
+						className: `flex-1 flex flex-col items-center gap-1 py-1 text-[10px] font-medium transition-all ${activeTab === "scanner" ? "text-white" : "text-neutral-500 hover:text-neutral-300"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-base",
 							children: "📡"
@@ -15482,7 +15452,7 @@ function App() {
 							triggerHaptic("light");
 							handleTabChange("referral");
 						},
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "referral" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
+						className: `flex-1 flex flex-col items-center gap-1 py-1 text-[10px] font-medium transition-all ${activeTab === "referral" ? "text-white" : "text-neutral-500 hover:text-neutral-300"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-base",
 							children: "💰"
@@ -15495,7 +15465,7 @@ function App() {
 							handleTabChange("settings");
 							if (!localStorage.getItem("mexc_setup_prompted") && !apiKey && !apiUid) setIsKeyModalOpen(true);
 						},
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-medium transition-all ${activeTab === "settings" ? "text-emerald-500 font-bold" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
+						className: `flex-1 flex flex-col items-center gap-1 py-1 text-[10px] font-medium transition-all ${activeTab === "settings" ? "text-white" : "text-neutral-500 hover:text-neutral-300"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-base",
 							children: "⚙️"
@@ -15507,11 +15477,10 @@ function App() {
 							triggerHaptic("light");
 							const hasSub = savedSettings?.has_channel_sub;
 							const hasEmoji = savedSettings?.has_premium_emoji;
-							savedSettings?.has_app_shortcut;
 							if (!hasSub && !hasEmoji) setShowTournamentReqModal(true);
 							else handleTabChange("tournaments");
 						},
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-bold transition-all ${activeTab === "tournaments" ? "text-emerald-500" : "text-[var(--text)] hover:text-[var(--text-h)]"}`,
+						className: `flex-1 flex flex-col items-center gap-1 py-1 text-[10px] font-medium transition-all ${activeTab === "tournaments" ? "text-white" : "text-neutral-500 hover:text-neutral-300"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-base",
 							children: "🏆"
@@ -15522,7 +15491,7 @@ function App() {
 							triggerHaptic("light");
 							handleTabChange("sub");
 						},
-						className: `flex-1 flex flex-col items-center gap-1 py-1.5 text-[11px] font-bold transition-all ${activeTab === "sub" ? "text-amber-400" : "text-amber-500 hover:text-amber-400"}`,
+						className: `flex-1 flex flex-col items-center gap-1 py-1 text-[10px] font-medium transition-all ${activeTab === "sub" ? "text-amber-500" : "text-neutral-500 hover:text-neutral-300"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-base",
 							children: "💳"
