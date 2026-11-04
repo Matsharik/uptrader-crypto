@@ -12983,7 +12983,7 @@ var ScannerTab = ({ apiUrl, triggerHaptic, lang }) => {
 						setShowFilters((v) => !v);
 					},
 					className: "text-[11px] px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-neutral-300 font-medium hover:bg-white/10 transition-all",
-					children: showFilters ? trOr("scanner.ui.onlySignals", "Only signals") : trOr("scanner.ui.showFilters", "Show filters")
+					children: showFilters ? trOr("scanner.ui.hideFilters", "Скрыть фильтры") : trOr("scanner.ui.onlySignals", "Фильтры скрыты")
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 					type: "button",
 					onClick: () => {
@@ -14175,7 +14175,7 @@ function App() {
 	const [useMaxLeverage, setUseMaxLeverage] = (0, import_react.useState)(true);
 	const [maxPositions, setMaxPositions] = (0, import_react.useState)(3);
 	const [htfContext, setHtfContext] = (0, import_react.useState)(["sfp", "fvg_htf"]);
-	const [entryTrigger, setEntryTrigger] = (0, import_react.useState)("reclaim");
+	const [entryTriggers, setEntryTriggers] = (0, import_react.useState)(["reclaim"]);
 	const [confirmations, setConfirmations] = (0, import_react.useState)(["choch"]);
 	const [apiUid, setApiUid] = (0, import_react.useState)("");
 	const [apiKey, setApiKey] = (0, import_react.useState)("");
@@ -14453,42 +14453,6 @@ function App() {
 			setHasSeenOnboarding(true);
 		} else setCurrentStepOnboarding((prev) => prev + 1);
 	};
-	const handleCreateInvoice = async () => {
-		triggerHaptic("medium");
-		setSubLoading(true);
-		try {
-			const tg = window.Telegram?.WebApp;
-			const initData = tg?.initData || "";
-			const res = await fetch(`${API_URL}create-invoice`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-					"Authorization": `Bearer ${initData}`
-				},
-				body: JSON.stringify({
-					amount: 100,
-					asset: "USDT"
-				})
-			});
-			if (!res.ok) throw new Error(`HTTP: ${res.status}`);
-			const data = await res.json();
-			const payUrl = data.pay_url || data.url || data.invoiceUrl || data.result?.pay_url || data.invoice?.pay_url;
-			if (data.success !== false && payUrl) {
-				if (tg?.openTelegramLink) tg.openTelegramLink(payUrl);
-				else if (tg?.openLink) tg.openLink(payUrl);
-				else window.open(payUrl, "_blank");
-			} else {
-				triggerHaptic("error");
-				safeAlert(data.error || t("invoiceError"));
-			}
-		} catch (err) {
-			console.error("Ошибка оплаты:", err);
-			triggerHaptic("error");
-			safeAlert(t("networkError"));
-		} finally {
-			setSubLoading(false);
-		}
-	};
 	const isPaperMode = savedSettings ? Boolean(Number(savedSettings.is_paper_trading ?? savedSettings.isPaperTrading ?? savedSettings.is_paper ?? 1)) : Boolean(isPaper);
 	if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "min-h-[100dvh] bg-[#0A0A0A] flex items-center justify-center",
@@ -14602,115 +14566,113 @@ function App() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "h-[100dvh] w-full bg-[#0A0A0A] text-white flex flex-col font-sans overflow-hidden",
 		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "flex justify-center",
+				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 12px)" },
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					type: "button",
+					onClick: handleLinkCycle,
+					className: "min-h-[14px] text-[10px] font-mono tracking-tight text-[var(--text)] opacity-40 hover:opacity-70 transition-opacity select-none",
+					children: LINK_STATES[linkState] || "\xA0"
+				})
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
-				className: "w-full shrink-0 z-20 flex flex-col border-b border-white/5 bg-[#0A0A0A]",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "flex justify-center border-b border-white/5 py-1",
-						style: { paddingTop: "env(safe-area-inset-top, 0px)" },
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-							type: "button",
-							onClick: handleLinkCycle,
-							className: "text-[10px] font-mono tracking-wide text-neutral-500 hover:text-white transition-colors select-none",
-							children: LINK_STATES[linkState] || "\xA0"
-						})
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "w-full px-4 pb-3 pt-2 flex flex-col gap-2",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center justify-between",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex items-center gap-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									onClick: () => window.Telegram?.WebApp?.openTelegramLink("https://t.me/uptradercrypto"),
-									className: "w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer active:scale-95 transition-transform",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 48px)" },
+				className: "w-full px-5 pb-4 app-bar border-b flex flex-col gap-2 shrink-0 z-10",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "w-full px-4 pb-3 pt-2 flex flex-col gap-2",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center justify-between",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-3",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								onClick: () => window.Telegram?.WebApp?.openTelegramLink("https://t.me/uptradercrypto"),
+								className: "w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer active:scale-95 transition-transform",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+									viewBox: "0 0 24 24",
+									className: "w-5 h-5 text-white",
+									fill: "currentColor",
+									"aria-hidden": "true",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M22.05 2.9a1.2 1.2 0 0 0-1.3-.2L2.6 10.4c-1 .4-1 1.8.02 2.15l4.62 1.55 1.7 5.32c.32 1 1.62 1.2 2.22.35l2.4-3.4 4.7 3.45c.75.55 1.83.15 2.03-.75l3.1-14.9c.1-.5-.15-1-.34-1.27zM9.1 14.05l-.9 2.83-.86-2.68 9.5-6.35-7.74 6.2z" })
+								})
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+								className: "font-semibold text-sm tracking-wide text-white",
+								children: "Hyperliquid Bot"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-center gap-1.5 mt-0.5",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-[11px] text-neutral-400 font-medium",
+									children: "By Uptradercrypto"
+								})]
+							})] })]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-2",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+									value: lang,
+									onChange: (e) => {
+										triggerHaptic("light");
+										setLang(e.target.value);
+									},
+									className: "bg-[#121212] border border-white/10 text-[11px] rounded-lg px-2 py-1.5 outline-none uppercase font-semibold text-white appearance-none",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+											value: "ru",
+											children: "RU"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+											value: "en",
+											children: "EN"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+											value: "es",
+											children: "ES"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+											value: "zh",
+											children: "ZH"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+											value: "tr",
+											children: "TR"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+											value: "de",
+											children: "DE"
+										})
+									]
+								}),
+								!apiUid && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+									type: "button",
+									onClick: () => {
+										triggerHaptic("light");
+										setIsKeyModalOpen(true);
+									},
+									className: "px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-all cursor-pointer active:scale-95 shrink-0",
+									children: "Connect HL"
+								}),
+								apiUid && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: "https://www.youtube.com/@uptradercrypto",
+									target: "_blank",
+									rel: "noopener noreferrer",
+									onClick: (e) => {
+										e.preventDefault();
+										triggerHaptic("light");
+										window.Telegram?.WebApp?.openLink("https://www.youtube.com/@uptradercrypto");
+									},
+									className: "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-all cursor-pointer active:scale-95 shrink-0",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
 										viewBox: "0 0 24 24",
-										className: "w-5 h-5 text-white",
+										className: "w-3.5 h-3.5",
 										fill: "currentColor",
 										"aria-hidden": "true",
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M22.05 2.9a1.2 1.2 0 0 0-1.3-.2L2.6 10.4c-1 .4-1 1.8.02 2.15l4.62 1.55 1.7 5.32c.32 1 1.62 1.2 2.22.35l2.4-3.4 4.7 3.45c.75.55 1.83.15 2.03-.75l3.1-14.9c.1-.5-.15-1-.34-1.27zM9.1 14.05l-.9 2.83-.86-2.68 9.5-6.35-7.74 6.2z" })
-									})
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-									className: "font-semibold text-sm tracking-wide text-white",
-									children: "Hyperliquid Bot"
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "flex items-center gap-1.5 mt-0.5",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-[11px] text-neutral-400 font-medium",
-										children: "By Uptradercrypto"
-									})]
-								})] })]
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex items-center gap-2",
-								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
-										value: lang,
-										onChange: (e) => {
-											triggerHaptic("light");
-											setLang(e.target.value);
-										},
-										className: "bg-[#121212] border border-white/10 text-[11px] rounded-lg px-2 py-1.5 outline-none uppercase font-semibold text-white appearance-none",
-										children: [
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												value: "ru",
-												children: "RU"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												value: "en",
-												children: "EN"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												value: "es",
-												children: "ES"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												value: "zh",
-												children: "ZH"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												value: "tr",
-												children: "TR"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												value: "de",
-												children: "DE"
-											})
-										]
-									}),
-									!apiUid && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-										type: "button",
-										onClick: () => {
-											triggerHaptic("light");
-											setIsKeyModalOpen(true);
-										},
-										className: "px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-all cursor-pointer active:scale-95 shrink-0",
-										children: "Connect HL"
-									}),
-									apiUid && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-										href: "https://www.youtube.com/@uptradercrypto",
-										target: "_blank",
-										rel: "noopener noreferrer",
-										onClick: (e) => {
-											e.preventDefault();
-											triggerHaptic("light");
-											window.Telegram?.WebApp?.openLink("https://www.youtube.com/@uptradercrypto");
-										},
-										className: "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-all cursor-pointer active:scale-95 shrink-0",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
-											viewBox: "0 0 24 24",
-											className: "w-3.5 h-3.5",
-											fill: "currentColor",
-											"aria-hidden": "true",
-											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" })
-										}), "Academy"]
-									})
-								]
-							})]
-						})
-					}),
-					" "
-				]
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" })
+									}), "Academy"]
+								})
+							]
+						})]
+					})
+				}), " "]
 			}),
 			shortcut.visible && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: `relative px-4 pt-3 transition-opacity duration-500 ${shortcut.fading ? "opacity-0" : "opacity-100"}`,
@@ -14858,10 +14820,10 @@ function App() {
 								}, pos.id || pos.symbol))]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "grid grid-cols-3 gap-2",
+								className: "grid grid-cols-5 gap-2 mt-4",
 								children: [
 									{
-										name: "TG Channel",
+										name: "Канал",
 										url: "https://t.me/uptradercrypto",
 										icon: "📢",
 										show: true
@@ -14873,13 +14835,13 @@ function App() {
 										show: true
 									},
 									{
-										name: "Hyperliquid",
+										name: "HyperL",
 										url: "https://app.hyperliquid.xyz/join/SETUP",
 										icon: "🌊",
 										show: true
 									},
 									{
-										name: "TG Gifts",
+										name: "Gifts",
 										url: "https://t.me/tonnel_network_bot/gifts?startapp=ref_1711018223",
 										icon: "🎁",
 										show: true
@@ -14904,19 +14866,18 @@ function App() {
 										triggerHaptic("light");
 										window.Telegram?.WebApp?.openLink(link.url);
 									},
-									className: "flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#121212] border border-white/5 hover:border-white/10 hover:bg-white/5 active:scale-95 transition-all",
+									className: "flex flex-col items-center justify-center gap-1 py-2 rounded-lg bg-[#121212] border border-white/5 hover:border-white/10 active:scale-95 transition-all",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-lg",
+										className: "text-base",
 										children: link.icon
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-[10px] text-neutral-400 font-medium text-center leading-tight",
+										className: "text-[9px] text-neutral-400 font-medium text-center leading-tight",
 										children: link.name
 									})]
 								}, i))
 							})
 						]
 					}),
-					" // Закрываем activeTab === 'status'",
 					activeTab === "settings" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "space-y-4 animate-fadeIn",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -15126,22 +15087,22 @@ function App() {
 										className: "text-[10px] text-neutral-500 mt-0.5",
 										children: t("ltfEntrySub")
 									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "space-y-2",
+										className: "grid grid-cols-2 gap-2",
 										children: LTF_ENTRY.map((s) => {
-											const on = entryTrigger === s.id;
+											const on = entryTriggers.includes(s.id);
 											return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 												type: "button",
 												onClick: () => {
 													triggerHaptic("light");
-													setEntryTrigger(s.id);
+													setEntryTriggers((prev) => prev.includes(s.id) ? prev.filter((x) => x !== s.id) : [...prev, s.id]);
 												},
-												className: `w-full flex items-center justify-between bg-[#0A0A0A] border rounded-lg p-3 transition-colors ${on ? "border-white/20" : "border-white/5"}`,
+												className: `flex items-center justify-between px-3 py-2.5 rounded-lg border text-xs font-semibold transition-all ${on ? "border-white/20 bg-white/5 text-white" : "border-white/5 bg-[#0A0A0A] text-neutral-400"}`,
 												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-													className: `text-xs font-semibold ${on ? "text-white" : "text-neutral-500"}`,
+													className: "flex items-center gap-2",
 													children: s.label
-												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-													className: `w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${on ? "border-white" : "border-neutral-600"}`,
-													children: on && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-2 h-2 rounded-full bg-white" })
+												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: `w-8 h-4 rounded-full p-0.5 transition-colors ${on ? "bg-white" : "bg-white/10"}`,
+													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block w-3 h-3 rounded-full transition-transform ${on ? "bg-black translate-x-4" : "bg-neutral-500 translate-x-0"}` })
 												})]
 											}, s.id);
 										})
@@ -15194,38 +15155,127 @@ function App() {
 						isLifetime,
 						isReferral
 					}),
-					activeTab === "sub" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "p-6 rounded-xl bg-[#121212] border border-white/5 text-center space-y-4 animate-fadeIn",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center mx-auto text-lg",
-								children: "⚡"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-								className: "font-semibold text-base text-white",
-								children: t("vipTitle")
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-xs text-neutral-400 mt-1 max-w-xs mx-auto",
-								children: t("vipDesc")
-							})] }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "py-2",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-3xl font-semibold text-white",
-									children: "$100"
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-xs text-neutral-500",
-									children: [" ", t("perMonth")]
-								})]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-								type: "button",
-								onClick: handleCreateInvoice,
-								disabled: subLoading,
-								className: "w-full bg-white text-black font-semibold py-3.5 rounded-lg text-xs tracking-wide transition-all disabled:opacity-50 flex items-center justify-center gap-2",
-								children: subLoading ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" }) : t("payBtn")
-							})
-						]
+					activeTab === "sub" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "space-y-4 animate-fadeIn",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "p-5 rounded-xl bg-[#121212] border border-white/5 space-y-4",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "text-center space-y-2 mb-4",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center mx-auto text-2xl",
+											children: "🌊"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+											className: "text-lg font-semibold text-white",
+											children: "Как подключить Hyperliquid"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs text-neutral-400",
+											children: "Инструкция по настройке API"
+										})
+									]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "space-y-4",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "bg-[#0A0A0A] border border-white/5 rounded-xl p-4 space-y-2",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-[10px] font-bold text-neutral-500 uppercase tracking-wider block",
+												children: "Шаг 1"
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+												className: "text-xs text-white leading-relaxed",
+												children: [
+													"Перейдите на ",
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+														href: "https://app.hyperliquid.xyz/join/SETUP",
+														target: "_blank",
+														className: "text-blue-400 hover:underline",
+														children: "app.hyperliquid.xyz"
+													}),
+													" и подключите ваш основной кошелек (MetaMask, Rabby или др.)."
+												]
+											})]
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "bg-[#0A0A0A] border border-white/5 rounded-xl p-4 space-y-2",
+											children: [
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "text-[10px] font-bold text-neutral-500 uppercase tracking-wider block",
+													children: "Шаг 2"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+													className: "text-xs text-white leading-relaxed mb-2",
+													children: [
+														"В правом верхнем углу нажмите на свой адрес и выберите ",
+														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "API" }),
+														"."
+													]
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+													src: "/assets/step-api.jpg",
+													alt: "API Menu",
+													className: "w-full rounded-lg border border-white/10"
+												})
+											]
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "bg-[#0A0A0A] border border-white/5 rounded-xl p-4 space-y-2",
+											children: [
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "text-[10px] font-bold text-neutral-500 uppercase tracking-wider block",
+													children: "Шаг 3"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+													className: "text-xs text-white leading-relaxed mb-2",
+													children: [
+														"Нажмите ",
+														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "Generate" }),
+														", чтобы создать Agent Wallet (API Key). Подпишите транзакцию в кошельке."
+													]
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+													src: "/assets/step-generate.jpg",
+													alt: "Generate API",
+													className: "w-full rounded-lg border border-white/10"
+												})
+											]
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "bg-[#0A0A0A] border border-white/5 rounded-xl p-4 space-y-2",
+											children: [
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "text-[10px] font-bold text-neutral-500 uppercase tracking-wider block",
+													children: "Шаг 4"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+													className: "text-xs text-white leading-relaxed",
+													children: [
+														"Скопируйте ",
+														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "Main Wallet" }),
+														" и ",
+														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "Private Key" }),
+														" агента."
+													]
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+													className: "text-xs text-amber-500 leading-relaxed font-semibold mt-1",
+													children: "Внимание: ключ агента не может выводить средства. Он нужен только для торговли!"
+												})
+											]
+										})
+									]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+									type: "button",
+									onClick: () => setIsKeyModalOpen(true),
+									className: "w-full bg-white text-black font-semibold py-3.5 rounded-lg text-xs tracking-wide mt-2 transition-all active:scale-[0.98]",
+									children: "Ввести ключи"
+								})
+							]
+						})
 					})
 				]
 			}),
@@ -15471,7 +15521,18 @@ function App() {
 							children: "⚙️"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("tabSettings") })]
 					}),
-					isLifetime || isReferral ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+					!apiUid ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
+						onClick: () => {
+							triggerHaptic("light");
+							handleTabChange("sub");
+						},
+						className: `flex-1 flex flex-col items-center gap-1 py-1 text-[10px] font-medium transition-all ${activeTab === "sub" ? "text-white" : "text-neutral-500 hover:text-neutral-300"}`,
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-base",
+							children: "🌊"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "HL Гид" })]
+					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
 						onClick: () => {
 							triggerHaptic("light");
@@ -15485,17 +15546,6 @@ function App() {
 							className: "text-base",
 							children: "🏆"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("tabTournaments") || "Турниры" })]
-					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-						type: "button",
-						onClick: () => {
-							triggerHaptic("light");
-							handleTabChange("sub");
-						},
-						className: `flex-1 flex flex-col items-center gap-1 py-1 text-[10px] font-medium transition-all ${activeTab === "sub" ? "text-amber-500" : "text-neutral-500 hover:text-neutral-300"}`,
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-base",
-							children: "💳"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: t("tabSub") })]
 					})
 				]
 			})
