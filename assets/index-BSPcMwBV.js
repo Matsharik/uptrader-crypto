@@ -11809,7 +11809,21 @@ var translations = {
 		saveSuccess: "✅ Настройки сохранены!",
 		saveError: "Ошибка сохранения параметров",
 		networkError: "Ошибка сети при сохранении. Проверьте соединение.",
-		invoiceError: "Ошибка при выписке счета CryptoBot"
+		invoiceError: "Ошибка при выписке счета CryptoBot",
+		hlGuide: {
+			title: "Как подключить Hyperliquid",
+			subtitle: "Инструкция по настройке API",
+			step1Title: "Шаг 1",
+			step1Desc: "Перейдите на app.hyperliquid.xyz и подключите ваш основной кошелек (MetaMask, Rabby или др.).",
+			step2Title: "Шаг 2",
+			step2Desc: "В правом верхнем углу нажмите на свой адрес и выберите API.",
+			step3Title: "Шаг 3",
+			step3Desc: "Нажмите Generate, чтобы создать Agent Wallet (API Key). Подпишите транзакцию в кошельке.",
+			step4Title: "Шаг 4",
+			step4Desc: "Скопируйте Main Wallet и Private Key агента.",
+			warning: "Внимание: ключ агента не может выводить средства. Он нужен только для торговли!",
+			btnConnect: "Ввести ключи"
+		}
 	},
 	en: {
 		saveChangesTitle: "Save changes?",
@@ -11843,6 +11857,7 @@ var translations = {
 		strategiesHeader: "Strategies",
 		tabTournaments: "Tournaments",
 		subtitle: "MEXC Futures Bot",
+		trialBadge: "🎁 Trial (5 days)",
 		tabScanner: "Scanner",
 		tabReferral: "Earn",
 		tabStatus: "Status",
@@ -11879,7 +11894,21 @@ var translations = {
 		saveSuccess: "✅ Settings saved successfully!",
 		saveError: "Failed to save settings",
 		networkError: "Network error while saving. Check connection.",
-		invoiceError: "CryptoBot invoice creation error"
+		invoiceError: "CryptoBot invoice creation error",
+		hlGuide: {
+			title: "How to connect Hyperliquid",
+			subtitle: "API Setup Instructions",
+			step1Title: "Step 1",
+			step1Desc: "Go to app.hyperliquid.xyz and connect your main wallet (MetaMask, Rabby, etc.).",
+			step2Title: "Step 2",
+			step2Desc: "Click on your address in the top right corner and select API.",
+			step3Title: "Step 3",
+			step3Desc: "Click Generate to create an Agent Wallet (API Key). Sign the transaction in your wallet.",
+			step4Title: "Step 4",
+			step4Desc: "Copy the Main Wallet and the Agent Private Key.",
+			warning: "Warning: the agent key cannot withdraw funds. It is only used for trading!",
+			btnConnect: "Enter keys"
+		}
 	},
 	es: {
 		saveChangesTitle: "¿Guardar cambios?",
@@ -11950,7 +11979,21 @@ var translations = {
 		saveSuccess: "✅ ¡Configuración guardada con éxito!",
 		saveError: "Error al guardar la configuración",
 		networkError: "Error de red al guardar. Compruebe la conexión.",
-		invoiceError: "Error al generar factura de CryptoBot"
+		invoiceError: "Error al generar factura de CryptoBot",
+		hlGuide: {
+			title: "Cómo conectar Hyperliquid",
+			subtitle: "Instrucciones para configurar la API",
+			step1Title: "Paso 1",
+			step1Desc: "Ve a app.hyperliquid.xyz y conecta tu billetera principal (MetaMask, Rabby, etc.).",
+			step2Title: "Paso 2",
+			step2Desc: "Haz clic en tu dirección en la esquina superior derecha y selecciona API.",
+			step3Title: "Paso 3",
+			step3Desc: "Haz clic en Generate para crear una Agent Wallet (API Key). Firma la transacción en tu billetera.",
+			step4Title: "Paso 4",
+			step4Desc: "Copia la Main Wallet y la Private Key del agente.",
+			warning: "Advertencia: la clave del agente no puede retirar fondos. ¡Solo se usa para operar!",
+			btnConnect: "Ingresar claves"
+		}
 	},
 	zh: {
 		saveChangesTitle: "保存更改？",
@@ -12021,7 +12064,21 @@ var translations = {
 		saveSuccess: "✅ 设置保存成功！",
 		saveError: "保存设置失败",
 		networkError: "网络错误，请检查网络连接。",
-		invoiceError: "CryptoBot 账单生成失败"
+		invoiceError: "CryptoBot 账单生成失败",
+		hlGuide: {
+			title: "如何连接 Hyperliquid",
+			subtitle: "API 设置说明",
+			step1Title: "第一步",
+			step1Desc: "前往 app.hyperliquid.xyz 并连接您的主钱包（MetaMask、Rabby 等）。",
+			step2Title: "第二步",
+			step2Desc: "点击右上角的地址并选择 API。",
+			step3Title: "第三步",
+			step3Desc: "点击 Generate 创建 Agent Wallet（API 密钥）。在钱包中签署交易。",
+			step4Title: "第四步",
+			step4Desc: "复制 Main Wallet（主钱包）和 Agent Private Key（代理私钥）。",
+			warning: "警告：代理密钥无法提取资金。它仅用于交易！",
+			btnConnect: "输入密钥"
+		}
 	},
 	tr: {
 		saveChangesTitle: "Değişiklikler kaydedilsin mi?",
@@ -12092,7 +12149,21 @@ var translations = {
 		saveSuccess: "✅ Ayarlar başarıyla kaydedildi!",
 		saveError: "Ayarlar kaydedilemedi",
 		networkError: "Kaydederken ağ hatası oluştu. Bağlantınızı kontrol edin.",
-		invoiceError: "CryptoBot fatura oluşturma hatası"
+		invoiceError: "CryptoBot fatura oluşturma hatası",
+		hlGuide: {
+			title: "Hyperliquid nasıl bağlanır",
+			subtitle: "API Kurulum Talimatları",
+			step1Title: "Adım 1",
+			step1Desc: "app.hyperliquid.xyz adresine gidin ve ana cüzdanınızı bağlayın (MetaMask, Rabby vb.).",
+			step2Title: "Adım 2",
+			step2Desc: "Sağ üst köşedeki adresinize tıklayın ve API'yi seçin.",
+			step3Title: "Adım 3",
+			step3Desc: "Bir Agent Wallet (API Anahtarı) oluşturmak için Generate'e tıklayın. İşlemi cüzdanınızda imzalayın.",
+			step4Title: "Adım 4",
+			step4Desc: "Main Wallet (Ana Cüzdan) ve ajan Private Key'ini (Özel Anahtar) kopyalayın.",
+			warning: "Uyarı: ajan anahtarı para çekemez. Sadece işlem yapmak için kullanılır!",
+			btnConnect: "Anahtarları gir"
+		}
 	},
 	de: {
 		saveChangesTitle: "Änderungen speichern?",
@@ -12163,7 +12234,21 @@ var translations = {
 		saveSuccess: "✅ Einstellungen erfolgreich gespeichert!",
 		saveError: "Fehler beim Speichern der Einstellungen",
 		networkError: "Netzwerkfehler beim Speichern. Bitte Verbindung prüfen.",
-		invoiceError: "Fehler bei CryptoBot Rechnungsstellung"
+		invoiceError: "Fehler bei CryptoBot Rechnungsstellung",
+		hlGuide: {
+			title: "So verbinden Sie Hyperliquid",
+			subtitle: "API-Einrichtungsanleitung",
+			step1Title: "Schritt 1",
+			step1Desc: "Gehen Sie zu app.hyperliquid.xyz und verbinden Sie Ihre Haupt-Wallet (MetaMask, Rabby usw.).",
+			step2Title: "Schritt 2",
+			step2Desc: "Klicken Sie oben rechts auf Ihre Adresse und wählen Sie API.",
+			step3Title: "Schritt 3",
+			step3Desc: "Klicken Sie auf Generate, um eine Agent Wallet (API Key) zu erstellen. Unterschreiben Sie die Transaktion in Ihrer Wallet.",
+			step4Title: "Schritt 4",
+			step4Desc: "Kopieren Sie die Main Wallet und den Private Key des Agenten.",
+			warning: "Warnung: Der Agent-Schlüssel kann keine Gelder abheben. Er wird nur für den Handel verwendet!",
+			btnConnect: "Schlüssel eingeben"
+		}
 	}
 };
 //#endregion
@@ -14223,7 +14308,10 @@ function App() {
 	const isApiInvalid = !isPaper && (!apiKey?.toString().trim() || !apiSecret?.toString().trim() || !apiUid?.toString().trim());
 	const isFormInvalid = isRiskInvalid || isMaxPositionsInvalid || isLeverageInvalid || isApiInvalid;
 	const t = (key) => {
-		return translations[lang]?.[key] || translations["en"]?.[key] || translations["ru"]?.[key] || key;
+		const getNested = (obj, path) => {
+			return path.split(".").reduce((acc, part) => acc && acc[part], obj);
+		};
+		return getNested(translations[lang], key) || getNested(translations["en"], key) || getNested(translations["ru"], key) || key;
 	};
 	const safeAlert = (msg) => {
 		const tg = window.Telegram?.WebApp;
@@ -14568,17 +14656,16 @@ function App() {
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "flex justify-center",
-				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 12px)" },
+				style: { paddingTop: "calc(env(safe-area-inset-top, 0px) + 8px)" },
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 					type: "button",
 					onClick: handleLinkCycle,
-					className: "min-h-[14px] text-[10px] font-mono tracking-tight text-[var(--text)] opacity-40 hover:opacity-70 transition-opacity select-none",
+					className: "text-xs font-mono tracking-tight text-neutral-500 hover:text-white transition-opacity select-none",
 					children: LINK_STATES[linkState] || "\xA0"
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
-				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 48px)" },
-				className: "w-full px-5 pb-4 app-bar border-b flex flex-col gap-2 shrink-0 z-10",
+				className: "w-full px-4 pb-3 pt-2 bg-[#0A0A0A] border-b border-white/5 flex flex-col gap-2 shrink-0 z-10",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "w-full px-4 pb-3 pt-2 flex flex-col gap-2",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -15169,11 +15256,11 @@ function App() {
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 											className: "text-lg font-semibold text-white",
-											children: "Как подключить Hyperliquid"
+											children: t("hlGuide.title")
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-xs text-neutral-400",
-											children: "Инструкция по настройке API"
+											children: t("hlGuide.subtitle")
 										})
 									]
 								}),
@@ -15184,19 +15271,10 @@ function App() {
 											className: "bg-[#0A0A0A] border border-white/5 rounded-xl p-4 space-y-2",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 												className: "text-[10px] font-bold text-neutral-500 uppercase tracking-wider block",
-												children: "Шаг 1"
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+												children: t("hlGuide.step1Title")
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 												className: "text-xs text-white leading-relaxed",
-												children: [
-													"Перейдите на ",
-													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-														href: "https://app.hyperliquid.xyz/join/SETUP",
-														target: "_blank",
-														className: "text-blue-400 hover:underline",
-														children: "app.hyperliquid.xyz"
-													}),
-													" и подключите ваш основной кошелек (MetaMask, Rabby или др.)."
-												]
+												children: t("hlGuide.step1Desc")
 											})]
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -15204,18 +15282,14 @@ function App() {
 											children: [
 												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 													className: "text-[10px] font-bold text-neutral-500 uppercase tracking-wider block",
-													children: "Шаг 2"
+													children: t("hlGuide.step2Title")
 												}),
-												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 													className: "text-xs text-white leading-relaxed mb-2",
-													children: [
-														"В правом верхнем углу нажмите на свой адрес и выберите ",
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "API" }),
-														"."
-													]
+													children: t("hlGuide.step2Desc")
 												}),
 												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-													src: "/assets/step-api.jpg",
+													src: "/assets/step-api.png",
 													alt: "API Menu",
 													className: "w-full rounded-lg border border-white/10"
 												})
@@ -15226,18 +15300,14 @@ function App() {
 											children: [
 												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 													className: "text-[10px] font-bold text-neutral-500 uppercase tracking-wider block",
-													children: "Шаг 3"
+													children: t("hlGuide.step3Title")
 												}),
-												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 													className: "text-xs text-white leading-relaxed mb-2",
-													children: [
-														"Нажмите ",
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "Generate" }),
-														", чтобы создать Agent Wallet (API Key). Подпишите транзакцию в кошельке."
-													]
+													children: t("hlGuide.step3Desc")
 												}),
 												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-													src: "/assets/step-generate.jpg",
+													src: "/assets/step-generate.png",
 													alt: "Generate API",
 													className: "w-full rounded-lg border border-white/10"
 												})
@@ -15248,21 +15318,20 @@ function App() {
 											children: [
 												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 													className: "text-[10px] font-bold text-neutral-500 uppercase tracking-wider block",
-													children: "Шаг 4"
+													children: t("hlGuide.step4Title")
 												}),
-												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 													className: "text-xs text-white leading-relaxed",
-													children: [
-														"Скопируйте ",
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "Main Wallet" }),
-														" и ",
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "Private Key" }),
-														" агента."
-													]
+													children: t("hlGuide.step4Desc")
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+													src: "/assets/step-copy.png",
+													alt: "API Menu",
+													className: "w-full rounded-lg border border-white/10"
 												}),
 												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 													className: "text-xs text-amber-500 leading-relaxed font-semibold mt-1",
-													children: "Внимание: ключ агента не может выводить средства. Он нужен только для торговли!"
+													children: t("hlGuide.warning")
 												})
 											]
 										})
@@ -15272,7 +15341,7 @@ function App() {
 									type: "button",
 									onClick: () => setIsKeyModalOpen(true),
 									className: "w-full bg-white text-black font-semibold py-3.5 rounded-lg text-xs tracking-wide mt-2 transition-all active:scale-[0.98]",
-									children: "Ввести ключи"
+									children: t("hlGuide.btnConnect")
 								})
 							]
 						})
