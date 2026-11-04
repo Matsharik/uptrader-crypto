@@ -11741,6 +11741,10 @@ var mexcModalTranslations = {
 };
 var translations = {
 	ru: {
+		tournReqThanks: "Рассказывая о SetupCryptoBot, вы помогаете нам развиваться!",
+		tournReqSelect: "Выбрать",
+		tournReqOptional: "Необязательно",
+		tournReqBtnNext: "Дальше",
 		saveChangesTitle: "Сохранить изменения?",
 		discardBtn: "Не сохранять",
 		discardLeaveBtn: "Не сохранять и уйти",
@@ -11826,6 +11830,10 @@ var translations = {
 		}
 	},
 	en: {
+		tournReqThanks: "By sharing SetupCryptoBot, you help us grow!",
+		tournReqSelect: "Select",
+		tournReqOptional: "Optional",
+		tournReqBtnNext: "Next",
 		saveChangesTitle: "Save changes?",
 		discardBtn: "Don't save",
 		discardLeaveBtn: "Discard and leave",
@@ -11911,6 +11919,10 @@ var translations = {
 		}
 	},
 	es: {
+		tournReqThanks: "¡Al compartir SetupCryptoBot, nos ayudas a crecer!",
+		tournReqSelect: "Seleccionar",
+		tournReqOptional: "Opcional",
+		tournReqBtnNext: "Siguiente",
 		saveChangesTitle: "¿Guardar cambios?",
 		discardBtn: "No guardar",
 		discardLeaveBtn: "Descartar y salir",
@@ -11996,6 +12008,10 @@ var translations = {
 		}
 	},
 	zh: {
+		tournReqThanks: "分享 SetupCryptoBot，帮助我们成长！",
+		tournReqSelect: "选择",
+		tournReqOptional: "选填",
+		tournReqBtnNext: "下一步",
 		saveChangesTitle: "保存更改？",
 		discardBtn: "不保存",
 		discardLeaveBtn: "不保存并离开",
@@ -12081,6 +12097,10 @@ var translations = {
 		}
 	},
 	tr: {
+		tournReqThanks: "SetupCryptoBot'tan bahsederek büyümemize yardımcı olursunuz!",
+		tournReqSelect: "Seç",
+		tournReqOptional: "İsteğe bağlı",
+		tournReqBtnNext: "İleri",
 		saveChangesTitle: "Değişiklikler kaydedilsin mi?",
 		discardBtn: "Kaydetme",
 		discardLeaveBtn: "Kaydetme ve çık",
@@ -12166,6 +12186,10 @@ var translations = {
 		}
 	},
 	de: {
+		tournReqThanks: "Indem Sie über SetupCryptoBot sprechen, helfen Sie uns zu wachsen!",
+		tournReqSelect: "Auswählen",
+		tournReqOptional: "Optional",
+		tournReqBtnNext: "Weiter",
 		saveChangesTitle: "Änderungen speichern?",
 		discardBtn: "Nicht speichern",
 		discardLeaveBtn: "Verwerfen und verlassen",
@@ -12612,7 +12636,7 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 	});
 	const [copied, setCopied] = (0, import_react.useState)(false);
 	const [loading, setLoading] = (0, import_react.useState)(true);
-	const [mexcUid, setMexcUid] = (0, import_react.useState)("");
+	const [hlWallet, setHlWallet] = (0, import_react.useState)("");
 	const [uidStatus, setUidStatus] = (0, import_react.useState)("idle");
 	const [cashbackStatus, setCashbackStatus] = (0, import_react.useState)("idle");
 	const t = (key) => {
@@ -12650,23 +12674,23 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 		else window.open(telegramShareUrl, "_blank");
 	};
 	const handleWithdrawUid = async () => {
-		if (!mexcUid.trim() || uidStatus === "loading") return;
+		if (!hlWallet.trim() || uidStatus === "loading") return;
 		setUidStatus("loading");
 		if (triggerHaptic) triggerHaptic("light");
 		try {
 			const initData = tg?.initData || "";
-			const res = await fetch(`${apiUrl}user/withdraw-uid`, {
+			const res = await fetch(`${apiUrl}user/withdraw-hl`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 					"Authorization": `Bearer ${initData}`
 				},
-				body: JSON.stringify({ mexcUid })
+				body: JSON.stringify({ wallet: hlWallet })
 			});
 			const data = await res.json();
 			if (res.ok && data.success) {
 				setUidStatus("success");
-				setMexcUid("");
+				setHlWallet("");
 				if (triggerHaptic) triggerHaptic("success");
 				fetchReferralStats();
 			} else {
@@ -12711,7 +12735,7 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 		children: t("refLoading")
 	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "flex flex-col gap-4 p-4 text-neutral-200 pb-20 bg-[#0A0A0A] min-h-screen",
+		className: "flex flex-col gap-4 text-neutral-200 pb-20 bg-[#0A0A0A] min-h-screen",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex flex-col gap-2 bg-[#121212] border border-white/5 p-4 rounded-xl",
@@ -12790,7 +12814,7 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 					className: "flex items-center justify-between",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 						className: "text-xs font-medium text-neutral-400",
-						children: "Вывести по MEXC UID"
+						children: "Вывести на HL Кошелек"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 						className: "text-[11px] font-medium text-emerald-500 font-mono",
 						children: ["$", stats.earningBalance || "0.00"]
@@ -12799,15 +12823,15 @@ var ReferralTab = ({ apiUrl, botUsername, lang, appName, referredBy, triggerHapt
 					className: "flex gap-2",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 						type: "text",
-						placeholder: "Введите ваш MEXC UID",
-						value: mexcUid,
-						onChange: (e) => setMexcUid(e.target.value),
+						placeholder: "0x...",
+						value: hlWallet,
+						onChange: (e) => setHlWallet(e.target.value),
 						className: "flex-1 bg-[#0A0A0A] border border-white/10 rounded-lg px-3 py-2 text-xs text-white font-mono outline-none focus:border-white/30 transition-colors"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
 						onClick: handleWithdrawUid,
-						disabled: !mexcUid.trim() || uidStatus === "loading",
-						className: `px-4 py-2 font-semibold text-xs rounded-lg transition-all shrink-0 flex items-center justify-center min-w-[80px] border ${!mexcUid.trim() ? "bg-[#0A0A0A] text-neutral-600 border-white/5 cursor-not-allowed" : "bg-white text-black border-transparent hover:bg-neutral-200 active:scale-[0.98]"}`,
+						disabled: !hlWallet.trim() || uidStatus === "loading",
+						className: `px-4 py-2 font-semibold text-xs rounded-lg transition-all shrink-0 flex items-center justify-center min-w-[80px] border ${!hlWallet.trim() ? "bg-[#0A0A0A] text-neutral-600 border-white/5 cursor-not-allowed" : "bg-white text-black border-transparent hover:bg-neutral-200 active:scale-[0.98]"}`,
 						children: [
 							uidStatus === "loading" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-3.5 h-3.5 border-2 border-black border-t-transparent rounded-full animate-spin" }),
 							uidStatus === "success" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -13047,7 +13071,7 @@ var ScannerTab = ({ apiUrl, triggerHaptic, lang }) => {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" })
 	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "flex flex-col gap-4 p-4 text-neutral-200 pb-20 bg-[#0A0A0A] min-h-screen",
+		className: "flex flex-col gap-4 text-neutral-200 pb-20 bg-[#0A0A0A] min-h-screen",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "flex items-center justify-between bg-[#121212] border border-white/5 p-3 rounded-xl",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -13298,7 +13322,7 @@ var TournamentTab = ({ apiUrl, lang, triggerHaptic, isLifetime, isReferral }) =>
 		children: tr("loading")
 	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "flex flex-col gap-4 p-4 pb-20 text-neutral-200 bg-[#0A0A0A] min-h-screen",
+		className: "flex flex-col gap-4 pb-20 text-neutral-200 bg-[#0A0A0A] min-h-screen",
 		children: [
 			reqModalOpen && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "fixed inset-0 z-50 bg-black/80 flex items-end sm:items-center justify-center p-4",
@@ -14256,6 +14280,8 @@ function App() {
 	const [isPaper, setIsPaper] = (0, import_react.useState)(true);
 	const [risk, setRisk] = (0, import_react.useState)(10);
 	const [leverage, setLeverage] = (0, import_react.useState)(10);
+	const [useMaxLeverage, setUseMaxLeverage] = (0, import_react.useState)(true);
+	const [maxPositions, setMaxPositions] = (0, import_react.useState)(2);
 	const [pairs, setPairs] = (0, import_react.useState)([
 		"SOL/USDT",
 		"BTC/USDT",
@@ -14266,8 +14292,6 @@ function App() {
 		"zone_reclaim",
 		"fvg"
 	]);
-	const [useMaxLeverage, setUseMaxLeverage] = (0, import_react.useState)(true);
-	const [maxPositions, setMaxPositions] = (0, import_react.useState)(3);
 	const [htfContext, setHtfContext] = (0, import_react.useState)(["sfp", "fvg_htf"]);
 	const [entryTriggers, setEntryTriggers] = (0, import_react.useState)(["reclaim"]);
 	const [confirmations, setConfirmations] = (0, import_react.useState)(["choch"]);
@@ -14665,7 +14689,7 @@ function App() {
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "flex justify-center",
-				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 18px)" },
+				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 16px)" },
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 					type: "button",
 					onClick: handleLinkCycle,
@@ -14674,101 +14698,95 @@ function App() {
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
-				className: "w-full px-4 pb-3 pt-2 bg-[#0A0A0A] border-b border-white/5 flex flex-col gap-2 shrink-0 z-10",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "w-full px-4 pb-3 pt-2 flex flex-col gap-2",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex items-center justify-between",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center gap-3",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								onClick: () => window.Telegram?.WebApp?.openTelegramLink("https://t.me/uptradercrypto"),
-								className: "w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer active:scale-95 transition-transform",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
-									viewBox: "0 0 24 24",
-									className: "w-5 h-5 text-white",
-									fill: "currentColor",
-									"aria-hidden": "true",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M22.05 2.9a1.2 1.2 0 0 0-1.3-.2L2.6 10.4c-1 .4-1 1.8.02 2.15l4.62 1.55 1.7 5.32c.32 1 1.62 1.2 2.22.35l2.4-3.4 4.7 3.45c.75.55 1.83.15 2.03-.75l3.1-14.9c.1-.5-.15-1-.34-1.27zM9.1 14.05l-.9 2.83-.86-2.68 9.5-6.35-7.74 6.2z" })
-								})
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-								className: "font-semibold text-sm tracking-wide text-white",
-								children: "Hyperliquid Bot"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex items-center gap-1.5 mt-0.5",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-[11px] text-neutral-400 font-medium",
-									children: "By Uptradercrypto"
-								})]
-							})] })]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center gap-2",
+				className: "w-full px-4 pb-[18px] pt-3 bg-[#0A0A0A] border-b border-white/5 flex items-center justify-between shrink-0 z-10",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-3",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						onClick: () => window.Telegram?.WebApp?.openTelegramLink("https://t.me/uptradercrypto"),
+						className: "w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer active:scale-95 transition-transform",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+							viewBox: "0 0 24 24",
+							className: "w-6 h-6 text-white",
+							fill: "currentColor",
+							"aria-hidden": "true",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M22.05 2.9a1.2 1.2 0 0 0-1.3-.2L2.6 10.4c-1 .4-1 1.8.02 2.15l4.62 1.55 1.7 5.32c.32 1 1.62 1.2 2.22.35l2.4-3.4 4.7 3.45c.75.55 1.83.15 2.03-.75l3.1-14.9c.1-.5-.15-1-.34-1.27zM9.1 14.05l-.9 2.83-.86-2.68 9.5-6.35-7.74 6.2z" })
+						})
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+						className: "font-semibold text-base tracking-wide text-white",
+						children: "Hyperliquid Bot"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center gap-2 mt-0.5",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-2 h-2 rounded-full bg-emerald-500 animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-xs text-neutral-400 font-medium",
+							children: "By Uptradercrypto"
+						})]
+					})] })]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-2",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+							value: lang,
+							onChange: (e) => {
+								triggerHaptic("light");
+								setLang(e.target.value);
+							},
+							className: "bg-[#121212] border border-white/10 text-xs rounded-lg px-2 py-2 outline-none uppercase font-semibold text-white appearance-none",
 							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
-									value: lang,
-									onChange: (e) => {
-										triggerHaptic("light");
-										setLang(e.target.value);
-									},
-									className: "bg-[#121212] border border-white/10 text-[11px] rounded-lg px-2 py-1.5 outline-none uppercase font-semibold text-white appearance-none",
-									children: [
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-											value: "ru",
-											children: "RU"
-										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-											value: "en",
-											children: "EN"
-										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-											value: "es",
-											children: "ES"
-										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-											value: "zh",
-											children: "ZH"
-										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-											value: "tr",
-											children: "TR"
-										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-											value: "de",
-											children: "DE"
-										})
-									]
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+									value: "ru",
+									children: "RU"
 								}),
-								!apiUid && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-									type: "button",
-									onClick: () => {
-										triggerHaptic("light");
-										setIsKeyModalOpen(true);
-									},
-									className: "px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-all cursor-pointer active:scale-95 shrink-0",
-									children: "Connect HL"
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+									value: "en",
+									children: "EN"
 								}),
-								apiUid && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-									href: "https://www.youtube.com/@uptradercrypto",
-									target: "_blank",
-									rel: "noopener noreferrer",
-									onClick: (e) => {
-										e.preventDefault();
-										triggerHaptic("light");
-										window.Telegram?.WebApp?.openLink("https://www.youtube.com/@uptradercrypto");
-									},
-									className: "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-all cursor-pointer active:scale-95 shrink-0",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
-										viewBox: "0 0 24 24",
-										className: "w-3.5 h-3.5",
-										fill: "currentColor",
-										"aria-hidden": "true",
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" })
-									}), "Academy"]
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+									value: "es",
+									children: "ES"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+									value: "zh",
+									children: "ZH"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+									value: "tr",
+									children: "TR"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+									value: "de",
+									children: "DE"
 								})
 							]
-						})]
-					})
-				}), " "]
+						}),
+						!apiUid && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							type: "button",
+							onClick: () => {
+								triggerHaptic("light");
+								setIsKeyModalOpen(true);
+							},
+							className: "px-3 py-2 rounded-lg text-xs font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-all cursor-pointer active:scale-95 shrink-0",
+							children: "Connect HL"
+						}),
+						apiUid && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: "https://www.youtube.com/@uptradercrypto",
+							target: "_blank",
+							rel: "noopener noreferrer",
+							onClick: (e) => {
+								e.preventDefault();
+								triggerHaptic("light");
+								window.Telegram?.WebApp?.openLink("https://www.youtube.com/@uptradercrypto");
+							},
+							className: "inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-all cursor-pointer active:scale-95 shrink-0",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+								viewBox: "0 0 24 24",
+								className: "w-4 h-4",
+								fill: "currentColor",
+								"aria-hidden": "true",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" })
+							}), t("academyBadge")]
+						})
+					]
+				})]
 			}),
 			shortcut.visible && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: `relative px-4 pt-3 transition-opacity duration-500 ${shortcut.fading ? "opacity-0" : "opacity-100"}`,
@@ -15069,11 +15087,11 @@ function App() {
 									children: [
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
 											className: "font-semibold text-xs text-white",
-											children: t("mexcApiHeader") || "Hyperliquid API"
+											children: "Hyperliquid API"
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 											className: "text-[11px] text-neutral-400 font-medium block mb-1",
-											children: t("apiUidLabel") || "Main Wallet"
+											children: "Main Wallet"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 											type: "text",
 											placeholder: "0x...",
@@ -15083,7 +15101,7 @@ function App() {
 										})] }),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 											className: "text-[11px] text-neutral-400 font-medium block mb-1",
-											children: t("apiSecretLabel") || "Agent Private Key"
+											children: "Agent Private Key"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											className: "relative",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
@@ -15527,22 +15545,39 @@ function App() {
 								})]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex items-center justify-between bg-[#0A0A0A] border border-white/5 rounded-lg p-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-xs font-semibold text-white",
-									children: t("tournReqEmoji") || "Премиум-статус"
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "flex flex-col pr-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-xs font-semibold text-white",
+										children: t("tournReqEmoji") || "Премиум-эмодзи"
+									}), window.Telegram?.WebApp?.initDataUnsafe?.user?.is_premium && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-[9px] text-emerald-500 mt-1 leading-tight",
+										children: t("tournReqThanks")
+									})]
 								}), savedSettings?.has_premium_emoji ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-[10px] text-emerald-500 font-semibold",
+									className: "text-[10px] text-emerald-500 font-semibold shrink-0",
 									children: ["✓ ", t("done") || "Готово"]
-								}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								}) : window.Telegram?.WebApp?.initDataUnsafe?.user?.is_premium ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 									onClick: () => window.Telegram?.WebApp?.openTelegramLink("https://t.me/premium"),
-									className: "text-[10px] px-2 py-1 bg-white text-black font-semibold rounded hover:bg-neutral-200 transition-colors",
-									children: t("openPremium") || "Открыть"
+									className: "text-[10px] px-2 py-1 bg-white/10 text-white font-semibold rounded hover:bg-white/20 transition-colors shrink-0",
+									children: t("tournReqSelect")
+								}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-[10px] text-neutral-500 shrink-0",
+									children: t("tournReqOptional")
 								})]
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-[10px] text-neutral-500 text-center leading-snug",
 							children: t("tournReqFooter") || "Если вы уже выполнили условия, перезайдите в приложение."
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: () => {
+								setShowTournamentReqModal(false);
+								handleTabChange("tournaments");
+							},
+							className: "w-full py-3 bg-white text-black font-semibold rounded-lg text-xs tracking-wide mt-2 transition-all active:scale-[0.98]",
+							children: t("tournReqBtnNext")
 						})
 					]
 				})
@@ -15614,9 +15649,7 @@ function App() {
 						type: "button",
 						onClick: () => {
 							triggerHaptic("light");
-							const hasSub = savedSettings?.has_channel_sub;
-							const hasEmoji = savedSettings?.has_premium_emoji;
-							if (!hasSub && !hasEmoji) setShowTournamentReqModal(true);
+							if (window.Telegram?.WebApp?.initDataUnsafe?.user?.is_premium && !savedSettings?.has_premium_emoji) setShowTournamentReqModal(true);
 							else handleTabChange("tournaments");
 						},
 						className: `flex-1 flex flex-col items-center gap-1 py-1 text-[10px] font-medium transition-all ${activeTab === "tournaments" ? "text-white" : "text-neutral-500 hover:text-neutral-300"}`,
