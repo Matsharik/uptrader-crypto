@@ -13555,6 +13555,15 @@ function useShortcutHint() {
 	};
 }
 //#endregion
+//#region src/assets/step-api.png
+var step_api_default = "/uptrader-crypto/assets/step-api-D_N2CrPX.png";
+//#endregion
+//#region src/assets/step-generate.png
+var step_generate_default = "/uptrader-crypto/assets/step-generate-FpqSrfZd.png";
+//#endregion
+//#region src/assets/step-copy.png
+var step_copy_default = "/uptrader-crypto/assets/step-copy-BpksnDQD.png";
+//#endregion
 //#region src/components/PositionCard.tsx
 var STORY_TEXTS = {
 	ru: "Не выставляйте риск на сделку более 2%. Помните: трейдинг может привести к полной потере капитала. Решение о запуске нашего торгового Volume & Price Action алгоритма принимайте самостоятельно.",
@@ -14656,7 +14665,7 @@ function App() {
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "flex justify-center",
-				style: { paddingTop: "calc(env(safe-area-inset-top, 0px) + 8px)" },
+				style: { paddingTop: "calc(var(--tg-safe-area-inset-top, 0px) + 18px)" },
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 					type: "button",
 					onClick: handleLinkCycle,
@@ -15289,7 +15298,7 @@ function App() {
 													children: t("hlGuide.step2Desc")
 												}),
 												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-													src: "/assets/step-api.png",
+													src: step_api_default,
 													alt: "API Menu",
 													className: "w-full rounded-lg border border-white/10"
 												})
@@ -15307,7 +15316,7 @@ function App() {
 													children: t("hlGuide.step3Desc")
 												}),
 												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-													src: "/assets/step-generate.png",
+													src: step_generate_default,
 													alt: "Generate API",
 													className: "w-full rounded-lg border border-white/10"
 												})
@@ -15325,7 +15334,7 @@ function App() {
 													children: t("hlGuide.step4Desc")
 												}),
 												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-													src: "/assets/step-copy.png",
+													src: step_copy_default,
 													alt: "API Menu",
 													className: "w-full rounded-lg border border-white/10"
 												}),
